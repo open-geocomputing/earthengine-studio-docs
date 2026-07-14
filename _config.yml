@@ -1,0 +1,44 @@
+title: Earth Engine Studio Documentation
+tagline: A modern workspace for planetary-scale geospatial work
+description: >-
+  Learn how to use Earth Engine Studio for JavaScript and Python analysis,
+  maps, repositories, assets, figures, exports, and local workflows.
+url: "https://docs.earthengine.studio"
+baseurl: ""
+lang: en
+timezone: Europe/Vienna
+permalink: pretty
+logo: /assets/images/orbit-studio.svg
+
+collections:
+  docs:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: doc
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+exclude:
+  - CHANGES.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - tmp

@@ -1,0 +1,35 @@
+<header class="site-header" data-header>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Earth Engine Studio documentation home">
+      <img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="38" height="38" alt="">
+      <span>Earth Engine <strong>Studio</strong><small>Documentation</small></span>
+    </a>
+    <div class="header-actions">
+      <button class="search-trigger" type="button" data-search-trigger aria-label="Search documentation">
+        <span aria-hidden="true">⌕</span><span>Search docs</span><kbd>/</kbd>
+      </button>
+      <a class="header-link" href="https://code.earthengine.studio/">Open Studio <span aria-hidden="true">↗</span></a>
+      <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span class="theme-sun" aria-hidden="true">☼</span><span class="theme-moon" aria-hidden="true">◐</span>
+      </button>
+      <button class="icon-button menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="docs-sidebar" aria-label="Open documentation menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="search-dialog" data-search-dialog hidden>
+  <button class="search-backdrop" type="button" data-search-close aria-label="Close search"></button>
+  <section class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+    <div class="search-field">
+      <span aria-hidden="true">⌕</span>
+      <label class="sr-only" id="search-title" for="docs-search">Search documentation</label>
+      <input id="docs-search" type="search" placeholder="Search workflows, panels, and features…" autocomplete="off" data-search-input>
+      <button type="button" data-search-close aria-label="Close search">Esc</button>
+    </div>
+    <p class="search-hint" data-search-hint>Type a topic such as “Python”, “exports”, or “geometry”.</p>
+    <div class="search-results" data-search-results aria-live="polite"></div>
+  </section>
+</div>

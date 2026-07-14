@@ -1,0 +1,15 @@
+{% assign ordered_docs = site.docs | sort: "order" %}
+{% assign previous_doc = nil %}
+{% assign next_doc = nil %}
+{% for item in ordered_docs %}
+  {% if item.order < page.order %}{% assign previous_doc = item %}{% endif %}
+  {% if item.order > page.order and next_doc == nil %}{% assign next_doc = item %}{% endif %}
+{% endfor %}
+<nav class="doc-pagination" aria-label="Guide pagination">
+  {% if previous_doc %}
+    <a href="{{ previous_doc.url | relative_url }}"><span>← Previous</span><strong>{{ previous_doc.title }}</strong></a>
+  {% else %}<span></span>{% endif %}
+  {% if next_doc %}
+    <a class="next" href="{{ next_doc.url | relative_url }}"><span>Next →</span><strong>{{ next_doc.title }}</strong></a>
+  {% endif %}
+</nav>

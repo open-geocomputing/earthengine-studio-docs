@@ -1,0 +1,28 @@
+- label: Start here
+  items:
+    - title: Getting started
+      url: /getting-started/
+    - title: Workspace
+      url: /workspace/
+- label: Create
+  items:
+    - title: Editor
+      url: /editor/
+    - title: Data & Docs
+      url: /data-and-docs/
+    - title: Maps & geometries
+      url: /maps-and-geometries/
+- label: Inspect & deliver
+  items:
+    - title: Console & plots
+      url: /console-and-plots/
+    - title: Tasks & exports
+      url: /tasks-and-exports/
+    - title: Assets
+      url: /assets/
+- label: Organize
+  items:
+    - title: Repositories & sharing
+      url: /repositories-and-sharing/
+    - title: Troubleshooting
+      url: /troubleshooting/

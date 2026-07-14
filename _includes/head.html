@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08101d">
+<meta name="color-scheme" content="light dark">
+{% seo %}
+<link rel="icon" href="{{ '/assets/images/orbit-studio.svg' | relative_url }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<script>
+  (() => {
+    let saved = null;
+    try { saved = localStorage.getItem("studio-docs-theme"); } catch { /* Use the system theme. */ }
+    const theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day");
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themeSource = saved ? "saved" : "system";
+  })();
+</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>

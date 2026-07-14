@@ -1,0 +1,22 @@
+<aside class="docs-sidebar" id="docs-sidebar" data-sidebar aria-label="Documentation navigation">
+  <div class="sidebar-intro">
+    <span>Earth Engine Studio</span>
+    <p>Workflows for code, maps, data, and delivery.</p>
+  </div>
+  <nav>
+    <a class="sidebar-home{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Overview</a>
+    {% for section in site.data.navigation %}
+      <div class="nav-section">
+        <p>{{ section.label }}</p>
+        {% for item in section.items %}
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </nav>
+  <div class="sidebar-note">
+    <strong>Built on Google Earth Engine</strong>
+    <p>Studio is independent and is not an official Google product.</p>
+  </div>
+</aside>
+<button class="sidebar-scrim" type="button" data-menu-toggle aria-label="Close documentation menu"></button>
