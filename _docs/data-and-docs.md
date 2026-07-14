@@ -3,6 +3,8 @@ title: Data & Docs
 description: Search official and community datasets, inspect complete metadata, insert starter expressions, and use the in-app API reference.
 permalink: /data-and-docs/
 order: 4
+lang: en
+translation_key: data-and-docs
 keywords: [catalog, datasets, STAC, community data, Docs panel, API reference, search, snippets]
 ---
 

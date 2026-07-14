@@ -3,6 +3,8 @@ title: Maps & geometries
 description: Display and inspect Earth Engine layers, choose map providers and basemaps, and maintain editable geometry workspaces.
 permalink: /maps-and-geometries/
 order: 5
+lang: en
+translation_key: maps-and-geometries
 keywords: [Map, MapLibre, OpenLayers, Google Maps, layers, basemaps, inspector, geometry, GeoJSONL, vector field]
 ---
 

@@ -3,6 +3,8 @@ title: Troubleshooting
 description: Diagnose account, project, runtime, browser, repository, map, and local-download problems in Earth Engine Studio.
 permalink: /troubleshooting/
 order: 10
+lang: en
+translation_key: troubleshooting
 keywords: [errors, authentication, permissions, runtime reset, browser, modules, downloads, maps, support]
 ---
 

@@ -1,4 +1,7 @@
-{% assign ordered_docs = site.docs | sort: "order" %}
+{% assign current_lang = page.lang | default: "en" %}
+{% assign ui = site.data.i18n[current_lang] %}
+{% assign localized_docs = site.docs | where: "lang", current_lang %}
+{% assign ordered_docs = localized_docs | sort: "order" %}
 {% assign previous_doc = nil %}
 {% assign next_doc = nil %}
 {% for item in ordered_docs %}
@@ -7,9 +10,9 @@
 {% endfor %}
 <nav class="doc-pagination" aria-label="Guide pagination">
   {% if previous_doc %}
-    <a href="{{ previous_doc.url | relative_url }}"><span>← Previous</span><strong>{{ previous_doc.title }}</strong></a>
+    <a href="{{ previous_doc.url | relative_url }}"><span>← {{ ui.previous }}</span><strong>{{ previous_doc.title }}</strong></a>
   {% else %}<span></span>{% endif %}
   {% if next_doc %}
-    <a class="next" href="{{ next_doc.url | relative_url }}"><span>Next →</span><strong>{{ next_doc.title }}</strong></a>
+    <a class="next" href="{{ next_doc.url | relative_url }}"><span>{{ ui.next }} →</span><strong>{{ next_doc.title }}</strong></a>
   {% endif %}
 </nav>

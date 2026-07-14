@@ -1,19 +1,23 @@
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign ui = site.data.i18n[lang] %}
+{% assign language = site.data.languages | where: "code", lang | first %}
 <header class="site-header" data-header>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content">{{ ui.skip }}</a>
   <div class="header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Earth Engine Studio documentation home">
+    <a class="brand" href="{{ language.prefix | append: '/' | relative_url }}" aria-label="{{ ui.home_label }}">
       <img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="38" height="38" alt="">
-      <span>Earth Engine <strong>Studio</strong><small>Documentation</small></span>
+      <span>Earth Engine <strong>Studio</strong><small>{{ ui.docs }}</small></span>
     </a>
     <div class="header-actions">
-      <button class="search-trigger" type="button" data-search-trigger aria-label="Search documentation">
-        <span aria-hidden="true">⌕</span><span>Search docs</span><kbd>/</kbd>
+      <button class="search-trigger" type="button" data-search-trigger aria-label="{{ ui.search_label }}">
+        <span aria-hidden="true">⌕</span><span>{{ ui.search }}</span><kbd>/</kbd>
       </button>
-      <a class="header-link" href="https://code.earthengine.studio/">Open Studio <span aria-hidden="true">↗</span></a>
-      <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="Switch color theme">
+      <a class="header-link" href="https://code.earthengine.studio/">{{ ui.open_studio }} <span aria-hidden="true">↗</span></a>
+      {% if page.translation_key %}{% include language-switcher.html %}{% endif %}
+      <button class="icon-button theme-button" type="button" data-theme-toggle aria-label="{{ ui.theme }}">
         <span class="theme-sun" aria-hidden="true">☼</span><span class="theme-moon" aria-hidden="true">◐</span>
       </button>
-      <button class="icon-button menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="docs-sidebar" aria-label="Open documentation menu">
+      <button class="icon-button menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="docs-sidebar" aria-label="{{ ui.menu }}">
         <span aria-hidden="true">☰</span>
       </button>
     </div>
@@ -21,15 +25,15 @@
 </header>
 
 <div class="search-dialog" data-search-dialog hidden>
-  <button class="search-backdrop" type="button" data-search-close aria-label="Close search"></button>
+  <button class="search-backdrop" type="button" data-search-close aria-label="{{ ui.close_search }}"></button>
   <section class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
     <div class="search-field">
       <span aria-hidden="true">⌕</span>
-      <label class="sr-only" id="search-title" for="docs-search">Search documentation</label>
-      <input id="docs-search" type="search" placeholder="Search workflows, panels, and features…" autocomplete="off" data-search-input>
-      <button type="button" data-search-close aria-label="Close search">Esc</button>
+      <label class="sr-only" id="search-title" for="docs-search">{{ ui.search_label }}</label>
+      <input id="docs-search" type="search" placeholder="{{ ui.search_placeholder }}" autocomplete="off" data-search-input>
+      <button type="button" data-search-close aria-label="{{ ui.close_search }}">Esc</button>
     </div>
-    <p class="search-hint" data-search-hint>Type a topic such as “Python”, “exports”, or “geometry”.</p>
+    <p class="search-hint" data-search-hint>{{ ui.search_hint }}</p>
     <div class="search-results" data-search-results aria-live="polite"></div>
   </section>
 </div>

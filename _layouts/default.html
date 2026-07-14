@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}">
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign ui = site.data.i18n[lang] %}
+{% assign language = site.data.languages | where: "code", lang | first %}
+{% if lang == "en" %}{% assign search_path = "/search.json" %}{% else %}{% assign search_path = language.prefix | append: "/search.json" %}{% endif %}
+<html lang="{{ language.hreflang }}" data-search-url="{{ search_path | relative_url }}" data-theme-day-label="{{ ui.theme_day }}" data-theme-night-label="{{ ui.theme_night }}" data-search-error="{{ ui.search_error }}" data-no-results="{{ ui.no_results }}" data-copy-label="{{ ui.copy }}" data-copied-label="{{ ui.copied }}" data-copy-fallback="{{ ui.copy_fallback }}">
   <head>{% include head.html %}</head>
   <body>
     {% include header.html %}

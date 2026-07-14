@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /pt-br/search.json
+lang: pt-br
+sitemap: false
+---
+{% include search-index.json %}

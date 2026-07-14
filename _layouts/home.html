@@ -1,5 +1,7 @@
 ---
 layout: default
 ---
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign ui = site.data.i18n[lang] %}
 <main id="main-content">{{ content }}</main>
 {% include footer.html %}

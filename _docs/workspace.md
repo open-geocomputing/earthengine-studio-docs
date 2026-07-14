@@ -3,6 +3,8 @@ title: Workspace
 description: Arrange Studio panels, preserve local context, change workspace preferences, and recover from local-state problems.
 permalink: /workspace/
 order: 2
+lang: en
+translation_key: workspace
 keywords: [layout, panels, tabs, popout, theme, persistence, settings, reset, recovery]
 ---
 

@@ -3,6 +3,8 @@ title: Repositories & sharing
 description: Connect Git providers, open or create branches and files, handle save conflicts, and share immutable Studio links.
 permalink: /repositories-and-sharing/
 order: 9
+lang: en
+translation_key: repositories-and-sharing
 keywords: [Scripts, repositories, GitHub, GitLab, GoogleSource, branch, save conflict, pull request, Get Link]
 ---
 

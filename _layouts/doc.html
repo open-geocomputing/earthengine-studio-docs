@@ -1,20 +1,22 @@
 ---
 layout: default
 ---
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign ui = site.data.i18n[lang] %}
 <div class="docs-shell">
   {% include sidebar.html %}
   <main class="doc-main" id="main-content">
     <article class="doc-article">
       <header class="doc-heading">
-        <p class="eyebrow">Earth Engine Studio guide</p>
+        <p class="eyebrow">{{ ui.guide_label }}</p>
         <h1>{{ page.title }}</h1>
         <p>{{ page.description }}</p>
       </header>
       <div class="doc-content" data-doc-content>{{ content }}</div>
       {% include doc-pagination.html %}
     </article>
-    <aside class="page-toc" aria-label="On this page">
-      <p>On this page</p>
+    <aside class="page-toc" aria-label="{{ ui.toc }}">
+      <p>{{ ui.toc }}</p>
       <nav data-page-toc></nav>
     </aside>
     {% include footer.html %}

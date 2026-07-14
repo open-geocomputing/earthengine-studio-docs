@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added complete French, German, Spanish, Brazilian Portuguese, and Simplified
+  Chinese editions alongside English, with stable locale-prefixed routes.
+- Added a page-aware language selector, localized navigation and interface
+  labels, translated home pages, per-language search indexes, and `hreflang`
+  metadata including an English `x-default`.
+- Added an automated translation-matrix check to local validation and the Pages
+  workflow so missing, duplicate, misordered, or misrouted guides fail builds.
 - Created the complete Earth Engine Studio documentation site with a custom
   responsive Jekyll layout, Day/Night themes, accessible navigation, local
   search, code-copy controls, and previous/next guide links.

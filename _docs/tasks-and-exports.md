@@ -3,6 +3,8 @@ title: Tasks & exports
 description: Review and submit Earth Engine exports or stream high-volume raster and table results to local folders and ZIP files.
 permalink: /tasks-and-exports/
 order: 7
+lang: en
+translation_key: tasks-and-exports
 keywords: [Tasks, Export, batch, Drive, Cloud Storage, assets, BigQuery, local download, folder, ZIP, GeoTIFF]
 ---
 

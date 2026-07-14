@@ -1,8 +1,10 @@
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign ui = site.data.i18n[lang] %}
 <footer class="site-footer">
-  <p>Earth Engine Studio is an independent project built on Google Earth Engine.</p>
+  <p>{{ ui.footer_note }}</p>
   <div>
-    <a href="https://developers.google.com/earth-engine/guides">Earth Engine guides ↗</a>
-    <a href="https://github.com/open-geocomputing/earthengine-studio-docs">Documentation source ↗</a>
+    <a href="https://developers.google.com/earth-engine/guides">{{ ui.earth_engine_guides }} ↗</a>
+    <a href="https://github.com/open-geocomputing/earthengine-studio-docs">{{ ui.source }} ↗</a>
     <span>© <span data-year>2026</span> Earth Engine Studio</span>
   </div>
 </footer>

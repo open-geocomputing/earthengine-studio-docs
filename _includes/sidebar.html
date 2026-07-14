@@ -1,22 +1,27 @@
-<aside class="docs-sidebar" id="docs-sidebar" data-sidebar aria-label="Documentation navigation">
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign ui = site.data.i18n[lang] %}
+{% assign language = site.data.languages | where: "code", lang | first %}
+<aside class="docs-sidebar" id="docs-sidebar" data-sidebar aria-label="{{ ui.docs }}">
   <div class="sidebar-intro">
     <span>Earth Engine Studio</span>
-    <p>Workflows for code, maps, data, and delivery.</p>
+    <p>{{ ui.sidebar_intro }}</p>
   </div>
   <nav>
-    <a class="sidebar-home{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Overview</a>
+    {% assign locale_home = language.prefix | append: "/" %}
+    <a class="sidebar-home{% if page.translation_key == 'home' %} active{% endif %}" href="{{ locale_home | relative_url }}">{{ ui.overview }}</a>
     {% for section in site.data.navigation %}
       <div class="nav-section">
-        <p>{{ section.label }}</p>
+        <p>{{ section.labels[lang] }}</p>
         {% for item in section.items %}
-          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% assign item_url = language.prefix | append: "/" | append: item.slug | append: "/" %}
+          <a href="{{ item_url | relative_url }}"{% if page.translation_key == item.slug %} class="active" aria-current="page"{% endif %}>{{ item.titles[lang] }}</a>
         {% endfor %}
       </div>
     {% endfor %}
   </nav>
   <div class="sidebar-note">
-    <strong>Built on Google Earth Engine</strong>
-    <p>Studio is independent and is not an official Google product.</p>
+    <strong>{{ ui.foundation_title }}</strong>
+    <p>{{ ui.foundation_text }}</p>
   </div>
 </aside>
-<button class="sidebar-scrim" type="button" data-menu-toggle aria-label="Close documentation menu"></button>
+<button class="sidebar-scrim" type="button" data-menu-toggle aria-label="{{ ui.close_menu }}"></button>

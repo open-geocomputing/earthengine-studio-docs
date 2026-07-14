@@ -1,0 +1,192 @@
+en:
+  docs: Documentation
+  skip: Skip to content
+  home_label: Earth Engine Studio documentation home
+  search: Search docs
+  search_label: Search documentation
+  search_placeholder: Search workflows, panels, and features…
+  search_hint: Type a topic such as “Python”, “exports”, or “geometry”.
+  search_error: Search is unavailable.
+  no_results: No guide matched this search.
+  close_search: Close search
+  open_studio: Open Studio
+  theme: Switch color theme
+  theme_day: Switch to Day theme
+  theme_night: Switch to Night theme
+  menu: Open documentation menu
+  close_menu: Close documentation menu
+  language: Language
+  sidebar_intro: Workflows for code, maps, data, and delivery.
+  overview: Overview
+  foundation_title: Built on Google Earth Engine
+  foundation_text: Studio is independent and is not an official Google product.
+  guide_label: Earth Engine Studio guide
+  toc: On this page
+  previous: Previous
+  next: Next
+  footer_note: Earth Engine Studio is an independent project built on Google Earth Engine.
+  earth_engine_guides: Earth Engine guides
+  source: Documentation source
+  copy: Copy
+  copied: Copied
+  copy_fallback: Select to copy
+fr:
+  docs: Documentation
+  skip: Aller au contenu
+  home_label: Accueil de la documentation Earth Engine Studio
+  search: Rechercher
+  search_label: Rechercher dans la documentation
+  search_placeholder: Rechercher des flux de travail, panneaux et fonctions…
+  search_hint: Essayez un sujet comme « Python », « exportations » ou « géométrie ».
+  search_error: La recherche est indisponible.
+  no_results: Aucun guide ne correspond à cette recherche.
+  close_search: Fermer la recherche
+  open_studio: Ouvrir Studio
+  theme: Changer de thème
+  theme_day: Passer au thème clair
+  theme_night: Passer au thème sombre
+  menu: Ouvrir le menu de documentation
+  close_menu: Fermer le menu de documentation
+  language: Langue
+  sidebar_intro: Flux de travail pour le code, les cartes, les données et les livrables.
+  overview: Vue d’ensemble
+  foundation_title: Construit sur Google Earth Engine
+  foundation_text: Studio est indépendant et n’est pas un produit officiel de Google.
+  guide_label: Guide Earth Engine Studio
+  toc: Sur cette page
+  previous: Précédent
+  next: Suivant
+  footer_note: Earth Engine Studio est un projet indépendant construit sur Google Earth Engine.
+  earth_engine_guides: Guides Earth Engine
+  source: Source de la documentation
+  copy: Copier
+  copied: Copié
+  copy_fallback: Sélectionner pour copier
+de:
+  docs: Dokumentation
+  skip: Zum Inhalt springen
+  home_label: Startseite der Earth Engine Studio-Dokumentation
+  search: Dokumentation durchsuchen
+  search_label: Dokumentation durchsuchen
+  search_placeholder: Workflows, Bereiche und Funktionen durchsuchen…
+  search_hint: Suchen Sie etwa nach „Python“, „Export“ oder „Geometrie“.
+  search_error: Die Suche ist nicht verfügbar.
+  no_results: Kein Leitfaden passt zu dieser Suche.
+  close_search: Suche schließen
+  open_studio: Studio öffnen
+  theme: Farbschema wechseln
+  theme_day: Zum hellen Design wechseln
+  theme_night: Zum dunklen Design wechseln
+  menu: Dokumentationsmenü öffnen
+  close_menu: Dokumentationsmenü schließen
+  language: Sprache
+  sidebar_intro: Workflows für Code, Karten, Daten und Ergebnisse.
+  overview: Überblick
+  foundation_title: Auf Google Earth Engine aufgebaut
+  foundation_text: Studio ist unabhängig und kein offizielles Google-Produkt.
+  guide_label: Earth Engine Studio-Leitfaden
+  toc: Auf dieser Seite
+  previous: Zurück
+  next: Weiter
+  footer_note: Earth Engine Studio ist ein unabhängiges Projekt auf Basis von Google Earth Engine.
+  earth_engine_guides: Earth Engine-Leitfäden
+  source: Dokumentationsquelltext
+  copy: Kopieren
+  copied: Kopiert
+  copy_fallback: Zum Kopieren auswählen
+es:
+  docs: Documentación
+  skip: Ir al contenido
+  home_label: Inicio de la documentación de Earth Engine Studio
+  search: Buscar documentación
+  search_label: Buscar en la documentación
+  search_placeholder: Buscar flujos, paneles y funciones…
+  search_hint: Prueba un tema como «Python», «exportaciones» o «geometría».
+  search_error: La búsqueda no está disponible.
+  no_results: Ninguna guía coincide con esta búsqueda.
+  close_search: Cerrar búsqueda
+  open_studio: Abrir Studio
+  theme: Cambiar tema de color
+  theme_day: Cambiar al tema claro
+  theme_night: Cambiar al tema oscuro
+  menu: Abrir menú de documentación
+  close_menu: Cerrar menú de documentación
+  language: Idioma
+  sidebar_intro: Flujos de trabajo para código, mapas, datos y resultados.
+  overview: Descripción general
+  foundation_title: Construido sobre Google Earth Engine
+  foundation_text: Studio es independiente y no es un producto oficial de Google.
+  guide_label: Guía de Earth Engine Studio
+  toc: En esta página
+  previous: Anterior
+  next: Siguiente
+  footer_note: Earth Engine Studio es un proyecto independiente construido sobre Google Earth Engine.
+  earth_engine_guides: Guías de Earth Engine
+  source: Código de la documentación
+  copy: Copiar
+  copied: Copiado
+  copy_fallback: Seleccionar para copiar
+pt-br:
+  docs: Documentação
+  skip: Ir para o conteúdo
+  home_label: Início da documentação do Earth Engine Studio
+  search: Pesquisar documentação
+  search_label: Pesquisar na documentação
+  search_placeholder: Pesquisar fluxos, painéis e recursos…
+  search_hint: Tente um assunto como “Python”, “exportações” ou “geometria”.
+  search_error: A pesquisa não está disponível.
+  no_results: Nenhum guia corresponde a esta pesquisa.
+  close_search: Fechar pesquisa
+  open_studio: Abrir Studio
+  theme: Alternar tema de cores
+  theme_day: Mudar para o tema claro
+  theme_night: Mudar para o tema escuro
+  menu: Abrir menu da documentação
+  close_menu: Fechar menu da documentação
+  language: Idioma
+  sidebar_intro: Fluxos de trabalho para código, mapas, dados e entregas.
+  overview: Visão geral
+  foundation_title: Construído sobre o Google Earth Engine
+  foundation_text: O Studio é independente e não é um produto oficial do Google.
+  guide_label: Guia do Earth Engine Studio
+  toc: Nesta página
+  previous: Anterior
+  next: Próximo
+  footer_note: O Earth Engine Studio é um projeto independente construído sobre o Google Earth Engine.
+  earth_engine_guides: Guias do Earth Engine
+  source: Código da documentação
+  copy: Copiar
+  copied: Copiado
+  copy_fallback: Selecionar para copiar
+zh-cn:
+  docs: 文档
+  skip: 跳到正文
+  home_label: Earth Engine Studio 文档首页
+  search: 搜索文档
+  search_label: 搜索文档
+  search_placeholder: 搜索工作流、面板和功能…
+  search_hint: 可尝试“Python”“导出”或“几何”等主题。
+  search_error: 搜索暂时不可用。
+  no_results: 没有与此搜索匹配的指南。
+  close_search: 关闭搜索
+  open_studio: 打开 Studio
+  theme: 切换颜色主题
+  theme_day: 切换到浅色主题
+  theme_night: 切换到深色主题
+  menu: 打开文档菜单
+  close_menu: 关闭文档菜单
+  language: 语言
+  sidebar_intro: 面向代码、地图、数据和成果交付的工作流。
+  overview: 概览
+  foundation_title: 构建于 Google Earth Engine 之上
+  foundation_text: Studio 是独立项目，并非 Google 官方产品。
+  guide_label: Earth Engine Studio 指南
+  toc: 本页内容
+  previous: 上一页
+  next: 下一页
+  footer_note: Earth Engine Studio 是构建于 Google Earth Engine 之上的独立项目。
+  earth_engine_guides: Earth Engine 指南
+  source: 文档源代码
+  copy: 复制
+  copied: 已复制
+  copy_fallback: 选择后复制

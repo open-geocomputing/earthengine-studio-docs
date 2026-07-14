@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /zh-cn/search.json
+lang: zh-cn
+sitemap: false
+---
+{% include search-index.json %}

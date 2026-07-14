@@ -3,6 +3,8 @@ title: Editor
 description: Write JavaScript and Python, run complete scripts or selections, use modules, and save or share Studio documents.
 permalink: /editor/
 order: 3
+lang: en
+translation_key: editor
 keywords: [Monaco, JavaScript, Python, run selection, modules, require, imports, save, share, markdown, GeoJSON]
 ---
 

@@ -1,0 +1,102 @@
+en:
+  eyebrow: Earth Engine Studio documentation
+  headline: From planetary data to
+  accent: working insight.
+  lede: Learn the complete Studio workflow—discover data, write JavaScript or Python, inspect maps and figures, organize code in repositories, and deliver cloud or local results.
+  start: Start with the first workflow
+  search: Search documentation
+  note: Earth Engine Studio is an independent workspace built on Google Earth Engine. It is not an official Google product.
+  section_label: Choose a workflow
+  section_title: Find the guide that matches the work.
+  section_text: Studio keeps familiar Earth Engine ideas while expanding the workspace around them. Start with a first script or jump directly to the panel you need.
+  compare_label: Built on a strong foundation
+  compare_title: Familiar engine. Expanded studio.
+  compare_text: Google Earth Engine remains the computation and data platform. Studio builds a separate, open workspace around it.
+  cta_label: Ready when you are
+  cta_title: Open the workspace and make the first run.
+  cta_text: No local install is required for normal Studio use.
+fr:
+  eyebrow: Documentation Earth Engine Studio
+  headline: Des données planétaires aux
+  accent: connaissances exploitables.
+  lede: Découvrez le flux de travail complet de Studio — recherche de données, JavaScript ou Python, cartes, figures, dépôts et livraison de résultats cloud ou locaux.
+  start: Commencer le premier flux de travail
+  search: Rechercher dans la documentation
+  note: Earth Engine Studio est un espace indépendant construit sur Google Earth Engine. Ce n’est pas un produit officiel de Google.
+  section_label: Choisir un flux de travail
+  section_title: Trouvez le guide adapté à votre tâche.
+  section_text: Studio conserve les concepts familiers d’Earth Engine tout en élargissant l’espace de travail. Commencez par un script ou ouvrez directement le panneau recherché.
+  compare_label: Une base solide
+  compare_title: Moteur familier. Studio étendu.
+  compare_text: Google Earth Engine reste la plateforme de données et de calcul. Studio construit autour d’elle un espace ouvert et indépendant.
+  cta_label: À vous de jouer
+  cta_title: Ouvrez l’espace de travail et lancez votre premier script.
+  cta_text: L’utilisation normale de Studio ne nécessite aucune installation locale.
+de:
+  eyebrow: Earth Engine Studio-Dokumentation
+  headline: Von planetaren Daten zu
+  accent: nutzbaren Erkenntnissen.
+  lede: Lernen Sie den gesamten Studio-Workflow kennen—Daten finden, JavaScript oder Python schreiben, Karten und Diagramme prüfen, Code organisieren und Cloud- oder lokale Ergebnisse ausgeben.
+  start: Mit dem ersten Workflow beginnen
+  search: Dokumentation durchsuchen
+  note: Earth Engine Studio ist ein unabhängiger Arbeitsbereich auf Basis von Google Earth Engine und kein offizielles Google-Produkt.
+  section_label: Workflow auswählen
+  section_title: Finden Sie den passenden Leitfaden.
+  section_text: Studio bewahrt vertraute Earth-Engine-Konzepte und erweitert den Arbeitsbereich. Beginnen Sie mit einem Skript oder springen Sie direkt zum benötigten Bereich.
+  compare_label: Auf einer starken Grundlage
+  compare_title: Vertraute Engine. Erweitertes Studio.
+  compare_text: Google Earth Engine bleibt die Daten- und Rechenplattform. Studio ergänzt sie um einen separaten, offenen Arbeitsbereich.
+  cta_label: Bereit zum Start
+  cta_title: Öffnen Sie den Arbeitsbereich und führen Sie Ihr erstes Skript aus.
+  cta_text: Für die normale Nutzung ist keine lokale Installation erforderlich.
+es:
+  eyebrow: Documentación de Earth Engine Studio
+  headline: De datos planetarios a
+  accent: conocimiento útil.
+  lede: Aprende el flujo completo de Studio—descubre datos, escribe JavaScript o Python, inspecciona mapas y figuras, organiza código y entrega resultados locales o en la nube.
+  start: Empezar con el primer flujo
+  search: Buscar en la documentación
+  note: Earth Engine Studio es un espacio independiente construido sobre Google Earth Engine. No es un producto oficial de Google.
+  section_label: Elige un flujo de trabajo
+  section_title: Encuentra la guía adecuada para tu tarea.
+  section_text: Studio mantiene los conceptos conocidos de Earth Engine y amplía el espacio que los rodea. Empieza con un script o ve directamente al panel que necesitas.
+  compare_label: Una base sólida
+  compare_title: Motor conocido. Studio ampliado.
+  compare_text: Google Earth Engine sigue siendo la plataforma de datos y cálculo. Studio crea a su alrededor un espacio abierto e independiente.
+  cta_label: Cuando quieras
+  cta_title: Abre el espacio de trabajo y ejecuta tu primer script.
+  cta_text: El uso normal de Studio no requiere instalación local.
+pt-br:
+  eyebrow: Documentação do Earth Engine Studio
+  headline: De dados planetários a
+  accent: conhecimento prático.
+  lede: Aprenda o fluxo completo do Studio—descubra dados, escreva JavaScript ou Python, examine mapas e figuras, organize código e entregue resultados locais ou na nuvem.
+  start: Começar pelo primeiro fluxo
+  search: Pesquisar documentação
+  note: O Earth Engine Studio é um espaço independente construído sobre o Google Earth Engine. Não é um produto oficial do Google.
+  section_label: Escolha um fluxo de trabalho
+  section_title: Encontre o guia certo para a tarefa.
+  section_text: O Studio preserva conceitos conhecidos do Earth Engine e amplia o espaço ao redor deles. Comece com um script ou vá direto ao painel necessário.
+  compare_label: Uma base sólida
+  compare_title: Motor conhecido. Studio ampliado.
+  compare_text: O Google Earth Engine continua sendo a plataforma de dados e computação. O Studio cria ao redor dela um espaço aberto e independente.
+  cta_label: Quando estiver pronto
+  cta_title: Abra o espaço de trabalho e faça a primeira execução.
+  cta_text: O uso normal do Studio não exige instalação local.
+zh-cn:
+  eyebrow: Earth Engine Studio 文档
+  headline: 从全球尺度数据走向
+  accent: 可执行的洞见。
+  lede: 了解完整的 Studio 工作流：发现数据、编写 JavaScript 或 Python、检查地图和图表、管理代码库，并交付云端或本地成果。
+  start: 从第一个工作流开始
+  search: 搜索文档
+  note: Earth Engine Studio 是构建于 Google Earth Engine 之上的独立工作区，并非 Google 官方产品。
+  section_label: 选择工作流
+  section_title: 找到与当前任务匹配的指南。
+  section_text: Studio 保留熟悉的 Earth Engine 概念，同时扩展其周边工作空间。可从第一个脚本开始，也可直接进入所需面板。
+  compare_label: 构建于可靠基础之上
+  compare_title: 熟悉的引擎，更完整的 Studio。
+  compare_text: Google Earth Engine 仍提供数据与计算平台，Studio 则在其周围构建独立、开放的工作空间。
+  cta_label: 准备就绪
+  cta_title: 打开工作区并完成第一次运行。
+  cta_text: 日常使用 Studio 无需在本地安装软件。

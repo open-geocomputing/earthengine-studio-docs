@@ -15,7 +15,7 @@
       root.dataset.themeSource = "saved";
       try { localStorage.setItem("studio-docs-theme", theme); } catch { /* The active page still changes theme. */ }
     }
-    themeButton?.setAttribute("aria-label", `Switch to ${theme === "night" ? "Day" : "Night"} theme`);
+    themeButton?.setAttribute("aria-label", theme === "night" ? root.dataset.themeDayLabel : root.dataset.themeNightLabel);
   };
 
   themeButton?.addEventListener("click", () => {
@@ -35,7 +35,7 @@
 
   const loadSearch = async () => {
     if (searchIndex) return searchIndex;
-    const response = await fetch(`${document.documentElement.dataset.baseurl || ""}/search.json`);
+    const response = await fetch(root.dataset.searchUrl || "/search.json");
     if (!response.ok) throw new Error("Search index could not be loaded.");
     searchIndex = await response.json();
     return searchIndex;
@@ -55,7 +55,7 @@
     try {
       await loadSearch();
     } catch (error) {
-      if (searchHint) searchHint.textContent = error instanceof Error ? error.message : "Search is unavailable.";
+      if (searchHint) searchHint.textContent = root.dataset.searchError || (error instanceof Error ? error.message : "Search is unavailable.");
     }
   };
 
@@ -82,14 +82,29 @@
     searchHint.hidden = true;
     searchResults.innerHTML = matches.length
       ? matches.map(({ entry }) => `<a class="search-result" href="${entry.url}"><strong>${escapeHtml(entry.title)}</strong><span>${escapeHtml(entry.description)}</span></a>`).join("")
-      : `<p class="search-hint">No guide matched “${escapeHtml(searchInput.value.trim())}”. Try a panel or workflow name.</p>`;
+      : `<p class="search-hint">${escapeHtml(root.dataset.noResults || "No guide matched this search.")}</p>`;
   };
 
   document.querySelectorAll("[data-search-trigger]").forEach((button) => button.addEventListener("click", openSearch));
   document.querySelectorAll("[data-search-close]").forEach((button) => button.addEventListener("click", closeSearch));
   searchInput?.addEventListener("input", () => { void renderSearch(); });
+
+  const languagePicker = document.querySelector("[data-language-picker]");
+  const languageButton = document.querySelector("[data-language-toggle]");
+  const languageMenu = document.querySelector("[data-language-menu]");
+  const setLanguageMenu = (open) => {
+    if (!languageButton || !languageMenu) return;
+    languageButton.setAttribute("aria-expanded", String(open));
+    languageMenu.hidden = !open;
+  };
+  languageButton?.addEventListener("click", () => setLanguageMenu(languageMenu?.hidden ?? true));
+  document.addEventListener("click", (event) => {
+    if (languagePicker && !languagePicker.contains(event.target)) setLanguageMenu(false);
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && searchDialog && !searchDialog.hidden) closeSearch();
+    if (event.key === "Escape") setLanguageMenu(false);
     if (event.key === "/" && !event.metaKey && !event.ctrlKey && !event.altKey && !/input|textarea/i.test(document.activeElement?.tagName || "")) {
       event.preventDefault();
       void openSearch();
@@ -102,16 +117,16 @@
     const button = document.createElement("button");
     button.type = "button";
     button.className = "copy-code";
-    button.textContent = "Copy";
-    button.setAttribute("aria-label", "Copy code to clipboard");
+    button.textContent = root.dataset.copyLabel || "Copy";
+    button.setAttribute("aria-label", root.dataset.copyLabel || "Copy");
     button.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(code.textContent || "");
-        button.textContent = "Copied";
+        button.textContent = root.dataset.copiedLabel || "Copied";
       } catch {
-        button.textContent = "Select to copy";
+        button.textContent = root.dataset.copyFallback || "Select to copy";
       }
-      window.setTimeout(() => { button.textContent = "Copy"; }, 1600);
+      window.setTimeout(() => { button.textContent = root.dataset.copyLabel || "Copy"; }, 1600);
     });
     block.append(button);
   });

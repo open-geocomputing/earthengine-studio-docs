@@ -1,0 +1,17 @@
+{% assign current_lang = page.lang | default: "en" %}
+{% assign current_language = site.data.languages | where: "code", current_lang | first %}
+<div class="language-picker" data-language-picker>
+  <button class="language-button" type="button" data-language-toggle aria-expanded="false" aria-haspopup="true" aria-label="{{ ui.language }}">
+    <span aria-hidden="true">◎</span><strong>{{ current_language.short }}</strong><span aria-hidden="true">⌄</span>
+  </button>
+  <div class="language-menu" data-language-menu hidden>
+    {% for switch_language in site.data.languages %}
+      {% if page.translation_key == "home" %}
+        {% assign translated_path = switch_language.prefix | append: "/" %}
+      {% else %}
+        {% assign translated_path = switch_language.prefix | append: "/" | append: page.translation_key | append: "/" %}
+      {% endif %}
+      <a href="{{ translated_path | relative_url }}" lang="{{ switch_language.hreflang }}"{% if switch_language.code == current_lang %} class="active" aria-current="page"{% endif %}>{{ switch_language.label }}</a>
+    {% endfor %}
+  </div>
+</div>

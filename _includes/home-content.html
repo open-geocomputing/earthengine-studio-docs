@@ -1,0 +1,41 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign home = site.data.home[lang] %}
+{% assign ui = site.data.i18n[lang] %}
+{% assign language = site.data.languages | where: "code", lang | first %}
+<section class="home-hero">
+  <div class="home-grid" aria-hidden="true"></div><div class="home-glow" aria-hidden="true"></div>
+  <div class="home-hero-inner">
+    <div>
+      <p class="eyebrow">{{ home.eyebrow }}</p>
+      <h1>{{ home.headline }}<br><span>{{ home.accent }}</span></h1>
+      <p class="home-lede">{{ home.lede }}</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ language.prefix | append: '/getting-started/' | relative_url }}">{{ home.start }} →</a>
+        <button class="button button-secondary" type="button" data-search-trigger>{{ home.search }}</button>
+      </div>
+      <p class="hero-foundation">{{ home.note }}</p>
+    </div>
+    <div class="hero-orbit" aria-hidden="true"><span class="orbit-line"></span><img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="330" height="330" alt=""></div>
+  </div>
+</section>
+<section class="home-section"><div class="section-inner">
+  <div class="section-heading"><div><p class="eyebrow">{{ home.section_label }}</p><h2>{{ home.section_title }}</h2></div><p>{{ home.section_text }}</p></div>
+  <div class="guide-grid">
+    {% assign card_slugs = "getting-started,editor,maps-and-geometries,console-and-plots,tasks-and-exports,repositories-and-sharing" | split: "," %}
+    {% for slug in card_slugs %}
+      {% assign nav_item = nil %}{% for section in site.data.navigation %}{% for item in section.items %}{% if item.slug == slug %}{% assign nav_item = item %}{% endif %}{% endfor %}{% endfor %}
+      <a class="guide-card" href="{{ language.prefix | append: '/' | append: slug | append: '/' | relative_url }}"><span>0{{ forloop.index }}</span><h3>{{ nav_item.titles[lang] }}</h3><p>{{ site.docs | where: 'lang', lang | where: 'translation_key', slug | map: 'description' | first }}</p></a>
+    {% endfor %}
+  </div>
+</div></section>
+<section class="home-section comparison-section"><div class="section-inner">
+  <div class="section-heading"><div><p class="eyebrow">{{ home.compare_label }}</p><h2>{{ home.compare_title }}</h2></div><p>{{ home.compare_text }}</p></div>
+  <div class="comparison-table">
+    <div class="comparison-row"><div><strong>API</strong></div><div><strong>Google Earth Engine</strong><p>Earth Engine API</p></div><div><strong>Earth Engine Studio</strong><p>JavaScript + Python</p></div></div>
+    <div class="comparison-row"><div><strong>Map</strong></div><div><strong>Earth Engine</strong><p>Map</p></div><div><strong>Studio</strong><p>MapLibre + OpenLayers + Google Maps</p></div></div>
+    <div class="comparison-row"><div><strong>Git</strong></div><div><strong>GoogleSource</strong><p>GoogleSource</p></div><div><strong>Studio</strong><p>GitHub + GitLab + GoogleSource</p></div></div>
+  </div>
+</div></section>
+<section class="home-cta">
+  <img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="82" height="82" alt=""><p class="eyebrow">{{ home.cta_label }}</p><h2>{{ home.cta_title }}</h2><p>{{ home.cta_text }}</p><a class="button button-primary" href="https://code.earthengine.studio/">{{ ui.open_studio }} ↗</a>
+</section>

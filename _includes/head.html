@@ -3,6 +3,18 @@
 <meta name="theme-color" content="#08101d">
 <meta name="color-scheme" content="light dark">
 {% seo %}
+{% if page.translation_key %}
+  {% for alternate_language in site.data.languages %}
+    {% if page.translation_key == "home" %}
+      {% assign translated_path = alternate_language.prefix | append: "/" %}
+    {% else %}
+      {% assign translated_path = alternate_language.prefix | append: "/" | append: page.translation_key | append: "/" %}
+    {% endif %}
+    <link rel="alternate" hreflang="{{ alternate_language.hreflang }}" href="{{ translated_path | absolute_url }}">
+  {% endfor %}
+  {% if page.translation_key == "home" %}{% assign default_path = "/" %}{% else %}{% assign default_path = "/" | append: page.translation_key | append: "/" %}{% endif %}
+  <link rel="alternate" hreflang="x-default" href="{{ default_path | absolute_url }}">
+{% endif %}
 <link rel="icon" href="{{ '/assets/images/orbit-studio.svg' | relative_url }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <script>

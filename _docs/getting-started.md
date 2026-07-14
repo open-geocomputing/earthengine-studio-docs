@@ -3,6 +3,8 @@ title: Getting started
 description: Connect Earth Engine Studio to an enabled Cloud project and run a first JavaScript or Python analysis.
 permalink: /getting-started/
 order: 1
+lang: en
+translation_key: getting-started
 keywords: [sign in, cloud project, first script, run, JavaScript, Python, authentication]
 ---
 

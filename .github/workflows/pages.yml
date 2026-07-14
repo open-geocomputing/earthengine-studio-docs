@@ -27,6 +27,8 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
+      - name: Validate translation coverage
+        run: ruby scripts/check_translations.rb
       - name: Build Jekyll site
         env:
           JEKYLL_ENV: production

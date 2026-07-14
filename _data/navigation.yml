@@ -1,28 +1,28 @@
-- label: Start here
+- labels: {en: Start here, fr: Bien démarrer, de: Einstieg, es: Primeros pasos, pt-br: Primeiros passos, zh-cn: 开始使用}
   items:
-    - title: Getting started
-      url: /getting-started/
-    - title: Workspace
-      url: /workspace/
-- label: Create
+    - slug: getting-started
+      titles: {en: Getting started, fr: Bien démarrer, de: Erste Schritte, es: Primeros pasos, pt-br: Primeiros passos, zh-cn: 开始使用}
+    - slug: workspace
+      titles: {en: Workspace, fr: Espace de travail, de: Arbeitsbereich, es: Espacio de trabajo, pt-br: Espaço de trabalho, zh-cn: 工作区}
+- labels: {en: Create, fr: Créer, de: Erstellen, es: Crear, pt-br: Criar, zh-cn: 创建}
   items:
-    - title: Editor
-      url: /editor/
-    - title: Data & Docs
-      url: /data-and-docs/
-    - title: Maps & geometries
-      url: /maps-and-geometries/
-- label: Inspect & deliver
+    - slug: editor
+      titles: {en: Editor, fr: Éditeur, de: Editor, es: Editor, pt-br: Editor, zh-cn: 编辑器}
+    - slug: data-and-docs
+      titles: {en: Data & Docs, fr: Données et Docs, de: Daten & Docs, es: Datos y Docs, pt-br: Dados e Docs, zh-cn: 数据与文档}
+    - slug: maps-and-geometries
+      titles: {en: Maps & geometries, fr: Cartes et géométries, de: Karten & Geometrien, es: Mapas y geometrías, pt-br: Mapas e geometrias, zh-cn: 地图与几何}
+- labels: {en: Inspect & deliver, fr: Examiner et livrer, de: Prüfen & ausgeben, es: Inspeccionar y entregar, pt-br: Inspecionar e entregar, zh-cn: 检查与交付}
   items:
-    - title: Console & plots
-      url: /console-and-plots/
-    - title: Tasks & exports
-      url: /tasks-and-exports/
-    - title: Assets
-      url: /assets/
-- label: Organize
+    - slug: console-and-plots
+      titles: {en: Console & plots, fr: Console et graphiques, de: Konsole & Diagramme, es: Consola y gráficos, pt-br: Console e gráficos, zh-cn: 控制台与图表}
+    - slug: tasks-and-exports
+      titles: {en: Tasks & exports, fr: Tâches et exportations, de: Tasks & Exporte, es: Tareas y exportaciones, pt-br: Tarefas e exportações, zh-cn: 任务与导出}
+    - slug: assets
+      titles: {en: Assets, fr: Éléments, de: Assets, es: Recursos, pt-br: Recursos, zh-cn: 资产}
+- labels: {en: Organize, fr: Organiser, de: Organisieren, es: Organizar, pt-br: Organizar, zh-cn: 组织}
   items:
-    - title: Repositories & sharing
-      url: /repositories-and-sharing/
-    - title: Troubleshooting
-      url: /troubleshooting/
+    - slug: repositories-and-sharing
+      titles: {en: Repositories & sharing, fr: Dépôts et partage, de: Repositories & Teilen, es: Repositorios y uso compartido, pt-br: Repositórios e compartilhamento, zh-cn: 代码库与共享}
+    - slug: troubleshooting
+      titles: {en: Troubleshooting, fr: Dépannage, de: Fehlerbehebung, es: Solución de problemas, pt-br: Solução de problemas, zh-cn: 故障排除}

@@ -3,6 +3,8 @@ title: Console & plots
 description: Inspect structured runtime output and create Plotly, Earth Engine chart, or Matplotlib figure tabs.
 permalink: /console-and-plots/
 order: 6
+lang: en
+translation_key: console-and-plots
 keywords: [Console, print, Plotly, ui.Chart, Matplotlib, figures, CSV, PNG, SVG, events]
 ---
 
