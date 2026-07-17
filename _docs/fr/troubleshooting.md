@@ -15,8 +15,18 @@ Vérifiez l’identité Google, le projet sélectionné, l’activation d’Eart
 
 Lisez la première erreur dans **Console**. Les causes fréquentes sont un asset privé, un chemin GeoJSON dynamique, une expression trop coûteuse ou un module Python distant non approuvé. Les figures et cartes créées par script disparaissent après rechargement et doivent être recréées.
 
+Les réponses HTTP 429 des tuiles Earth Engine sont réessayées automatiquement.
+Après épuisement des tentatives, les limites de débit des tuiles vectorielles ne
+sont volontairement pas ajoutées à **Console** ni à la console du navigateur.
+Vérifiez donc l’état de la couche et réessayez plus tard même sans message 429.
+
 ## Dépôts et téléchargements
 
 Confirmez que le dépôt et la branche sont modifiables; les dépôts web publics restent en lecture seule. Un téléchargement vers dossier exige Chromium, une action utilisateur et une autorisation d’écriture. Utilisez ZIP si le sélecteur de dossier est indisponible, avec une taille compatible avec la mémoire.
 
-Pour les erreurs de plateforme, utilisez l’[aide Earth Engine](https://developers.google.com/earth-engine/help?hl=fr). Ne partagez jamais de jetons, secrets OAuth ou clés de compte de service.
+Pour les erreurs de plateforme, utilisez l’[aide Earth Engine](https://developers.google.com/earth-engine/help?hl=fr).
+Pour un problème propre à Studio, ouvrez un ticket dans le
+[suivi de l’éditeur Earth Engine Studio](https://github.com/open-geocomputing/earthengine-studio-editor/issues)
+avec le navigateur, le moteur cartographique, les étapes de reproduction et la
+première erreur. Ne partagez jamais de jetons, secrets OAuth ou clés de compte
+de service.

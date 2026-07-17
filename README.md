@@ -48,6 +48,13 @@ for example `_docs/fr/editor.md`. Every language must contain the same ten
 before committing to catch missing pages, duplicate keys, bad permalinks, or
 order drift.
 
+When an Earth Engine Studio release changes user-visible technical behavior,
+update the relevant workflow guide in every language in the same commit. In
+particular, keep editor commands, the `ui` App runtime, map rendering options,
+workspace safeguards, and troubleshooting behavior synchronized with the
+application's current release notes. Record the documentation change in
+`CHANGES.md` and run the full build, link, and translation checks above.
+
 Navigation groups and translated labels live in `_data/navigation.yml`.
 Interface text lives in `_data/i18n.yml`, home-page copy in `_data/home.yml`,
 and locale names and URL prefixes in `_data/languages.yml`. Use root-relative

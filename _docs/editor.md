@@ -26,8 +26,17 @@ the adjacent **Docs** panel when you need the complete registered signature.
 
 Use **Run** to evaluate the complete active JavaScript or Python document. If a
 selection is active, **Run selection** evaluates only that text. Keyboard users
-can invoke the same editor actions through the command palette and configured
-shortcuts.
+can open **Settings → General shortcuts** for a platform-aware reference. With
+the editor focused:
+
+- `Cmd/Ctrl+S` saves the current writable Git file or opens the destination
+  dialog for a draft.
+- `Cmd/Ctrl+Enter` runs the current selection or the complete script.
+- `Cmd/Ctrl+/` toggles line comments. On keyboard layouts where `/` requires
+  `Shift` and the browser captures the chord for Help, use `Cmd/Ctrl+7` or
+  `Cmd/Ctrl+Numpad /` instead.
+- `F1` opens Monaco's command palette, where the Studio Save, Run, and
+  layout-safe comment actions are also searchable.
 
 JavaScript runs in a persistent, isolated SES compartment inside a Worker.
 Python runs in a pinned Pyodide environment. Both can publish portable top-level

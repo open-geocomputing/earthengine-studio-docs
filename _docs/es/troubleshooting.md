@@ -15,6 +15,16 @@ Comprueba la cuenta de Google, el proyecto seleccionado, el registro en Earth En
 
 Lee el primer error de **Console**. Son causas frecuentes un recurso privado, una ruta GeoJSON dinámica, un cálculo demasiado costoso o Python remoto no aprobado. Los mapas y gráficos creados por scripts deben recrearse tras recargar.
 
+Las respuestas HTTP 429 de teselas de Earth Engine se reintentan
+automáticamente. Cuando se agotan los intentos, los límites de frecuencia de
+teselas vectoriales se omiten intencionadamente de Studio y de la consola del
+navegador. Comprueba el estado de la capa y vuelve a intentarlo más tarde aunque
+no aparezca un mensaje 429.
+
 ## Repositorios y descargas
 
-Comprueba el permiso de escritura y la rama; los repositorios web públicos son de solo lectura. Descargar a una carpeta requiere Chromium, una acción del usuario y permiso de archivos. Usa ZIP si no está disponible. Para fallos de plataforma, consulta la [ayuda de Earth Engine](https://developers.google.com/earth-engine/help?hl=es). Nunca compartas tokens ni claves.
+Comprueba el permiso de escritura y la rama; los repositorios web públicos son de solo lectura. Descargar a una carpeta requiere Chromium, una acción del usuario y permiso de archivos. Usa ZIP si no está disponible. Para fallos de plataforma, consulta la [ayuda de Earth Engine](https://developers.google.com/earth-engine/help?hl=es).
+Informa de problemas específicos de Studio en el
+[seguimiento del editor de Earth Engine Studio](https://github.com/open-geocomputing/earthengine-studio-editor/issues)
+e incluye navegador, renderizador, pasos reproducibles y el primer error. Nunca
+compartas tokens ni claves.

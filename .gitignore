@@ -16,6 +16,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+*.orig
 
 # Local logs
 *.log

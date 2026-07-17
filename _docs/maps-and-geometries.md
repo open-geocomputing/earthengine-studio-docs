@@ -57,10 +57,67 @@ tile** choice of 64 × 64, 128 × 128, or 256 × 256 controls the amount of
 computed output per geographic tile. Lower values reduce detail and memory;
 they do not change the geographic tile grid.
 
+MapLibre and WebGL2 can also apply a custom fragment-shader expression to a
+compute-pixel layer. Set `shader` to one GLSL expression that returns
+`vec4(red, green, blue, alpha)`. The expression can read `values`, `normalized`,
+`uv`, `mercator`, and `alpha`; Studio rejects declarations, statements,
+preprocessor directives, and direct `gl_*` access. Earth Engine still computes
+the input pixels, so normal authentication, band-selection, and compute-pixel
+limits continue to apply.
+
+```javascript
+const temperature = ee.Image.pixelLonLat()
+  .select("latitude")
+  .rename("temperature");
+
+Map.addLayer(temperature, {
+  bands: ["temperature"],
+  min: -90,
+  max: 90,
+  tileSize: 128,
+  shader: "vec4(normalized.r, smoothstep(0.15, 0.8, normalized.r), 1.0 - normalized.r, alpha)"
+}, "Temperature shader");
+```
+
 Two-band compute-pixel layers can render vector fields as animated particles or
 arrows. Layer settings control interpolation, density, speed, trails, placement,
 palette, and magnitude scaling. Reduced-motion users begin with a paused arrow
-view.
+view. In globe view, arrows and particles are culled at the horizon. Set
+`arrowDistribution: "uniform"` (or `"equal-area"`) to use equal-area Fibonacci
+anchors instead of the Mercator grid and avoid excess arrows near the poles.
+Anchor density scales with zoom and changes to screen spacing at close range so
+the visible density remains stable through MapLibre's globe-to-Mercator
+transition. `arrowSpacing` remains the density control; layer settings expose
+the same option as **Uniform globe**.
+
+## Build Earth Engine UI Apps
+
+Legacy Earth Engine `ui` scripts run directly in Studio. Printing an unattached
+widget, such as `print(ui.Button("Inspect"))`, renders it live in Console.
+Mutating `ui.root`, including `ui.root.clear()`, or attaching a widget to a
+`ui.Map` opens a dedicated **App** tab beside the main Map without replacing
+the Studio workspace map.
+
+Maps created inside an App remain embedded unless the script explicitly calls
+`map.open()`. `ui.SplitPanel` supports horizontal, vertical, and wipe layouts;
+Studio also accepts an optional diagonal wipe `angle` or
+`splitPanel.setAngle(degrees)`. `ui.Map.Linker([left, right])` synchronizes App
+map bounds, while `change-center` and `change-zoom` can link only part of the
+viewport. Embedded maps fill their split panes and support the six original map
+control groups through `Map.setControlVisibility(...)`.
+
+Apps can set a header and isolated styling without changing Studio itself:
+
+```javascript
+ui.App.setHeader({title: "Coast viewer", subtitle: "Interactive analysis"});
+ui.App.setCss(".primary-action { background: #137333; color: white; }");
+ui.root.clear();
+ui.root.add(ui.Button({label: "Run", className: "primary-action"}));
+```
+
+The App preview toolbar can download injected CSS for a future standalone
+deployment. App tabs belong to the current session and are recreated when their
+script runs again.
 
 ## Inspect a location
 

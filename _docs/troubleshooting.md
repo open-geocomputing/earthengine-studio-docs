@@ -62,6 +62,10 @@ not block unrelated layers.
 - Use MapLibre for vector fields and other MapLibre-only extensions.
 - Confirm that optional Google Maps configuration exists before choosing that
   renderer.
+- Earth Engine HTTP 429 tile responses are retried automatically. Exhausted
+  vector-tile rate limits are intentionally omitted from Studio and browser
+  Console noise, so check the layer status and retry later even when no 429
+  message is shown.
 - Remember that basemap providers have independent zoom limits and service
   availability.
 
@@ -103,5 +107,7 @@ required asset readable to the people investigating it.
 
 For a Studio-specific interface or integration problem, report the browser,
 selected renderer or provider, the affected panel, reproducible steps, and the
-first Console error. Do not include access tokens, OAuth secrets, service
-account keys, or private dataset content.
+first Console error in the
+[Earth Engine Studio editor issue tracker](https://github.com/open-geocomputing/earthengine-studio-editor/issues).
+Do not include access tokens, OAuth secrets, service account keys, or private
+dataset content.

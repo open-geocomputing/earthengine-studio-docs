@@ -30,7 +30,11 @@ tabs keep reference information beside the analysis instead of replacing it.
 
 Use a tab's context menu to close related tabs, reopen recently closed editor
 documents, or restore focus to a crowded layout. Closing a local editor does
-not immediately discard its recovery record.
+not immediately discard its recovery record. Studio always protects one editor
+tab: a close button or bulk **Close**, **Close Other Tabs**, or **Close Tabs to
+the Right** action cannot remove the final editor document and make the code
+workspace disappear. Closeable non-editor tabs, such as Settings, remain
+independent of this safeguard.
 
 Map and editor tabs that support popout can detach into a separate browser
 window. This is useful for a second monitor, but the detached window still

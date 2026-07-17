@@ -11,6 +11,16 @@ keywords: [éditeur, JavaScript, Python, modules, enregistrer, partager]
 
 Monaco fournit coloration, complétion, signatures et aide Earth Engine. Les extensions `.ee.js` et `.ee.py` sont recommandées; Markdown, JSON, GeoJSON et GeoJSONL sont également pris en charge. **Run** exécute le document complet et **Run selection** seulement le texte sélectionné.
 
+## Raccourcis clavier
+
+La page **Settings → General shortcuts** affiche les touches adaptées à la
+plate-forme. Lorsque l’éditeur est actif, `Cmd/Ctrl+S` enregistre le fichier Git
+modifiable ou ouvre la destination d’un brouillon; `Cmd/Ctrl+Enter` exécute la
+sélection ou tout le script. `Cmd/Ctrl+/` bascule les commentaires de ligne. Si
+le navigateur réserve cette combinaison parce que `/` exige `Shift`, utilisez
+`Cmd/Ctrl+7` ou `Cmd/Ctrl+Numpad /`. `F1` ouvre la palette de commandes Monaco,
+qui permet aussi de rechercher ces actions Studio.
+
 JavaScript s’exécute dans un Worker SES isolé et Python dans Pyodide. Les scalaires, fonctions et expressions Earth Engine portables peuvent passer d’un langage à l’autre; les objets spécifiques à un runtime y restent.
 
 ## Modules et fichiers

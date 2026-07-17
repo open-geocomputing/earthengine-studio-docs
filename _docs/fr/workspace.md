@@ -13,6 +13,11 @@ La zone gauche contient **Scripts**, **Docs**, **Assets** et **Settings**. Le ce
 
 Les onglets compatibles peuvent être détachés dans une autre fenêtre. Les préréglages réorganisent l’interface sans supprimer les documents, géométries ou tâches.
 
+Studio protège toujours un onglet d’éditeur. Le bouton de fermeture et les
+actions groupées **Close**, **Close Other Tabs** et **Close Tabs to the Right**
+ne peuvent pas supprimer le dernier document et faire disparaître l’éditeur.
+Les onglets non-éditeur fermables, comme Settings, ne sont pas concernés.
+
 ## Données mémorisées
 
 Le navigateur conserve les documents ouverts, la disposition, le thème, les préférences de l’éditeur, la carte principale et l’état des dépôts. Les figures et cartes créées par un script restent limitées à la session. Enregistrez les travaux importants dans un dépôt: le stockage local n’est pas une sauvegarde distante.

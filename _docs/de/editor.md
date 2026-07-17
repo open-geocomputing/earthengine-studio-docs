@@ -11,6 +11,16 @@ keywords: [Editor, JavaScript, Python, Module, speichern]
 
 Monaco bietet Syntaxfarben, Vervollständigung, Signaturen und Earth-Engine-Hilfe. Empfohlen sind `.ee.js` und `.ee.py`; Markdown, JSON, GeoJSON und GeoJSONL werden ebenfalls unterstützt. **Run** führt das ganze Dokument aus, **Run selection** nur die Auswahl.
 
+## Tastenkürzel
+
+**Settings → General shortcuts** zeigt die plattformspezifischen Tasten. Wenn
+der Editor fokussiert ist, speichert `Cmd/Ctrl+S` die aktuelle beschreibbare
+Git-Datei oder öffnet für einen Entwurf die Zielauswahl. `Cmd/Ctrl+Enter` führt
+die Auswahl oder das vollständige Skript aus. `Cmd/Ctrl+/` schaltet
+Zeilenkommentare um; reserviert der Browser diese Kombination, verwenden Sie
+`Cmd/Ctrl+7` oder `Cmd/Ctrl+Numpad /`. Mit `F1` öffnen Sie Monacos
+Befehlspalette und finden dort auch diese Studio-Aktionen.
+
 JavaScript läuft isoliert in einem SES-Worker, Python in Pyodide. Portable Earth-Engine-Ausdrücke können Sprachgrenzen überqueren; runtime-spezifische Objekte nicht.
 
 ## Module und Speichern

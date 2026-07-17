@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+- Documented the platform-aware Save, Run, command-palette, and layout-safe
+  line-comment shortcuts exposed by the editor and General shortcuts panel.
+- Added technical coverage for Earth Engine `ui` App tabs, embedded and linked
+  maps, SplitPanel layouts, diagonal wipes, App headers, and scoped CSS.
+- Expanded MapLibre guidance with custom WebGL2 shader expressions, globe
+  horizon culling, and zoom-adaptive equal-area vector-field arrows.
+- Explained final-editor-tab protection, silent automatic retry behavior for
+  Earth Engine HTTP 429 vector tiles, and the dedicated Studio editor issue
+  tracker.
+- Synchronized the new guidance across all six language editions and clarified
+  the release-to-documentation workflow for future technical changes.
 - Added complete French, German, Spanish, Brazilian Portuguese, and Simplified
   Chinese editions alongside English, with stable locale-prefixed routes.
 - Added a page-aware language selector, localized navigation and interface

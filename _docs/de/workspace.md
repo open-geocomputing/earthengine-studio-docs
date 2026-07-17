@@ -11,6 +11,11 @@ keywords: [Arbeitsbereich, Panels, Tabs, Layout, Design]
 
 Studio ordnet **Scripts**, **Docs**, **Assets** und **Tasks** neben Editor, Karten, Konsole und Diagrammen an. Tabs lassen sich verschieben, teilen oder in ein separates Fenster lösen. Panelgrenzen können per Tastatur oder Zeiger angepasst werden.
 
+Studio schützt immer einen Editor-Tab. Weder die Schließen-Schaltfläche noch
+**Close**, **Close Other Tabs** oder **Close Tabs to the Right** können das
+letzte Dokument entfernen und den Codebereich verschwinden lassen. Schließbare
+Nicht-Editor-Tabs wie Settings bleiben davon unabhängig.
+
 ## Persistenz und Designs
 
 Layout, offene Dokumente und Entwürfe werden lokal gespeichert. **Day**, **Night** und **System** ändern die gesamte Oberfläche. Ein gelöstes Fenster gehört weiterhin zur aktuellen Sitzung; schließen Sie es, um den Tab in den Hauptarbeitsbereich zurückzuholen.
