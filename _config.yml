@@ -8,7 +8,7 @@ baseurl: ""
 lang: en
 timezone: Europe/Vienna
 permalink: pretty
-logo: /assets/images/orbit-studio.svg
+logo: https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.svg
 
 collections:
   docs:

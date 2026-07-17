@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Refreshed the documentation site around the new Earth Engine Studio identity,
+  including the animated logo and lowercase wordmark, shared favicon set,
+  earth-green/engine-blue/lime palette, planetary homepage, guide cards,
+  navigation, code blocks, and coordinated Day/Night themes.
 - Documented the platform-aware Save, Run, command-palette, and layout-safe
   line-comment shortcuts exposed by the editor and General shortcuts panel.
 - Added technical coverage for Earth Engine `ui` App tabs, embedded and linked

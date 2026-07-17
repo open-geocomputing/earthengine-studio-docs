@@ -15,7 +15,13 @@
       </div>
       <p class="hero-foundation">{{ home.note }}</p>
     </div>
-    <div class="hero-orbit" aria-hidden="true"><span class="orbit-line"></span><img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="330" height="330" alt=""></div>
+    <div class="hero-orbit" aria-hidden="true">
+      <span class="orbit-line"></span>
+      <span class="studio-logo hero-logo" data-studio-logo data-animation-path="https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.json">
+        <img src="https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.svg" width="348" height="252" alt="">
+        <span class="studio-logo-animation"></span>
+      </span>
+    </div>
   </div>
 </section>
 <section class="home-section"><div class="section-inner">
@@ -37,5 +43,9 @@
   </div>
 </div></section>
 <section class="home-cta">
-  <img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="82" height="82" alt=""><p class="eyebrow">{{ home.cta_label }}</p><h2>{{ home.cta_title }}</h2><p>{{ home.cta_text }}</p><a class="button button-primary" href="https://code.earthengine.studio/">{{ ui.open_studio }} ↗</a>
+  <span class="studio-logo cta-logo" data-studio-logo data-animation-path="https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.json">
+    <img src="https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.svg" width="116" height="84" alt="">
+    <span class="studio-logo-animation"></span>
+  </span>
+  <p class="eyebrow">{{ home.cta_label }}</p><h2>{{ home.cta_title }}</h2><p>{{ home.cta_text }}</p><a class="button button-primary" href="https://code.earthengine.studio/">{{ ui.open_studio }} ↗</a>
 </section>

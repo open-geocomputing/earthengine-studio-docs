@@ -72,10 +72,21 @@ examples, or images.
 - `_data/navigation.yml` is the source of truth for the sidebar.
 - `_data/languages.yml`, `_data/i18n.yml`, and `_data/home.yml` configure the
   six language editions and their shared interface.
-- `assets/` contains the existing Orbit Studio mark, CSS, and dependency-free
-  browser behavior.
+- `assets/` contains the documentation CSS and dependency-free browser
+  behavior. The current Earth Engine Studio logo, animation, and favicon set
+  are served from the main website so the two public sites share one canonical
+  brand asset set.
 - Each locale has a generated search index containing only that language.
 - `CNAME` records the canonical GitHub Pages domain.
+
+## Visual identity
+
+The documentation mirrors the main Earth Engine Studio site through its
+earth green (`#59b84d`), engine blue (`#1772aa`), and lime (`#a4d637`)
+palette; lowercase `earthengine.studio` wordmark; gridded planetary hero;
+orbit accents; buttons; guide cards; code surfaces; navigation states; and
+Day/Night themes. Header and homepage marks use the shared Lottie animation
+with the static SVG as an immediate and reduced-motion fallback.
 
 Generated `_site/`, Bundler state, caches, and local server files are ignored.
 

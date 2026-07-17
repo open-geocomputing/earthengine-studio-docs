@@ -5,8 +5,14 @@
   <a class="skip-link" href="#main-content">{{ ui.skip }}</a>
   <div class="header-inner">
     <a class="brand" href="{{ language.prefix | append: '/' | relative_url }}" aria-label="{{ ui.home_label }}">
-      <img src="{{ '/assets/images/orbit-studio.svg' | relative_url }}" width="38" height="38" alt="">
-      <span>Earth Engine <strong>Studio</strong><small>{{ ui.docs }}</small></span>
+      <span class="studio-logo brand-logo" data-studio-logo data-animation-path="https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.json">
+        <img src="https://www.earthengine.studio/assets/images/brand/earthengine-studio-logo.svg" width="58" height="42" alt="">
+        <span class="studio-logo-animation" aria-hidden="true"></span>
+      </span>
+      <span class="brand-copy">
+        <span class="brand-wordmark" aria-hidden="true"><span class="wordmark-earth">earth</span><span class="wordmark-engine">engine</span><span class="wordmark-dot">.</span><span class="wordmark-studio">studio</span></span>
+        <small>{{ ui.docs }}</small>
+      </span>
     </a>
     <div class="header-actions">
       <button class="search-trigger" type="button" data-search-trigger aria-label="{{ ui.search_label }}">
