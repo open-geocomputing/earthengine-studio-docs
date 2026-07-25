@@ -119,6 +119,53 @@ The App preview toolbar can download injected CSS for a future standalone
 deployment. App tabs belong to the current session and are recreated when their
 script runs again.
 
+## Add categorical legends
+
+`ui.Legend` is a Studio extension for classified images. Supply aligned
+`values`, `names`, and `palette` arrays to create a legend without an Earth
+Engine metadata request. An optional `descriptions` array adds a tooltip to
+each class color and name:
+
+```javascript
+var legend = ui.Legend({
+  title: "Land cover",
+  values: [1, 2],
+  names: ["Forest", "Water"],
+  palette: ["00A600", "00CCF2"],
+  descriptions: ["Tree-covered land", "Permanent inland water"]
+});
+Map.add(legend);
+```
+
+The widget can also discover class metadata from an `ee.Image` or homogeneous
+`ee.ImageCollection`. Give it the image property prefix through
+`description`. Collections use `first()`, so every image is assumed to expose
+the same classes:
+
+```javascript
+var corine = ee.ImageCollection("COPERNICUS/CORINE/V20/100m");
+
+Map.add(ui.Legend({
+  collection: corine,
+  description: "landcover",
+  title: "CORINE land cover",
+  style: {position: "bottom-left", width: "390px"}
+}));
+```
+
+For `description: "landcover"`, lookup first tries
+`landcover_class_values`, `landcover_class_names`, and
+`landcover_class_palette`, then the shorter `landcover_values`,
+`landcover_names`, and `landcover_palette` form. Omitting `description`
+searches for a complete matching triplet. While server metadata resolves, the
+legend shows a loading state; missing or unequal arrays produce a visible
+error instead of a partially aligned legend.
+
+The CORINE catalog contains 44 homogeneous land-cover classes with the standard
+metadata triplet. See Google's
+[CORINE dataset page](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_CORINE_V20_100m)
+for the authoritative class table.
+
 ## Inspect a location
 
 Select **Inspector**, then click the map. Studio samples every visible,

@@ -37,6 +37,42 @@ diagonal do Studio por `angle` ou `splitPanel.setAngle(...)`.
 `ui.App.setCss(...)` adicionam cabeçalho e estilos isolados. Abas App pertencem
 à sessão e são recriadas quando o script roda novamente.
 
+## Adicionar legendas categóricas
+
+`ui.Legend` é uma extensão do Studio para imagens classificadas. Forneça
+listas alinhadas `values`, `names` e `palette`. A lista opcional
+`descriptions` mostra uma dica sobre a cor e o nome de cada classe:
+
+```javascript
+Map.add(ui.Legend({
+  title: "Cobertura do solo",
+  values: [1, 2],
+  names: ["Floresta", "Água"],
+  palette: ["00A600", "00CCF2"],
+  descriptions: ["Terreno coberto por árvores", "Água interior permanente"]
+}));
+```
+
+A legenda também pode descobrir classes em uma `ee.Image` ou
+`ee.ImageCollection` homogênea. `description` informa o prefixo; uma coleção
+usa `first()` e pressupõe as mesmas classes em todas as imagens:
+
+```javascript
+var corine = ee.ImageCollection("COPERNICUS/CORINE/V20/100m");
+Map.add(ui.Legend({
+  collection: corine,
+  description: "landcover",
+  title: "Cobertura CORINE",
+  style: {position: "bottom-left", width: "390px"}
+}));
+```
+
+Para `landcover`, o Studio procura primeiro `landcover_class_values`,
+`landcover_class_names` e `landcover_class_palette`, e depois
+`landcover_values`, `landcover_names` e `landcover_palette`. Durante a
+resolução dos metadados, o widget mostra um estado de carregamento; listas
+ausentes ou com tamanhos diferentes produzem um erro visível.
+
 ## Inspecionar e desenhar
 
 O inspetor consulta pixels e objetos em uma posição. As ferramentas de desenho criam pontos, linhas e polígonos reutilizáveis como variáveis ou GeoJSON. GeoJSON e GeoJSONL podem ser carregados de caminhos estáticos.

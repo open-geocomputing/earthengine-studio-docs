@@ -65,6 +65,10 @@ with Google's Code Editor, summarize only the Studio context and link to the
 relevant page on `developers.google.com`; do not reproduce Google's text,
 examples, or images.
 
+The Maps & geometries guide includes Studio's categorical `ui.Legend`
+extension: explicit class arrays, tooltip descriptions, automatic image or
+homogeneous-collection metadata discovery, and the CORINE example.
+
 ## Site structure
 
 - `_layouts/` contains the home, guide, and fallback page shells.

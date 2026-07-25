@@ -38,6 +38,43 @@ Los mapas permanecen dentro de la App salvo que el script llame a `map.open()`.
 `ui.App.setCss(...)` añaden encabezado y estilos aislados. Las pestañas App
 pertenecen a la sesión y se recrean al ejecutar de nuevo el script.
 
+## Añadir leyendas categóricas
+
+`ui.Legend` es una extensión de Studio para imágenes clasificadas. Proporciona
+listas alineadas `values`, `names` y `palette`. La lista opcional
+`descriptions` muestra una ayuda emergente sobre el color y el nombre de cada
+clase:
+
+```javascript
+Map.add(ui.Legend({
+  title: "Cobertura del suelo",
+  values: [1, 2],
+  names: ["Bosque", "Agua"],
+  palette: ["00A600", "00CCF2"],
+  descriptions: ["Terreno arbolado", "Agua interior permanente"]
+}));
+```
+
+La leyenda también puede descubrir clases desde una `ee.Image` o una
+`ee.ImageCollection` homogénea. `description` indica el prefijo; una colección
+usa `first()` y presupone las mismas clases en todas las imágenes:
+
+```javascript
+var corine = ee.ImageCollection("COPERNICUS/CORINE/V20/100m");
+Map.add(ui.Legend({
+  collection: corine,
+  description: "landcover",
+  title: "Cobertura CORINE",
+  style: {position: "bottom-left", width: "390px"}
+}));
+```
+
+Para `landcover`, Studio busca primero `landcover_class_values`,
+`landcover_class_names` y `landcover_class_palette`, y después
+`landcover_values`, `landcover_names` y `landcover_palette`. Mientras resuelve
+los metadatos muestra un estado de carga; las listas ausentes o de distinta
+longitud producen un error visible.
+
 ## Inspeccionar y dibujar
 
 El inspector consulta píxeles y objetos en una ubicación. Las herramientas de dibujo crean puntos, líneas y polígonos reutilizables como variables o GeoJSON. GeoJSON y GeoJSONL se pueden cargar desde rutas de archivo estáticas.

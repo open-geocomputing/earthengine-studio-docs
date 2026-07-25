@@ -33,6 +33,42 @@ Earth Engine `ui` 脚本可直接在 Studio 中运行。通过 `print(...)` 输�
 可同步关联地图。`ui.App.setHeader(...)` 与 `ui.App.setCss(...)` 可添加页眉和
 隔离样式。App 标签页仅属于当前会话，重新运行脚本时会重新创建。
 
+## 添加分类图例
+
+`ui.Legend` 是 Studio 为分类影像提供的扩展。传入相互对应的 `values`、
+`names` 和 `palette` 数组即可创建图例。可选的 `descriptions` 数组会在用户
+悬停于类别颜色或名称时显示说明：
+
+```javascript
+Map.add(ui.Legend({
+  title: "土地覆盖",
+  values: [1, 2],
+  names: ["森林", "水体"],
+  palette: ["00A600", "00CCF2"],
+  descriptions: ["树木覆盖区域", "永久性内陆水体"]
+}));
+```
+
+图例也可以从 `ee.Image` 或同质的 `ee.ImageCollection` 自动读取类别。
+`description` 用于指定属性前缀；集合会调用 `first()`，因此默认所有影像具有
+相同的类别：
+
+```javascript
+var corine = ee.ImageCollection("COPERNICUS/CORINE/V20/100m");
+Map.add(ui.Legend({
+  collection: corine,
+  description: "landcover",
+  title: "CORINE 土地覆盖",
+  style: {position: "bottom-left", width: "390px"}
+}));
+```
+
+当 `description` 为 `landcover` 时，Studio 会先查找
+`landcover_class_values`、`landcover_class_names` 和
+`landcover_class_palette`，然后再尝试 `landcover_values`、
+`landcover_names` 和 `landcover_palette`。解析服务器元数据时会显示加载
+状态；数组缺失或长度不一致时则显示明确错误。
+
 ## 检查与绘制
 
 检查器查询指定位置的像素和对象值。绘图工具创建点、线和多边形，可作为变量或 GeoJSON 继续使用。GeoJSON 与逐行 GeoJSONL 可从静态文件路径载入。

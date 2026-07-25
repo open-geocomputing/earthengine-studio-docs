@@ -39,6 +39,43 @@ diagonalen Studio-Winkel über `angle` oder `splitPanel.setAngle(...)`.
 isolierte Styles festlegen. App-Tabs gelten nur für die Sitzung und werden beim
 erneuten Ausführen des Skripts neu erstellt.
 
+## Kategorische Legenden hinzufügen
+
+`ui.Legend` ist eine Studio-Erweiterung für klassifizierte Bilder. Übergib
+gleich lange Arrays für `values`, `names` und `palette`. Das optionale Array
+`descriptions` zeigt einen Tooltip über Klassenfarbe und -name:
+
+```javascript
+Map.add(ui.Legend({
+  title: "Landbedeckung",
+  values: [1, 2],
+  names: ["Wald", "Wasser"],
+  palette: ["00A600", "00CCF2"],
+  descriptions: ["Baumbedecktes Land", "Dauerhaftes Binnengewässer"]
+}));
+```
+
+Die Legende kann Klassen auch aus einem `ee.Image` oder einer homogenen
+`ee.ImageCollection` ermitteln. `description` gibt das Präfix an; bei einer
+Collection wird `first()` verwendet und für alle Bilder dieselbe Klassifikation
+angenommen:
+
+```javascript
+var corine = ee.ImageCollection("COPERNICUS/CORINE/V20/100m");
+Map.add(ui.Legend({
+  collection: corine,
+  description: "landcover",
+  title: "CORINE-Landbedeckung",
+  style: {position: "bottom-left", width: "390px"}
+}));
+```
+
+Für `landcover` sucht Studio zuerst nach `landcover_class_values`,
+`landcover_class_names` und `landcover_class_palette`, danach nach
+`landcover_values`, `landcover_names` und `landcover_palette`. Während der
+Metadatenabfrage erscheint ein Ladestatus; fehlende oder unterschiedlich lange
+Arrays werden als sichtbarer Fehler gemeldet.
+
 ## Prüfen und zeichnen
 
 Der Inspektor fragt Pixel- und Objektwerte an der gewählten Position ab. Zeichenwerkzeuge erstellen Punkte, Linien und Polygone, die als Variablen oder GeoJSON weiterverwendet werden können. GeoJSON und zeilenweises GeoJSONL lassen sich aus statischen Dateipfaden laden.

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Documented the Studio `ui.Legend` extension in all six languages, including
+  explicit values/names/palette arrays, tooltip descriptions, automatic image
+  and homogeneous ImageCollection metadata discovery, supported property-name
+  triplets, loading/error behavior, and a CORINE example.
+
 - Added a complete Public Apps guide in all six languages. It separates managed
   Google credentials from static hosting, documents managed bundle download,
   optional GitHub Pages publishing, 1–10 exact allowed origins, security

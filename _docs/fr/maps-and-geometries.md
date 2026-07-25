@@ -41,6 +41,43 @@ wipe, ainsi qu’un angle diagonal Studio via `angle` ou
 style isolé. Ces onglets appartiennent à la session et sont recréés quand le
 script est réexécuté.
 
+## Ajouter des légendes catégorielles
+
+`ui.Legend` est une extension Studio pour les images classifiées. Fournissez
+des tableaux alignés `values`, `names` et `palette`. Le tableau facultatif
+`descriptions` affiche une info-bulle sur la couleur et le nom de chaque classe :
+
+```javascript
+Map.add(ui.Legend({
+  title: "Occupation des sols",
+  values: [1, 2],
+  names: ["Forêt", "Eau"],
+  palette: ["00A600", "00CCF2"],
+  descriptions: ["Terrain arboré", "Eau intérieure permanente"]
+}));
+```
+
+La légende peut aussi découvrir les classes d’une `ee.Image` ou d’une
+`ee.ImageCollection` homogène. Indiquez le préfixe avec `description`; une
+collection utilise `first()` et suppose les mêmes classes pour toutes les
+images :
+
+```javascript
+var corine = ee.ImageCollection("COPERNICUS/CORINE/V20/100m");
+Map.add(ui.Legend({
+  collection: corine,
+  description: "landcover",
+  title: "Occupation des sols CORINE",
+  style: {position: "bottom-left", width: "390px"}
+}));
+```
+
+Pour `landcover`, Studio recherche d’abord `landcover_class_values`,
+`landcover_class_names` et `landcover_class_palette`, puis les propriétés plus
+courtes `landcover_values`, `landcover_names` et `landcover_palette`. Le widget
+affiche un chargement pendant la résolution des métadonnées et une erreur
+visible si les tableaux manquent ou n’ont pas la même longueur.
+
 ## Inspection et dessin
 
 Activez **Inspector**, puis cliquez sur la carte pour échantillonner les couches visibles compatibles. L’échec d’une couche ne bloque pas les autres.
