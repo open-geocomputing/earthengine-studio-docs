@@ -2,7 +2,7 @@
 title: Éléments
 description: Parcourez, importez, partagez, déplacez et supprimez en toute sécurité les assets Earth Engine.
 permalink: /fr/assets/
-order: 8
+order: 9
 lang: fr
 translation_key: assets
 keywords: [assets, import, IAM, partage, déplacement, suppression]

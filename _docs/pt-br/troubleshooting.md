@@ -2,7 +2,7 @@
 title: Solução de problemas
 description: Diagnostique problemas de conta, projeto, runtime, navegador, mapa, repositório e download.
 permalink: /pt-br/troubleshooting/
-order: 10
+order: 11
 lang: pt-br
 translation_key: troubleshooting
 keywords: [erro, autenticação, permissão, runtime, download]

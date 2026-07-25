@@ -16,3 +16,5 @@ Cloud-Exporte nutzen die von Earth Engine unterstützten Ziele wie Drive, Cloud 
 ## Lokale Downloads
 
 Studio kann kleine Ergebnisse direkt als Datei, ZIP oder – in Chromium mit Berechtigung – in einen Ordner schreiben. Browser-Speicher und Arbeitsspeicher begrenzen die Größe; verwenden Sie für große oder wiederholbare Jobs Cloud-Exporte.
+
+Task-Exporte und die Veröffentlichung einer anonymen App haben unterschiedliche Sicherheitsmodelle. Im Leitfaden [Öffentliche Apps]({{ '/de/public-apps/' | relative_url }}) wählen Sie verwaltete oder selbstverwaltete Zugangsdaten und ein statisches Hosting.

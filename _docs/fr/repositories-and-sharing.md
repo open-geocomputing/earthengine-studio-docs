@@ -2,7 +2,7 @@
 title: Dépôts et partage
 description: Connectez GitHub, GitLab ou GoogleSource, gérez les branches et partagez des instantanés Studio.
 permalink: /fr/repositories-and-sharing/
-order: 9
+order: 10
 lang: fr
 translation_key: repositories-and-sharing
 keywords: [GitHub, GitLab, GoogleSource, branche, conflit, partage]
@@ -18,3 +18,5 @@ Ouvrez un dépôt, choisissez une branche et sélectionnez un fichier. Les conne
 ## Partage
 
 **Get Link** produit un instantané adressé par son contenu. Un lien de dépôt convient aux modifications continues; un instantané garantit un contenu exact. Aucun lien ne donne accès aux assets ou modules privés. Le gestionnaire de scripts de Google Code Editor reste un système distinct.
+
+GitHub Pages peut également héberger une [App publique gérée]({{ '/fr/public-apps/' | relative_url }}) lorsque le document d’entrée appartient à un dépôt GitHub connecté et modifiable. Ce n’est pas une condition des identifiants gérés: une App locale, GitLab ou GoogleSource peut télécharger le bundle pour un autre hébergeur.

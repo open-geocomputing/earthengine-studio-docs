@@ -2,7 +2,7 @@
 title: Dépannage
 description: Diagnostiquez les problèmes de compte, projet, runtime, navigateur, carte, dépôt et téléchargement.
 permalink: /fr/troubleshooting/
-order: 10
+order: 11
 lang: fr
 translation_key: troubleshooting
 keywords: [erreur, authentification, autorisation, runtime, téléchargement]

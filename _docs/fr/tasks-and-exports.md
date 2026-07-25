@@ -16,3 +16,5 @@ Une opération soumise continue côté Earth Engine après la fermeture du navig
 ## Téléchargements locaux
 
 `Export.image.toFolder()` et `Export.table.toFolder()` sont des extensions Studio. La sortie **dossier** nécessite l’API File System Access d’un navigateur Chromium compatible et peut reprendre avec un manifeste. La sortie **ZIP** fonctionne comme un téléchargement normal, mais utilise la mémoire et ne reprend pas. Gardez la page ouverte pendant le traitement.
+
+Les exports de tâches et la publication d’une App anonyme ont des modèles de sécurité différents. Consultez le [guide des Apps publiques]({{ '/fr/public-apps/' | relative_url }}) pour choisir des identifiants gérés ou autogérés et un hébergement statique.

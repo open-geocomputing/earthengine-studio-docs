@@ -2,7 +2,7 @@
 title: 故障排除
 description: 排查账号、项目、运行时、浏览器、地图、代码库与下载问题。
 permalink: /zh-cn/troubleshooting/
-order: 10
+order: 11
 lang: zh-cn
 translation_key: troubleshooting
 keywords: [错误, 认证, 权限, 运行时, 下载]

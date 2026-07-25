@@ -43,7 +43,7 @@ Guides live in `_docs/`. Each guide has YAML front matter with:
 - `keywords`: extra terms for the local search index.
 
 English guides live directly in `_docs/`; translations live below their locale,
-for example `_docs/fr/editor.md`. Every language must contain the same ten
+for example `_docs/fr/editor.md`. Every language must contain the same eleven
 `translation_key` values and orders. Run `ruby scripts/check_translations.rb`
 before committing to catch missing pages, duplicate keys, bad permalinks, or
 order drift.

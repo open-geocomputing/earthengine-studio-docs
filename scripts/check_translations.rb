@@ -7,7 +7,7 @@ ROOT = File.expand_path("..", __dir__)
 LANGUAGES = %w[en fr de es pt-br zh-cn].freeze
 GUIDES = %w[
   getting-started workspace editor data-and-docs maps-and-geometries
-  console-and-plots tasks-and-exports assets repositories-and-sharing troubleshooting
+  console-and-plots tasks-and-exports public-apps assets repositories-and-sharing troubleshooting
 ].freeze
 
 errors = []

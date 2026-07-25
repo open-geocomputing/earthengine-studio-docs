@@ -2,7 +2,7 @@
 title: 资产
 description: 浏览、上传、共享、移动并安全删除 Earth Engine 资产。
 permalink: /zh-cn/assets/
-order: 8
+order: 9
 lang: zh-cn
 translation_key: assets
 keywords: [资产, 上传, 共享, 移动, 删除]

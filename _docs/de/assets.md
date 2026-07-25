@@ -2,7 +2,7 @@
 title: Assets
 description: Earth-Engine-Assets durchsuchen, hochladen, teilen, verschieben und sicher löschen.
 permalink: /de/assets/
-order: 8
+order: 9
 lang: de
 translation_key: assets
 keywords: [Assets, Upload, Teilen, Verschieben, Löschen]

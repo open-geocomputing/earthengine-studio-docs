@@ -2,7 +2,7 @@
 title: Repositorios y uso compartido
 description: Edita archivos de GitHub, GitLab o GoogleSource y comparte enlaces reproducibles de Studio.
 permalink: /es/repositories-and-sharing/
-order: 9
+order: 10
 lang: es
 translation_key: repositories-and-sharing
 keywords: [GitHub, GitLab, GoogleSource, rama, compartir]
@@ -16,3 +16,5 @@ Studio conserva la revisión cargada. Si el archivo cambió remotamente, muestra
 ## Compartir
 
 **Get Link** crea una instantánea inmutable del código y las geometrías. No incluye datos de recursos privados, tokens ni permisos del repositorio; cada destinatario necesita su propio acceso a Earth Engine.
+
+GitHub Pages también puede alojar una [App pública administrada]({{ '/es/public-apps/' | relative_url }}) cuando el documento de entrada pertenece a un repositorio GitHub conectado y con escritura. Pages no es obligatorio para las credenciales administradas; las Apps locales, de GitLab o GoogleSource pueden descargar el bundle estático para otro host.

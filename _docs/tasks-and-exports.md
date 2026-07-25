@@ -92,3 +92,7 @@ blocking cloud task monitoring.
 Keep the Studio page open during folder or ZIP production. A browser crash,
 worker reset, permission revocation, or authentication change can interrupt
 local work even though submitted Earth Engine cloud operations remain active.
+
+Task exports and public App publishing have different security models. To
+publish an anonymous interactive App with managed or self-managed credentials,
+continue with the [Public Apps guide]({{ '/public-apps/' | relative_url }}).

@@ -16,3 +16,5 @@ Exportações em nuvem usam destinos compatíveis, como Drive, Cloud Storage ou 
 ## Downloads locais
 
 O Studio salva resultados pequenos como arquivo, ZIP ou, no Chromium com permissão, em uma pasta. A memória do navegador limita o tamanho; use exportações em nuvem para trabalhos grandes ou repetíveis.
+
+Exportações de tarefas e a publicação de um App anônimo têm modelos de segurança diferentes. Consulte o [guia de Apps públicos]({{ '/pt-br/public-apps/' | relative_url }}) para escolher credenciais gerenciadas ou autogerenciadas e uma hospedagem estática.

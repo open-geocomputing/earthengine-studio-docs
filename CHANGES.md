@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+- Added a complete Public Apps guide in all six languages. It separates managed
+  Google credentials from static hosting, documents managed bundle download,
+  optional GitHub Pages publishing, 1–10 exact allowed origins, security
+  boundaries, and separate App IDs for quota or security isolation.
+- Added the production operator plan for the distinct
+  `cdn.earthengine.studio` and `auth.earthengine.studio` hosts, including
+  immutable CDN paths, broker-only routes, keyless service identity, deployment
+  ordering, DNS/TLS, verification, and rollback guidance.
 - Refreshed the documentation site around the new Earth Engine Studio identity,
   including the animated logo and lowercase wordmark, shared favicon set,
   earth-green/engine-blue/lime palette, planetary homepage, guide cards,

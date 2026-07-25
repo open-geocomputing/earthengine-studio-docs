@@ -18,6 +18,8 @@
       titles: {en: Console & plots, fr: Console et graphiques, de: Konsole & Diagramme, es: Consola y gráficos, pt-br: Console e gráficos, zh-cn: 控制台与图表}
     - slug: tasks-and-exports
       titles: {en: Tasks & exports, fr: Tâches et exportations, de: Tasks & Exporte, es: Tareas y exportaciones, pt-br: Tarefas e exportações, zh-cn: 任务与导出}
+    - slug: public-apps
+      titles: {en: Public Apps, fr: Apps publiques, de: Öffentliche Apps, es: Apps públicas, pt-br: Apps públicos, zh-cn: 公共应用}
     - slug: assets
       titles: {en: Assets, fr: Éléments, de: Assets, es: Recursos, pt-br: Recursos, zh-cn: 资产}
 - labels: {en: Organize, fr: Organiser, de: Organisieren, es: Organizar, pt-br: Organizar, zh-cn: 组织}

@@ -2,7 +2,7 @@
 title: Repositories & sharing
 description: Connect Git providers, open or create branches and files, handle save conflicts, and share immutable Studio links.
 permalink: /repositories-and-sharing/
-order: 9
+order: 10
 lang: en
 translation_key: repositories-and-sharing
 keywords: [Scripts, repositories, GitHub, GitLab, GoogleSource, branch, save conflict, pull request, Get Link]
@@ -85,6 +85,12 @@ content.
 Neither form grants access to private Earth Engine assets, private modules, or
 repository files outside the shared bundle. Make dependencies readable or
 replace them with public equivalents before sharing.
+
+GitHub Pages is also an optional host for a
+[managed public App]({{ '/public-apps/' | relative_url }}), but only when the App entry document belongs
+to a connected writable GitHub repository. It is not required for managed
+credentials; local, GitLab, and GoogleSource Apps can download the managed
+static bundle for another host.
 
 Google's Code Editor has a separate Git-based Script Manager and link system.
 Refer to Google's [Code Editor overview](https://developers.google.com/earth-engine/guides/playground)

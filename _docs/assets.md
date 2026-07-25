@@ -2,7 +2,7 @@
 title: Assets
 description: Browse, inspect, upload, share, move, link, and safely delete Earth Engine assets from Studio.
 permalink: /assets/
-order: 8
+order: 9
 lang: en
 translation_key: assets
 keywords: [Assets, upload, IAM, sharing, delete, move, footprint, bands, linked assets, deep link]

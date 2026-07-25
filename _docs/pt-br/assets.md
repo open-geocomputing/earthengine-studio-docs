@@ -2,7 +2,7 @@
 title: Recursos
 description: Navegue, envie, compartilhe, mova e exclua recursos do Earth Engine com segurança.
 permalink: /pt-br/assets/
-order: 8
+order: 9
 lang: pt-br
 translation_key: assets
 keywords: [recursos, upload, compartilhar, mover, excluir]
