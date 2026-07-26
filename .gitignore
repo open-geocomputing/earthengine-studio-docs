@@ -24,3 +24,5 @@ Thumbs.db
 # Local visual review artifacts
 docs-brand-preview*.png
 docs-legend-preview*.png
+docs-client-symbol-preview*.png
+docs-client-symbol-linkcheck*.json

@@ -21,6 +21,46 @@ MapLibre 可以在浏览器中渲染 `computePixels` 图层。使用 WebGL2 时�
 避免 Mercator 网格在两极过密。锚点密度随缩放调整，近距离时改为屏幕间距；
 `arrowSpacing` 仍控制密度。图层设置中的同一选项名为 **Uniform globe**。
 
+## 在客户端渲染点符号
+
+设置 `renderer: "symbols"` 可让 Point 和 MultiPoint 集合使用 MapLibre WebGL
+符号渲染器。数据源可以是已认证的 `ee.FeatureCollection`，也可以是本地 GeoJSON
+`FeatureCollection`；本地数据不需要登录 Earth Engine。
+
+```javascript
+Map.addLayer(peaks, {
+  renderer: "symbols",
+  symbol: {type: "mountain", size: 18, sizeProperty: "size", color: "#5b4636"},
+  label: {
+    property: "label", position: "above",
+    positionProperty: "label_position",
+    fontFamily: "serif", fontSize: 14, scale: "zoom",
+    color: "#2c2118",
+    effect: {type: "outline", color: "#f5ead3", width: 2}
+  },
+  minZoom: 4, maxZoom: 18,
+  featureMinZoomProperty: "min_zoom",
+  featureMaxZoomProperty: "max_zoom"
+}, "历史山峰");
+```
+
+符号可为 `circle`、`mountain` 或 `none`；标签位置可为 `above`、`below`、
+`left`、`right` 或 `center`。`\n` 会生成多行文本。符号尺寸限制为 1–128
+屏幕像素，字号限制为 8–64。`"zoom"` 在缩放级别 0/12/24 分别插值为
+0.75×/1×/1.5×，`"fixed"` 保持不变。无效属性会回退到图层默认值；缺少
+最小或最大缩放属性时要素仍可见。
+
+地图旋转或倾斜时，文本保持直立，山形底边保持水平。默认避免碰撞并优先放置
+离视点最近的符号；`allowOverlap: true` 会绘制全部符号。支持 `halo`、
+`outline` 和 `shadow`。MapLibre 会从客户端已安装的 CSS 通用字体生成 v1
+别名 `sans`、`serif` 与 `monospace` 的字形，因此外观、度量和字符覆盖取决于
+客户端。
+
+Earth Engine 数据会加载可见 XYZ 瓦片及一圈边界，每页 1,000 个要素，每个查询
+瓦片最多 5,000 个，并发请求数为四。128 瓦片 LRU 缓存、过期请求取消和去重可
+避免瓦片接缝。请先筛选高密度集合；其他几何类型会被跳过并显示警告。v1 仅
+MapLibre 支持富符号；OpenLayers 和 Google Maps 会跳过图层并显示提供商警告。
+
 ## 构建 Earth Engine UI 应用
 
 Earth Engine `ui` 脚本可直接在 Studio 中运行。通过 `print(...)` 输出的未挂载

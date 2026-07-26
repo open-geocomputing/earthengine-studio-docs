@@ -24,6 +24,47 @@ zoom e muda para espaçamento de tela quando próximo; `arrowSpacing` continua
 controlando a densidade. A configuração da camada mostra a mesma opção como
 **Uniform globe**.
 
+## Renderizar símbolos de ponto no cliente
+
+`renderer: "symbols"` ativa o renderizador WebGL do MapLibre para coleções
+Point e MultiPoint. A fonte pode ser uma `ee.FeatureCollection` autenticada ou
+uma `FeatureCollection` GeoJSON local, que dispensa login no Earth Engine.
+
+```javascript
+Map.addLayer(peaks, {
+  renderer: "symbols",
+  symbol: {type: "mountain", size: 18, sizeProperty: "size", color: "#5b4636"},
+  label: {
+    property: "label", position: "above",
+    positionProperty: "label_position",
+    fontFamily: "serif", fontSize: 14, scale: "zoom",
+    color: "#2c2118",
+    effect: {type: "outline", color: "#f5ead3", width: 2}
+  },
+  minZoom: 4, maxZoom: 18,
+  featureMinZoomProperty: "min_zoom",
+  featureMaxZoomProperty: "max_zoom"
+}, "Picos históricos");
+```
+
+Símbolos podem ser `circle`, `mountain` ou `none`; rótulos usam `above`,
+`below`, `left`, `right` ou `center`. `\n` cria várias linhas. Tamanhos são
+limitados a 1–128 pixels e fontes a 8–64. `"zoom"` interpola
+0,75×/1×/1,5× nos zooms 0/12/24; `"fixed"` mantém o tamanho. Propriedades
+inválidas usam o padrão da camada, e min/max ausentes deixam a feição visível.
+
+O texto fica em pé e a base da montanha horizontal ao girar e inclinar. Por
+padrão as colisões são evitadas e o símbolo mais próximo prevalece;
+`allowOverlap: true` desenha todos. Há `halo`, `outline` e `shadow`. O MapLibre
+gera glifos dos aliases v1 `sans`, `serif` e `monospace` a partir da família
+CSS genérica instalada; forma, métricas e cobertura dependem do cliente.
+
+Fontes Earth Engine carregam tiles XYZ visíveis mais uma margem, em páginas de
+1.000 feições, até 5.000 por tile de consulta e quatro requisições simultâneas.
+Cache LRU de 128 tiles, cancelamento e deduplicação evitam emendas. Filtre
+coleções densas. Outras geometrias são ignoradas com aviso. No v1, o recurso é
+exclusivo do MapLibre; OpenLayers e Google Maps mostram aviso do provedor.
+
 ## Aplicativos Earth Engine UI
 
 Scripts `ui` do Earth Engine rodam diretamente no Studio. Um widget sem vínculo

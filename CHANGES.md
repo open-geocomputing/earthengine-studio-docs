@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Documented MapLibre client-side point symbols and labels in all six
+  languages, including script opt-in, local and Earth Engine sources, symbols,
+  multiline anchors, property fallback, zoom scaling and visibility, effects,
+  collision and orientation behavior, glyph coverage, collection safeguards,
+  tile overflow, provider scope, and troubleshooting.
+
 - Documented the Studio `ui.Legend` extension in all six languages, including
   explicit values/names/palette arrays, tooltip descriptions, automatic image
   and homogeneous ImageCollection metadata discovery, supported property-name

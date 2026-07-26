@@ -68,6 +68,10 @@ examples, or images.
 The Maps & geometries guide includes Studio's categorical `ui.Legend`
 extension: explicit class arrays, tooltip descriptions, automatic image or
 homogeneous-collection metadata discovery, and the CORINE example.
+It also documents MapLibre client-side point symbols and labels in all six
+languages: local and Earth Engine sources, property fallback, zoom visibility,
+collision and orientation behavior, glyph coverage, request safeguards, and
+provider troubleshooting.
 
 ## Site structure
 

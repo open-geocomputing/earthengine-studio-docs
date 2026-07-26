@@ -90,6 +90,67 @@ the visible density remains stable through MapLibre's globe-to-Mercator
 transition. `arrowSpacing` remains the density control; layer settings expose
 the same option as **Uniform globe**.
 
+## Render client-side point symbols
+
+Set `renderer: "symbols"` to opt a Point or MultiPoint collection into
+MapLibre's WebGL symbol renderer. The input can be an authenticated
+`ee.FeatureCollection` or a local GeoJSON `FeatureCollection`; local data does
+not require Earth Engine sign-in.
+
+```javascript
+Map.addLayer(peaks, {
+  renderer: "symbols",
+  symbol: {
+    type: "mountain", typeProperty: "symbol_type",
+    size: 18, sizeProperty: "size",
+    color: "#5b4636", colorProperty: "symbol_color"
+  },
+  label: {
+    property: "label",
+    position: "above", positionProperty: "label_position",
+    fontFamily: "serif",
+    fontSize: 14, fontSizeProperty: "font_size",
+    scale: "zoom",
+    color: "#2c2118", colorProperty: "text_color",
+    effect: {type: "outline", color: "#f5ead3", width: 2}
+  },
+  idProperty: "system:index",
+  minZoom: 4, maxZoom: 18,
+  featureMinZoomProperty: "min_zoom",
+  featureMaxZoomProperty: "max_zoom",
+  allowOverlap: false
+}, "Historic peaks");
+```
+
+Symbols may be `circle`, `mountain`, or `none`. Labels can be `above`, `below`,
+`left`, `right`, or `center`; explicit `\n` characters create multiple lines.
+Numeric marker sizes are screen pixels clamped to 1–128. Font sizes default to
+14 and clamp to 8–64. With `scale: "zoom"`, text scales from 0.75× at zoom 0,
+through 1× at zoom 12, to 1.5× at zoom 24; `"fixed"` retains its pixel size.
+Missing or invalid property overrides fall back to the layer value. A missing
+feature min/max zoom property leaves the feature visible.
+
+Symbols and text are viewport-aligned: labels remain upright and mountain
+bases horizontal under bearing and pitch. Collisions are avoided by default,
+with the closest foreground symbol placed first. `allowOverlap: true` disables
+that protection. Text effects support `halo`, `outline`, and a matching
+non-blocking `shadow` underlay. The v1 font aliases are `sans`, `serif`, and
+`monospace`. MapLibre generates glyphs in the browser from the corresponding
+installed CSS generic family, so exact shapes, metrics, and character coverage
+depend on the client.
+
+Earth Engine data is fetched for visible wrapped XYZ tiles plus a one-tile
+margin, then deduplicated into one GeoJSON source so labels may cross query-tile
+boundaries without seams. Requests paginate by 1,000 features, run four at a
+time, cache 128 tiles per layer, cancel stale viewport work, and stop at 5,000
+features per query tile with a warning. Filter dense collections before
+display. Non-point geometries are skipped with a layer warning.
+
+Rich symbols are MapLibre-only in v1. OpenLayers and Google Maps skip the layer
+and show a provider warning. For an empty layer, check the selected provider,
+point geometry, label and zoom properties, Earth Engine sign-in, and truncation
+warnings.
+
 ## Build Earth Engine UI Apps
 
 Legacy Earth Engine `ui` scripts run directly in Studio. Printing an unattached

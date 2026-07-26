@@ -26,6 +26,50 @@ pôles. Leur densité suit le zoom, puis passe à un espacement écran à courte
 distance; `arrowSpacing` reste le contrôle de densité. L’interface présente la
 même option sous **Uniform globe**.
 
+## Rendre des symboles ponctuels côté client
+
+`renderer: "symbols"` active le moteur WebGL MapLibre pour les collections
+Point et MultiPoint. La source peut être une `ee.FeatureCollection` authentifiée
+ou une `FeatureCollection` GeoJSON locale, sans connexion Earth Engine.
+
+```javascript
+Map.addLayer(peaks, {
+  renderer: "symbols",
+  symbol: {type: "mountain", size: 18, sizeProperty: "size", color: "#5b4636"},
+  label: {
+    property: "label", position: "above",
+    positionProperty: "label_position",
+    fontFamily: "serif", fontSize: 14, scale: "zoom",
+    color: "#2c2118",
+    effect: {type: "outline", color: "#f5ead3", width: 2}
+  },
+  minZoom: 4, maxZoom: 18,
+  featureMinZoomProperty: "min_zoom",
+  featureMaxZoomProperty: "max_zoom"
+}, "Sommets historiques");
+```
+
+Les symboles sont `circle`, `mountain` ou `none`; les positions sont `above`,
+`below`, `left`, `right` et `center`. `\n` crée plusieurs lignes. La taille des
+symboles est limitée à 1–128 pixels, celle du texte à 8–64. `"zoom"` interpole
+0,75×/1×/1,5× aux zooms 0/12/24; `"fixed"` reste constant. Une propriété
+incorrecte reprend la valeur de la couche et l’absence de min/max de zoom garde
+l’entité visible.
+
+Le texte reste droit et la base des montagnes horizontale malgré rotation et
+inclinaison. Les collisions sont évitées par défaut, au profit du symbole le
+plus proche; `allowOverlap: true` les autorise. `halo`, `outline` et `shadow`
+sont disponibles. MapLibre génère les glyphes des alias v1 `sans`, `serif` et
+`monospace` depuis la famille CSS générique installée; formes, métriques et
+couverture dépendent donc du client.
+
+Une source Earth Engine charge les tuiles XYZ visibles avec une marge, par
+pages de 1 000 entités, au plus 5 000 par tuile de requête et quatre requêtes
+simultanées. Le cache LRU de 128 tuiles, l’annulation et la déduplication
+évitent les coutures. Filtrez les collections denses. Les autres géométries
+sont ignorées avec avertissement. Cette fonction v1 exige MapLibre; OpenLayers
+et Google Maps affichent un avertissement de fournisseur.
+
 ## Applications Earth Engine UI
 
 Les scripts Earth Engine `ui` s’exécutent directement dans Studio. Un widget

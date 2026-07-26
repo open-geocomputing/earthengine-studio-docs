@@ -24,6 +24,52 @@ passt sich dem Zoom an und wechselt im Nahbereich zu Bildschirmabständen;
 `arrowSpacing` bleibt die Dichtesteuerung. In den Layer-Einstellungen heißt
 diese Option **Uniform globe**.
 
+## Clientseitige Punktsymbole rendern
+
+Mit `renderer: "symbols"` aktiviert ein Skript den MapLibre-WebGL-Renderer für
+Point- und MultiPoint-Sammlungen. Als Quelle dienen eine angemeldete
+`ee.FeatureCollection` oder eine lokale GeoJSON-`FeatureCollection`; lokale
+Daten benötigen keine Earth-Engine-Anmeldung.
+
+```javascript
+Map.addLayer(peaks, {
+  renderer: "symbols",
+  symbol: {type: "mountain", size: 18, sizeProperty: "size", color: "#5b4636"},
+  label: {
+    property: "label", position: "above",
+    positionProperty: "label_position",
+    fontFamily: "serif", fontSize: 14, scale: "zoom",
+    color: "#2c2118",
+    effect: {type: "outline", color: "#f5ead3", width: 2}
+  },
+  minZoom: 4, maxZoom: 18,
+  featureMinZoomProperty: "min_zoom",
+  featureMaxZoomProperty: "max_zoom"
+}, "Historische Gipfel");
+```
+
+Symbole sind `circle`, `mountain` oder `none`; Labels liegen `above`, `below`,
+`left`, `right` oder `center`. `\n` erzeugt mehrere Zeilen. Symbolgrößen werden
+auf 1–128 und Schriftgrößen auf 8–64 Bildschirmpixel begrenzt. `"zoom"`
+interpoliert 0,75×/1×/1,5× bei Zoom 0/12/24; `"fixed"` bleibt konstant.
+Ungültige Feature-Eigenschaften fallen auf den Layer-Standard zurück, fehlende
+Min-/Max-Zoom-Eigenschaften lassen das Feature sichtbar.
+
+Text bleibt aufrecht und Bergbasen bleiben bei Drehung und Neigung horizontal.
+Kollisionen werden standardmäßig vermieden; das vorderste Symbol gewinnt.
+`allowOverlap: true` zeichnet alle. `halo`, `outline` und `shadow` werden
+unterstützt. Für die v1-Aliase `sans`, `serif` und `monospace` erzeugt MapLibre
+Glyphen aus der installierten generischen CSS-Schrift. Form, Metrik und
+Zeichenabdeckung hängen daher vom Client ab.
+
+Earth-Engine-Quellen laden sichtbare XYZ-Kacheln plus einen Rand, je 1.000
+Features pro Seite, höchstens 5.000 pro Abfragekachel und vier Anfragen
+gleichzeitig. Ein 128-Kachel-LRU, Abbruch veralteter Arbeit und Deduplizierung
+verhindern Nähte. Dichte Sammlungen sollten vorab gefiltert werden. Andere
+Geometrien werden mit einer Warnung übersprungen. Diese Darstellung ist in v1
+nur mit MapLibre verfügbar; OpenLayers und Google Maps zeigen eine
+Provider-Warnung.
+
 ## Earth Engine UI Apps
 
 Earth-Engine-`ui`-Skripte laufen direkt in Studio. Ein nicht angehängtes Widget

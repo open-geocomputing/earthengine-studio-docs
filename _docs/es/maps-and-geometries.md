@@ -24,6 +24,51 @@ se adapta al zoom y cambia a espaciado de pantalla a corta distancia;
 `arrowSpacing` continúa controlando la densidad. La misma opción aparece como
 **Uniform globe** en la configuración de la capa.
 
+## Renderizar símbolos de puntos en el cliente
+
+`renderer: "symbols"` activa el renderizador WebGL de MapLibre para colecciones
+Point y MultiPoint. La fuente puede ser una `ee.FeatureCollection` autenticada
+o una `FeatureCollection` GeoJSON local; los datos locales no necesitan iniciar
+sesión en Earth Engine.
+
+```javascript
+Map.addLayer(peaks, {
+  renderer: "symbols",
+  symbol: {type: "mountain", size: 18, sizeProperty: "size", color: "#5b4636"},
+  label: {
+    property: "label", position: "above",
+    positionProperty: "label_position",
+    fontFamily: "serif", fontSize: 14, scale: "zoom",
+    color: "#2c2118",
+    effect: {type: "outline", color: "#f5ead3", width: 2}
+  },
+  minZoom: 4, maxZoom: 18,
+  featureMinZoomProperty: "min_zoom",
+  featureMaxZoomProperty: "max_zoom"
+}, "Cumbres históricas");
+```
+
+Los símbolos son `circle`, `mountain` o `none`; las etiquetas se colocan
+`above`, `below`, `left`, `right` o `center`. `\n` crea varias líneas. Los
+tamaños se limitan a 1–128 píxeles y las fuentes a 8–64. `"zoom"` interpola
+0,75×/1×/1,5× en zoom 0/12/24; `"fixed"` conserva el tamaño. Una propiedad no
+válida usa el valor predeterminado de la capa, y la ausencia de min/max de zoom
+mantiene visible el elemento.
+
+El texto permanece recto y la base de la montaña horizontal al rotar o
+inclinar. Se evitan colisiones de forma predeterminada y gana el símbolo más
+cercano; `allowOverlap: true` dibuja todos. Se admiten `halo`, `outline` y
+`shadow`. MapLibre genera los glifos de los alias v1 `sans`, `serif` y
+`monospace` desde la familia CSS genérica instalada; la forma, las métricas y
+la cobertura dependen por ello del cliente.
+
+Las fuentes de Earth Engine cargan teselas XYZ visibles más un margen, paginan
+1.000 elementos, limitan cada tesela de consulta a 5.000 y ejecutan cuatro
+peticiones simultáneas. Una caché LRU de 128 teselas, cancelación y
+deduplicación evitan costuras. Filtra colecciones densas. Otras geometrías se
+omiten con aviso. En v1 esta función es exclusiva de MapLibre; OpenLayers y
+Google Maps muestran un aviso del proveedor.
+
 ## Aplicaciones de Earth Engine UI
 
 Los scripts `ui` de Earth Engine se ejecutan directamente en Studio. Un widget
