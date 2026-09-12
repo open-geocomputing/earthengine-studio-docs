@@ -28,3 +28,7 @@ JavaScript se ejecuta en un Worker SES aislado y Python en Pyodide. Las expresio
 JavaScript usa `exports` y `require(...)`; Python admite imports normales y `require(...)`. Las rutas estáticas pueden apuntar al repositorio actual, GitHub, GitLab o GoogleSource. El Python remoto requiere confirmación de confianza.
 
 Al guardar, Studio comprueba la revisión abierta. Un cambio remoto produce un conflicto, no una sobrescritura. **Get Link** crea una instantánea inmutable, pero no concede acceso a recursos privados.
+
+## Funcionamiento actual
+
+Los diagnósticos Console abren la línea original JavaScript/Python, incluidos módulos y selecciones. Errores en rojo y advertencias `getInfo()` síncronas en ámbar. Los errores diferidos pueden señalar la operación inicial. Revisiones ejecutadas de dependencias se abren en modo lectura. La navegación contextual abre assets o documentación API; las pestañas ofrecen copia. La IA puede cambiar el lenguaje de borradores; los archivos mantienen el lenguaje de su ruta.

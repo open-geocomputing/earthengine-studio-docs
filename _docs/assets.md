@@ -79,3 +79,7 @@ selection or drag operation.
 
 See Google's [asset management guide](https://developers.google.com/earth-engine/guides/manage_assets)
 for platform-level storage, quota, and permission details.
+
+## Current workflow
+
+Search filters loaded assets while preserving folder context; sort each level by name or newest update time, with undated assets last. Drop files, folders or a local manifest into the upload section and review the destination and manifest before submission. Loose Shapefiles require `.shp`, `.dbf`, `.shx` and optionally `.prj` selected together. Progress separates file transfer from ingestion submission. The close button hides the upload section; Tasks tracks the resulting ingestion operation and destination asset.

@@ -7,6 +7,9 @@ lang: de
 translation_key: workspace
 keywords: [Arbeitsbereich, Panels, Tabs, Layout, Design]
 ---
+
+[Lokaler Speicher]({{ '/de/local-storage/' | relative_url }}) — Skripte auf der Festplatte speichern, Google verbinden und Git optional nutzen.
+
 ## Aufbau
 
 Studio ordnet **Scripts**, **Docs**, **Assets** und **Tasks** neben Editor, Karten, Konsole und Diagrammen an. Tabs lassen sich verschieben, teilen oder in ein separates Fenster lösen. Panelgrenzen können per Tastatur oder Zeiger angepasst werden.
@@ -23,3 +26,7 @@ Layout, offene Dokumente und Entwürfe werden lokal gespeichert. **Day**, **Nigh
 ## Wiederherstellung
 
 Bei einem defekten Layout setzen Sie zuerst einzelne Panels zurück und laden dann neu. Ein vollständiger Workspace-Reset entfernt lokale Layoutdaten, jedoch keine bereits in einem Repository gespeicherten Dateien. Speichern Sie wichtige Entwürfe vorher.
+
+## Aktueller Ablauf
+
+Die Werkzeugleiste passt sich schmalen Bereichen an. Loom Companion bestätigt Abschlüsse und verhindert falsche Verbindungsfehler nach fertigen Codex-Antworten. Entwicklungsverbindungen können auf die veröffentlichte Erweiterung zurückfallen; Freigabe der exakten Herkunft bleibt nötig. KI-Repositoryfehler zeigen lesbare Meldungen. Interne Refaktorierungen erhalten Layout und Skript-API; Architektur und Prüfabläufe stehen im Quellrepository.

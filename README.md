@@ -43,7 +43,7 @@ Guides live in `_docs/`. Each guide has YAML front matter with:
 - `keywords`: extra terms for the local search index.
 
 English guides live directly in `_docs/`; translations live below their locale,
-for example `_docs/fr/editor.md`. Every language must contain the same eleven
+for example `_docs/fr/editor.md`. Every language must contain the same twelve
 `translation_key` values and orders. Run `ruby scripts/check_translations.rb`
 before committing to catch missing pages, duplicate keys, bad permalinks, or
 order drift.
@@ -115,3 +115,11 @@ permissions. Repository settings must use **GitHub Actions** as the Pages
 source. DNS and the custom-domain setting are managed outside this repository.
 
 See [CHANGES.md](CHANGES.md) for notable documentation releases.
+
+The Local storage guide covers folder permissions, disk saves, optional Git, Google
+connection restoration, vaults, backups, and hosted-service boundaries in all six languages.
+
+The September maintenance refresh covers changes since July 26 through application
+commit `cab1150`: MapLibre-only rendering, diagnostics, collection previews, uploads,
+export projects, GitLab PKCE, remote change review, snippet and App asset sharing,
+client API documentation, quota recovery, and AI/Loom behavior in every language.

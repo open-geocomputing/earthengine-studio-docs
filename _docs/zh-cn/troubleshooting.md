@@ -7,6 +7,9 @@ lang: zh-cn
 translation_key: troubleshooting
 keywords: [错误, 认证, 权限, 运行时, 下载]
 ---
+
+[本地存储模式]({{ '/zh-cn/local-storage/' | relative_url }}) — 将脚本保存在磁盘上，连接 Google，并按需使用 Git。
+
 ## 账号与项目
 
 检查 Google 账号、所选项目、Earth Engine 注册状态和权限。切换账号或项目后，旧回调会失效；请等待登录完成并重新运行脚本。

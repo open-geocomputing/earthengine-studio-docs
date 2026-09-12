@@ -7,6 +7,9 @@ lang: fr
 translation_key: workspace
 keywords: [panneaux, onglets, disposition, thème, persistance, réinitialisation]
 ---
+
+[Stockage local]({{ '/fr/local-storage/' | relative_url }}) — Enregistrer les scripts sur disque, connecter Google et utiliser Git en option.
+
 ## Disposition
 
 La zone gauche contient **Scripts**, **Docs**, **Assets** et **Settings**. Le centre accueille les éditeurs, détails et figures. À droite se trouvent **Inspector**, **Console** et **Tasks**; la carte occupe la zone inférieure. Faites glisser les séparateurs ou les onglets pour adapter la disposition.
@@ -25,3 +28,7 @@ Le navigateur conserve les documents ouverts, la disposition, le thème, les pr�
 ## Réinitialisation
 
 La réinitialisation locale peut supprimer les brouillons, pièces jointes et préférences du navigateur. Elle ne supprime pas les assets Earth Engine, les fichiers distants ni les opérations déjà soumises. Essayez d’abord de recharger le panneau ou la page.
+
+## Fonctionnement actuel
+
+La barre d’outils s’adapte aux espaces étroits et donne à la recherche la largeur disponible. Les accusés de fin Loom Companion évitent les faux échecs de connexion après une réponse Codex terminée. En développement, l’extension publiée peut remplacer une extension configurée indisponible, toujours avec approbation de l’origine exacte. Les erreurs de dépôts dans l’IA sont lisibles. Les refactorisations internes préservent disposition et API; les détails contributeurs restent dans le dépôt source.

@@ -7,6 +7,9 @@ lang: pt-br
 translation_key: troubleshooting
 keywords: [erro, autenticação, permissão, runtime, download]
 ---
+
+[Armazenamento local]({{ '/pt-br/local-storage/' | relative_url }}) — Salvar scripts no disco, conectar o Google e usar Git opcionalmente.
+
 ## Conta e projeto
 
 Confira a Conta do Google, o projeto selecionado, o cadastro no Earth Engine e as permissões. Após trocar conta ou projeto, callbacks antigos são invalidados; execute novamente quando o login terminar.

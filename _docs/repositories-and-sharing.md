@@ -8,6 +8,9 @@ translation_key: repositories-and-sharing
 keywords: [Scripts, repositories, GitHub, GitLab, GoogleSource, branch, save conflict, pull request, Get Link]
 ---
 
+[Local storage mode]({{ '/local-storage/' | relative_url }}) — Keep scripts on disk, connect Google, use optional Git, and recover folder access.
+
+
 ## Understand the Scripts panel
 
 **Scripts** combines several sources in one tree:
@@ -96,3 +99,11 @@ Google's Code Editor has a separate Git-based Script Manager and link system.
 Refer to Google's [Code Editor overview](https://developers.google.com/earth-engine/guides/playground)
 for those workflows rather than assuming its repository paths or link options
 match Studio.
+
+## Current workflow
+
+Scripts separates Local folders and Online folders; **Show all file types** expands the default JavaScript/Python/Markdown/extensionless filter, while hidden folders stay hidden. Online GitHub/GitLab changes refresh loaded trees and offer a reload review for open files; local-only edits receive Recently closed recovery copies before replacement. Polling pauses offline or in hidden tabs. Account menus offer **Disconnect account…**; provider icons connect additional accounts.
+
+For **Add self-managed GitLab**, enter the instance origin, unique alias and public Application ID. Create a non-confidential GitLab OAuth application: clear **Confidential**, leave **Device authorization grant** unchecked, copy Studio's exact redirect URI, and enable `read_user`, `api`, `read_repository`, `write_repository`. Do not enter an Application Secret. Tokens are stored in Google Secret Manager for hosted mode; account identity remains bound to the GitLab origin.
+
+**Get Link** reviews detected assets and imported `require(...)` repositories. The entry script is embedded; its own repository need not be public. Review dynamic references manually. Sharing assets changes access permissions. Snippet creation requires authentication; removing a snippet from your collection does not delete its immutable public object.

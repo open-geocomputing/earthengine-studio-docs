@@ -7,6 +7,9 @@ lang: es
 translation_key: workspace
 keywords: [espacio de trabajo, paneles, pestañas, diseño, tema]
 ---
+
+[Almacenamiento local]({{ '/es/local-storage/' | relative_url }}) — Guardar scripts en disco, conectar Google y usar Git de forma opcional.
+
 ## Organización
 
 Studio sitúa **Scripts**, **Docs**, **Assets** y **Tasks** junto al editor, los mapas, la consola y los gráficos. Puedes mover o dividir pestañas y separar una vista en otra ventana. Los límites de los paneles responden al puntero y al teclado.
@@ -23,3 +26,7 @@ El diseño, los documentos abiertos y los borradores se guardan localmente. **Da
 ## Recuperación
 
 Si el diseño falla, restablece primero los paneles afectados y recarga. Un restablecimiento completo borra la configuración local, pero no los archivos guardados en repositorios. Guarda antes cualquier borrador importante.
+
+## Funcionamiento actual
+
+La barra se adapta a espacios estrechos y aprovecha el ancho para búsqueda. Loom Companion confirma finales y evita falsos errores tras respuestas Codex completas. En desarrollo puede usar la extensión publicada si la configurada falta, manteniendo aprobación del origen exacto. Errores de repositorios IA muestran mensajes legibles. Refactorizaciones preservan diseño y API; arquitectura y validación se documentan en el repositorio fuente.

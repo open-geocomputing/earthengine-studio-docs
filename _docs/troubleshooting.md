@@ -8,6 +8,9 @@ translation_key: troubleshooting
 keywords: [errors, authentication, permissions, runtime reset, browser, modules, downloads, maps, support]
 ---
 
+[Local storage mode]({{ '/local-storage/' | relative_url }}) — Keep scripts on disk, connect Google, use optional Git, and recover folder access.
+
+
 ## Sign-in or project problems
 
 If the interface opens but Earth Engine requests fail:
@@ -60,8 +63,8 @@ not block unrelated layers.
 - Switch an experimental compute-pixel layer back to normal Earth Engine tiles.
 - Reduce pixels per tile or simplify an expensive expression.
 - Use MapLibre for vector fields and other MapLibre-only extensions.
-- Confirm that optional Google Maps configuration exists before choosing that
-  renderer.
+- Use `Map.create()` or `provider: "maplibre"` in older scripts; other
+  renderer values are no longer supported.
 - Earth Engine HTTP 429 tile responses are retried automatically. Exhausted
   vector-tile rate limits are intentionally omitted from Studio and browser
   Console noise, so check the layer status and retry later even when no 429

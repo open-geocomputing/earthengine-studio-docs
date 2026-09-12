@@ -59,7 +59,7 @@ Map.addLayer(peaks, {
 Earth Engine 数据会加载可见 XYZ 瓦片及一圈边界，每页 1,000 个要素，每个查询
 瓦片最多 5,000 个，并发请求数为四。128 瓦片 LRU 缓存、过期请求取消和去重可
 避免瓦片接缝。请先筛选高密度集合；其他几何类型会被跳过并显示警告。v1 仅
-MapLibre 支持富符号；OpenLayers 和 Google Maps 会跳过图层并显示提供商警告。
+MapLibre 支持富符号。
 
 ## 构建 Earth Engine UI 应用
 
@@ -113,4 +113,8 @@ Map.add(ui.Legend({
 
 检查器查询指定位置的像素和对象值。绘图工具创建点、线和多边形，可作为变量或 GeoJSON 继续使用。GeoJSON 与逐行 GeoJSONL 可从静态文件路径载入。
 
-脚本还能通过 MapLibre、OpenLayers 或 Google Maps 打开额外地图标签页。这些视图属于本次运行，刷新后需要重新创建。
+脚本还能通过 MapLibre 打开额外地图标签页。这些视图属于本次运行，刷新后需要重新创建。
+
+## 当前工作流程
+
+MapLibre 是唯一可选渲染器，旧 OpenLayers/Google Maps 偏好会转换为 MapLibre。使用 `Map.create()` 或 `Map.create({provider: "maplibre"})`，其他值报兼容性错误。底图仍可选择。关联地图同步原生移动，也支持稍后挂载的 App 地图。未命名图层可自动推断名称；控件可调整位置，连续色条支持配置。

@@ -7,6 +7,9 @@ lang: fr
 translation_key: getting-started
 keywords: [connexion, projet Cloud, JavaScript, Python, exécuter]
 ---
+
+[Stockage local]({{ '/fr/local-storage/' | relative_url }}) — Enregistrer les scripts sur disque, connecter Google et utiliser Git en option.
+
 ## Prérequis
 
 Studio fonctionne dans un navigateur moderne. Pour exécuter des requêtes, il faut un compte Google et un projet Cloud enregistré pour Earth Engine. Le [guide d’accès Earth Engine](https://developers.google.com/earth-engine/guides/access?hl=fr) décrit l’inscription et les autorisations.
@@ -31,3 +34,7 @@ Studio fournit au runtime Python le client Earth Engine déjà authentifié. Le 
 ## Lire les résultats
 
 **Map** affiche les couches, **Console** les valeurs et erreurs, **Plots** les figures Plotly ou Matplotlib, et **Tasks** les exportations à vérifier et démarrer explicitement. Le projet sélectionné détermine les requêtes, les assets et les exportations.
+
+## Fonctionnement actuel
+
+Au démarrage, choisissez Local avec un dossier ou Online. Google est nécessaire aux calculs Earth Engine, pas à l’édition locale. Après un échec d’accès, changez de projet ou réessayez dans le sélecteur; la vérification peut prendre une minute. Les jauges mensuelles n’apparaissent que si consommation et quota sont accessibles; leur absence ne signifie pas zéro. Monitoring est facultatif en local. Les sessions tentent une reprise après veille ou reconnexion.

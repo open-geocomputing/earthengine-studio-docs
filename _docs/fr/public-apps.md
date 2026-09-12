@@ -110,3 +110,7 @@ Engine doit aller directement à Google. Consultez la documentation
 [des domaines Cloud Run](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
 et des
 [identités de service](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
+
+## Fonctionnement actuel
+
+Les exports contiennent `embed-snippet.html` et `embed-loader.js` pour intégrer un élément HTML sans iframe. Gardez les fichiers ensemble et ajustez les chemins en sous-répertoire. Le déploiement géré analyse le script et ses modules `require(...)`; les références dynamiques non résolues le bloquent. Le compte de service dédié reçoit l’accès lecteur aux assets privés détectés, sans supprimer les autres permissions. Un échec identifie l’asset et permet de reprendre.

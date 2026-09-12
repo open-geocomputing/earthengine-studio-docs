@@ -149,3 +149,7 @@ limited-availability Preview. See
 [Cloud Run custom domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
 and
 [service identities](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
+
+## Current workflow
+
+App exports include `embed-snippet.html` and `embed-loader.js` for an inline custom-element embed without an iframe. Keep the bundle and attachments together and adjust paths for subdirectory hosting. Managed deployment scans the entry script and captured `require(...)` modules for assets; unresolved dynamic references block deployment. After creating or reusing the dedicated service account, it grants viewer access on detected private assets while preserving unrelated permissions. Failed grants identify the asset and leave deployment resumable.

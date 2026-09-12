@@ -18,3 +18,7 @@ Exportações em nuvem usam destinos compatíveis, como Drive, Cloud Storage ou 
 O Studio salva resultados pequenos como arquivo, ZIP ou, no Chromium com permissão, em uma pasta. A memória do navegador limita o tamanho; use exportações em nuvem para trabalhos grandes ou repetíveis.
 
 Exportações de tarefas e a publicação de um App anônimo têm modelos de segurança diferentes. Consulte o [guia de Apps públicos]({{ '/pt-br/public-apps/' | relative_url }}) para escolher credenciais gerenciadas ou autogerenciadas e uma hospedagem estática.
+
+## Funcionamento atual
+
+`Export.*` JavaScript/Python aceita o `projectId` opcional do Studio, inclusive `Export.image.toFolder()` e `Export.table.toFolder()`. Rascunhos preservam o projeto de destino independentemente do espaço; suas permissões continuam necessárias. Ingestões mostram fila, execução e conclusão com asset de destino. Operações em fila ou execução permitem cancelamento com estado e erros. Mantenha a aba aberta para downloads locais.

@@ -7,6 +7,9 @@ lang: es
 translation_key: getting-started
 keywords: [inicio de sesión, proyecto Cloud, JavaScript, Python, ejecutar]
 ---
+
+[Almacenamiento local]({{ '/es/local-storage/' | relative_url }}) — Guardar scripts en disco, conectar Google y usar Git de forma opcional.
+
 ## Requisitos
 
 Necesitas un navegador moderno, una cuenta de Google y un proyecto de Cloud registrado para Earth Engine. La [guía de acceso](https://developers.google.com/earth-engine/guides/access?hl=es) explica el registro y los permisos.
@@ -31,3 +34,7 @@ Python recibe un cliente de Earth Engine ya autenticado; el primer arranque de P
 ## Resultados
 
 **Map** muestra capas, **Console** valores y errores, **Plots** gráficos y **Tasks** exportaciones pendientes de confirmación. El proyecto seleccionado determina las consultas, los recursos y las exportaciones.
+
+## Funcionamiento actual
+
+Al iniciar elija Local con carpeta u Online. Google se necesita para cálculos, no para edición local. Tras fallos de acceso, el selector permite cambiar proyecto o reintentar; la verificación puede tardar un minuto. El indicador mensual solo aparece si cuota y consumo son accesibles; su ausencia no significa cero. Monitoring local es opcional. Las sesiones intentan recuperarse tras suspensión o reconexión.

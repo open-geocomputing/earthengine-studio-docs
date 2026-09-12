@@ -7,6 +7,9 @@ lang: fr
 translation_key: troubleshooting
 keywords: [erreur, authentification, autorisation, runtime, téléchargement]
 ---
+
+[Stockage local]({{ '/fr/local-storage/' | relative_url }}) — Enregistrer les scripts sur disque, connecter Google et utiliser Git en option.
+
 ## Compte et projet
 
 Vérifiez l’identité Google, le projet sélectionné, l’activation d’Earth Engine et vos autorisations. Un changement de compte ou de projet invalide les anciens callbacks; réexécutez les scripts une fois la connexion prête.

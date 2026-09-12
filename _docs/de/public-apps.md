@@ -110,3 +110,7 @@ erreichen; Earth-Engine-Verkehr muss direkt zu Google gehen. Siehe
 [Cloud-Run-Domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
 und
 [Dienstidentitäten](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
+
+## Aktueller Ablauf
+
+Exporte enthalten `embed-snippet.html` und `embed-loader.js` für ein HTML-Custom-Element ohne iframe. Dateien zusammenhalten und Unterverzeichnispfade anpassen. Verwaltete Bereitstellung prüft Hauptskript und erfasste `require(...)`-Module; unaufgelöste dynamische Referenzen blockieren. Das dedizierte Dienstkonto erhält Lesezugriff auf erkannte private Assets unter Erhalt anderer Rechte. Fehlgeschlagene Freigaben nennen das Asset und erlauben Fortsetzung.

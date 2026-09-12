@@ -16,3 +16,7 @@ keywords: [数据目录, API, 文档, 代码片段]
 **Docs** 可搜索 Earth Engine 类、方法和参数，并为 JavaScript 或 Python 插入符号。完整的平台概念请参阅 [Earth Engine 指南](https://developers.google.com/earth-engine/guides?hl=zh-cn)与 [API 参考](https://developers.google.com/earth-engine/apidocs?hl=zh-cn)。
 
 社区内容可能变化。为保证分析可复现，请尽可能固定版本并记录数据来源。
+
+## 当前工作流程
+
+Docs、补全和悬浮帮助现包含 JavaScript 客户端高级方法及继承方法，例如 `ee.ImageCollection.linkCollection` 和集合聚合。上下文导航打开 API 或资产。Earth Engine 对象仍是延迟执行的服务器计算描述。

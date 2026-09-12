@@ -120,3 +120,7 @@ when you specifically need Google Code Editor sharing behavior.
 
 Before sharing, make sure every referenced Earth Engine asset and remote module
 is readable by the recipient. A code link cannot grant access to private data.
+
+## Current workflow
+
+Console diagnostics navigate to the original JavaScript or Python file, module or selected-code line. Errors highlight a red range; synchronous `getInfo()` warnings use amber. Lazy Earth Engine errors can point to the originating operation rather than the final print. Executed dependency revisions can open as read-only snapshots. Editor context navigation opens asset details or API documentation; script tabs offer copy actions. Studio AI can inspect and change the language of scratch scripts; files with a path retain their filename-bound language.

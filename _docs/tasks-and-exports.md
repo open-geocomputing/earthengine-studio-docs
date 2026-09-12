@@ -96,3 +96,7 @@ local work even though submitted Earth Engine cloud operations remain active.
 Task exports and public App publishing have different security models. To
 publish an anonymous interactive App with managed or self-managed credentials,
 continue with the [Public Apps guide]({{ '/public-apps/' | relative_url }}).
+
+## Current workflow
+
+JavaScript and Python `Export.*` configurations accept Studio's optional `projectId`, including `Export.image.toFolder()` and `Export.table.toFolder()`. It selects the submission/download project without changing the workspace project; drafts retain and display it across project switches. Permissions still apply to that target. Ingestion tasks show queued/running/finished phases and the destination asset; queued or running operations expose cancellation with pending/error feedback. Local folder downloads require the tab to remain open.

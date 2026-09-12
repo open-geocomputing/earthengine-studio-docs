@@ -26,3 +26,7 @@ docs-brand-preview*.png
 docs-legend-preview*.png
 docs-client-symbol-preview*.png
 docs-client-symbol-linkcheck*.json
+
+# Local documentation build and link-validation reports.
+docs-maintenance-report*.json
+docs-maintenance-preview*.png

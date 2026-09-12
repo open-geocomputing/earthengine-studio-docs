@@ -18,3 +18,7 @@ Cloud-Exporte nutzen die von Earth Engine unterstützten Ziele wie Drive, Cloud 
 Studio kann kleine Ergebnisse direkt als Datei, ZIP oder – in Chromium mit Berechtigung – in einen Ordner schreiben. Browser-Speicher und Arbeitsspeicher begrenzen die Größe; verwenden Sie für große oder wiederholbare Jobs Cloud-Exporte.
 
 Task-Exporte und die Veröffentlichung einer anonymen App haben unterschiedliche Sicherheitsmodelle. Im Leitfaden [Öffentliche Apps]({{ '/de/public-apps/' | relative_url }}) wählen Sie verwaltete oder selbstverwaltete Zugangsdaten und ein statisches Hosting.
+
+## Aktueller Ablauf
+
+JavaScript-/Python-`Export.*` unterstützt Studios optionales `projectId`, auch `Export.image.toFolder()` und `Export.table.toFolder()`. Das Zielprojekt bleibt im Entwurf erhalten, unabhängig vom Arbeitsbereich; seine Berechtigungen gelten weiterhin. Importaufgaben zeigen Warteschlange, Ausführung und Abschluss samt Ziel-Asset. Wartende/laufende Vorgänge lassen sich mit Status- und Fehleranzeige abbrechen. Lokale Downloads benötigen den geöffneten Tab.

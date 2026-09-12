@@ -63,7 +63,7 @@ Fontes Earth Engine carregam tiles XYZ visíveis mais uma margem, em páginas de
 1.000 feições, até 5.000 por tile de consulta e quatro requisições simultâneas.
 Cache LRU de 128 tiles, cancelamento e deduplicação evitam emendas. Filtre
 coleções densas. Outras geometrias são ignoradas com aviso. No v1, o recurso é
-exclusivo do MapLibre; OpenLayers e Google Maps mostram aviso do provedor.
+exclusivo do MapLibre.
 
 ## Aplicativos Earth Engine UI
 
@@ -118,4 +118,8 @@ ausentes ou com tamanhos diferentes produzem um erro visível.
 
 O inspetor consulta pixels e objetos em uma posição. As ferramentas de desenho criam pontos, linhas e polígonos reutilizáveis como variáveis ou GeoJSON. GeoJSON e GeoJSONL podem ser carregados de caminhos estáticos.
 
-Scripts podem abrir abas de mapa extras com MapLibre, OpenLayers ou Google Maps. Essas visualizações pertencem à execução e precisam ser recriadas depois de recarregar.
+Scripts podem abrir abas de mapa extras com MapLibre. Essas visualizações pertencem à execução e precisam ser recriadas depois de recarregar.
+
+## Funcionamento atual
+
+MapLibre é o único renderizador selecionável. Preferências antigas OpenLayers/Google Maps passam a MapLibre. Use `Map.create()` ou `Map.create({provider: "maplibre"})`; outros valores geram erro. Mapas base continuam disponíveis. Mapas vinculados sincronizam movimentos nativos mesmo quando montados depois em Apps. Camadas sem nome podem receber rótulos inferidos; controles podem ser reposicionados e barras contínuas configuradas.

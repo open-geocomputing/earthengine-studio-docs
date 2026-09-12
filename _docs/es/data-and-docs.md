@@ -16,3 +16,7 @@ El catálogo incluye conjuntos oficiales y de la comunidad. Antes de usarlos, re
 **Docs** busca clases, métodos y argumentos de Earth Engine y puede insertar símbolos para JavaScript o Python. Para conceptos completos, consulta las [guías de Earth Engine](https://developers.google.com/earth-engine/guides?hl=es) y la [referencia de la API](https://developers.google.com/earth-engine/apidocs?hl=es).
 
 Los recursos comunitarios pueden cambiar. Para análisis reproducibles, fija versiones cuando sea posible y documenta la procedencia de los datos.
+
+## Funcionamiento actual
+
+Docs, autocompletado y ayuda incluyen métodos del cliente JavaScript y heredados, como `ee.ImageCollection.linkCollection` y agregaciones. La navegación contextual abre API o asset. Los valores Earth Engine siguen siendo cálculos diferidos del servidor.

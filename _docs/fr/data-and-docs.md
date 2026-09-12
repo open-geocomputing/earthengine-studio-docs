@@ -16,3 +16,7 @@ Un résultat officiel peut charger les métadonnées STAC détaillées: bandes, 
 ## Panneau Docs
 
 **Docs** rassemble le registre Earth Engine, les signatures supplémentaires, les extensions Studio, les cartes et les exportations. Chaque entrée indique si elle vient de Google ou de Studio. La même source alimente la complétion Monaco. Utilisez la [référence API Google](https://developers.google.com/earth-engine/apidocs?hl=fr) pour la documentation complète de la plateforme.
+
+## Fonctionnement actuel
+
+Docs, complétion et survol incluent les méthodes du client JavaScript et héritées, comme `ee.ImageCollection.linkCollection`, les agrégations de collections et les helpers hérités. La navigation contextuelle ouvre l’API ou l’asset. Cette couverture ne change pas l’évaluation différée des objets Earth Engine.

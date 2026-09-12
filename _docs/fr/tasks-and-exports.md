@@ -18,3 +18,7 @@ Une opération soumise continue côté Earth Engine après la fermeture du navig
 `Export.image.toFolder()` et `Export.table.toFolder()` sont des extensions Studio. La sortie **dossier** nécessite l’API File System Access d’un navigateur Chromium compatible et peut reprendre avec un manifeste. La sortie **ZIP** fonctionne comme un téléchargement normal, mais utilise la mémoire et ne reprend pas. Gardez la page ouverte pendant le traitement.
 
 Les exports de tâches et la publication d’une App anonyme ont des modèles de sécurité différents. Consultez le [guide des Apps publiques]({{ '/fr/public-apps/' | relative_url }}) pour choisir des identifiants gérés ou autogérés et un hébergement statique.
+
+## Fonctionnement actuel
+
+Les configurations JavaScript et Python `Export.*` acceptent `projectId`, y compris `Export.image.toFolder()` et `Export.table.toFolder()`. Ce champ Studio choisit le projet d’exécution sans changer celui de l’espace; les brouillons le conservent. Les permissions du projet cible restent nécessaires. Tasks distingue attente, exécution et fin des ingestions, affiche l’asset et propose l’annulation des opérations en attente ou actives avec retour d’erreur. Gardez l’onglet ouvert pour les téléchargements locaux.

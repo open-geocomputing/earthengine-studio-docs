@@ -8,6 +8,9 @@ translation_key: workspace
 keywords: [layout, panels, tabs, popout, theme, persistence, settings, reset, recovery]
 ---
 
+[Local storage mode]({{ '/local-storage/' | relative_url }}) — Keep scripts on disk, connect Google, use optional Git, and recover folder access.
+
+
 ## Understand the default layout
 
 Studio begins with four working areas:
@@ -77,8 +80,8 @@ Open **Settings** from the left panel or top bar. Common choices include:
 
 - **Theme:** Auto follows the operating system; Day and Night stay fixed.
 - **Indentation:** choose the editor tab width used for new edits.
-- **Map renderer:** use MapLibre by default, OpenLayers for a GIS-oriented
-  alternative, or Google Maps when the deployment provides an API key.
+- **Workspace modes:** enable Local folders, Hosted services, or both; choose
+  the preferred destination for new files. Maps use MapLibre.
 - **Default basemap:** select the starting background for the main map.
 - **Approximate location:** optionally request low-accuracy browser location
   when no remembered map view exists.
@@ -102,3 +105,7 @@ preferences. Save valuable work to a repository before confirming.
 For a single panel problem, try its retry control or reload the page before
 resetting everything. See [Troubleshooting]({{ '/troubleshooting/' | relative_url }})
 for authentication and runtime recovery steps.
+
+## Current workflow
+
+The toolbar adapts to narrow workspaces and gives search available width. Loom Companion completion acknowledgements prevent completed Codex responses from being mislabeled as disconnected. Development connections may fall back to the published extension when the configured extension is unavailable; exact-origin approval still applies. AI repository failures now show readable provider messages. Internal refactors preserve the workspace layout and public script APIs; contributor architecture and validation details remain in the source repository.

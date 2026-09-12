@@ -18,3 +18,7 @@ Le flux d’importation accepte les fichiers, dossiers et manifestes compatibles
 ## Déplacer et supprimer
 
 Command/Ctrl permet une sélection multiple; faites glisser les éléments vers un dossier ou une racine de projet. La suppression est permanente et toujours confirmée. Les dossiers et collections d’images suppriment leurs descendants avant le conteneur; arrêter l’opération ne restaure pas les éléments déjà supprimés.
+
+## Fonctionnement actuel
+
+La recherche filtre les assets chargés en conservant les dossiers. Triez par nom ou date de mise à jour, les éléments sans date en dernier. Déposez fichiers, dossiers ou manifeste local dans la zone d’envoi, puis vérifiez destination et manifeste. Pour un Shapefile non zippé, sélectionnez ensemble `.shp`, `.dbf`, `.shx` et éventuellement `.prj`. Les progressions distinguent transfert et soumission. Le bouton de fermeture masque la zone; Tasks suit l’ingestion et l’asset cible.

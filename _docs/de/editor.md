@@ -28,3 +28,7 @@ JavaScript läuft isoliert in einem SES-Worker, Python in Pyodide. Portable Eart
 JavaScript nutzt `exports` und `require(...)`; Python normale Imports sowie `require(...)`. Statische Pfade können das aktuelle Repository, GitHub, GitLab oder GoogleSource ansprechen. Entferntes Python erfordert eine Vertrauensbestätigung.
 
 Beim Speichern prüft Studio die geöffnete Revision. Entfernte Änderungen erzeugen einen Konflikt statt überschrieben zu werden. **Get Link** erstellt einen unveränderlichen Snapshot, gewährt aber keinen Zugriff auf private Assets.
+
+## Aktueller Ablauf
+
+Console-Diagnosen öffnen die ursprüngliche JavaScript-/Python-Zeile, auch in Modulen und ausgeführten Auswahlen. Fehler markieren rot, synchrone `getInfo()`-Warnungen bernsteinfarben. Verzögerte Earth-Engine-Fehler können zur auslösenden Operation führen. Ausgeführte Modulversionen öffnen schreibgeschützt. Kontextnavigation öffnet Assets oder API-Hilfe; Skripttabs bieten Kopieraktionen. Die KI kann die Sprache von Entwürfen ändern, während pfadgebundene Dateien ihre Dateisprache behalten.

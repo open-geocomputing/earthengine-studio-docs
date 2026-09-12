@@ -66,8 +66,7 @@ Las fuentes de Earth Engine cargan teselas XYZ visibles más un margen, paginan
 1.000 elementos, limitan cada tesela de consulta a 5.000 y ejecutan cuatro
 peticiones simultáneas. Una caché LRU de 128 teselas, cancelación y
 deduplicación evitan costuras. Filtra colecciones densas. Otras geometrías se
-omiten con aviso. En v1 esta función es exclusiva de MapLibre; OpenLayers y
-Google Maps muestran un aviso del proveedor.
+omiten con aviso. Esta función utiliza MapLibre.
 
 ## Aplicaciones de Earth Engine UI
 
@@ -124,4 +123,8 @@ longitud producen un error visible.
 
 El inspector consulta píxeles y objetos en una ubicación. Las herramientas de dibujo crean puntos, líneas y polígonos reutilizables como variables o GeoJSON. GeoJSON y GeoJSONL se pueden cargar desde rutas de archivo estáticas.
 
-Un script puede abrir pestañas de mapa adicionales mediante MapLibre, OpenLayers o Google Maps. Estas vistas pertenecen a la ejecución y deben recrearse tras recargar.
+Un script puede abrir pestañas de mapa adicionales mediante MapLibre. Estas vistas pertenecen a la ejecución y deben recrearse tras recargar.
+
+## Funcionamiento actual
+
+MapLibre es el único renderizador seleccionable. Las preferencias antiguas OpenLayers/Google Maps se normalizan a MapLibre. Use `Map.create()` o `Map.create({provider: "maplibre"})`; otros valores producen error. Los mapas base siguen disponibles. Los mapas vinculados sincronizan movimientos nativos incluso si se montan después en Apps. Las capas sin nombre pueden recibir etiquetas inferidas; los controles se reposicionan y las barras continuas son configurables.

@@ -78,3 +78,7 @@ and reduction.
 
 Studio documentation concentrates on how those APIs interact with this
 workspace. It does not reproduce the complete Earth Engine teaching material.
+
+## Current workflow
+
+Docs, completion and hover help now include high-level JavaScript client helpers and inherited methods as well as server algorithms, for example `ee.ImageCollection.linkCollection`, collection aggregation methods and inherited helpers. Use editor context navigation to open the matching API reference or asset. These additions document the callable surface; Earth Engine values remain lazy server-side computations.

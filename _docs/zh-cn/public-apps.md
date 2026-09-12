@@ -96,3 +96,7 @@ Earth Engine 流量必须直接到达 Google。请参阅
 [Cloud Run 自定义域名](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
 和
 [服务身份](https://docs.cloud.google.com/run/docs/configuring/services/service-identity)。
+
+## 当前工作流程
+
+App 导出包含 `embed-snippet.html` 和 `embed-loader.js`，可通过自定义 HTML 元素嵌入，无需 iframe。保持文件齐全，并调整子目录路径。托管部署扫描入口脚本及捕获的 `require(...)` 模块；未解析动态引用会阻止部署。专用服务账户获得已检测私有资产的读取权限，其他权限保持不变。授权失败会指出资产并允许稍后继续。

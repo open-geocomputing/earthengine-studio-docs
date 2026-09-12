@@ -18,3 +18,7 @@ Uploads werden als Tasks verarbeitet. Kontrollieren Sie Quellformat, Band- oder 
 ## Verschieben und Löschen
 
 Verschieben ändert die Asset-ID und kann vorhandene Skripte brechen. Löschen ist dauerhaft. Studio verlangt deshalb eine ausdrückliche Bestätigung und schützt Ordner mit Inhalt vor versehentlichem Entfernen.
+
+## Aktueller Ablauf
+
+Die Suche filtert geladene Assets mit Ordnerkontext. Sortieren Sie pro Ebene nach Name oder letzter Änderung, undatierte zuletzt. Ziehen Sie Dateien, Ordner oder ein lokales Manifest in den Uploadbereich und prüfen Sie Ziel und Manifest. Lose Shapefiles benötigen `.shp`, `.dbf`, `.shx` und optional `.prj` gemeinsam. Fortschritt trennt Transfer und Einreichung; der Schließen-Knopf blendet den Bereich aus. Tasks verfolgt Importoperation und Ziel-Asset.

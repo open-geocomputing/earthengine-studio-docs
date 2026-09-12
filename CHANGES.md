@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+- Refresh user documentation against application changes since the July 26 public
+  documentation maintenance, through `cab1150`. Add a practical local storage
+  guide in all six languages and correct browser-only versus remembered Google
+  authentication guidance. Refresh maps, diagnostics, previews, uploads, export
+  projects, GitLab setup, remote change review, sharing, API help and AI/Loom
+  workflows. Add local-storage navigation and expand translation validation to
+  twelve guides per language.
+
 - Documented MapLibre client-side point symbols and labels in all six
   languages, including script opt-in, local and Earth Engine sources, symbols,
   multiline anchors, property fallback, zoom scaling and visibility, effects,

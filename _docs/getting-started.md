@@ -8,6 +8,9 @@ translation_key: getting-started
 keywords: [sign in, cloud project, first script, run, JavaScript, Python, authentication]
 ---
 
+[Local storage mode]({{ '/local-storage/' | relative_url }}) — Keep scripts on disk, connect Google, use optional Git, and recover folder access.
+
+
 ## What you need
 
 Studio runs in a modern browser. To execute Earth Engine requests, you also need
@@ -29,7 +32,8 @@ is not an official Google product.
 
 ## Connect your account and project
 
-1. Open [Earth Engine Studio](https://code.earthengine.studio/).
+1. Open [Earth Engine Studio](https://code.earthengine.studio/) and choose
+   **Local** with a folder or **Online**.
 2. Use the account control in the upper-right corner to sign in with Google.
 3. Choose a Cloud project that has Earth Engine enabled and that your account
    may use.
@@ -103,7 +107,7 @@ runtime. Later runs reuse it until the worker or authentication context resets.
 
 One script can update several parts of the workspace:
 
-- **Map** displays layers and offers visibility, opacity, provider, basemap,
+- **Map** displays layers and offers visibility, opacity, basemap,
   drawing, and inspection controls.
 - **Console** shows `print()` output, warnings, and errors. Structured Earth
   Engine values can be expanded.
@@ -123,3 +127,7 @@ how panels and persistence work, or open the [editor guide]({{ '/editor/' | rela
 for files, modules, saves, and sharing. For Earth Engine data types and analysis
 concepts, use Google's [developer guides](https://developers.google.com/earth-engine/guides)
 as the authoritative reference.
+
+## Current workflow
+
+Choose Local with a folder or Online at startup. Google is required for Earth Engine execution, not local file editing. The project picker remains usable after access failures; choose another project or retry, allowing up to one minute for verification. Monthly quota indicators appear only when usage and allocation can be read; missing indicators do not mean zero usage. Local Monitoring consent is optional. Sessions attempt recovery after sleep or reconnect before requiring interactive sign-in.

@@ -18,3 +18,7 @@ Las exportaciones en la nube usan destinos compatibles como Drive, Cloud Storage
 Studio puede guardar resultados pequeños como archivo, ZIP o, en Chromium con permiso, en una carpeta. La memoria del navegador limita el tamaño; usa exportaciones en la nube para trabajos grandes o repetibles.
 
 Las exportaciones de tareas y la publicación de una App anónima tienen modelos de seguridad diferentes. Consulta la [guía de Apps públicas]({{ '/es/public-apps/' | relative_url }}) para elegir credenciales administradas o autogestionadas y un alojamiento estático.
+
+## Funcionamiento actual
+
+`Export.*` de JavaScript/Python acepta `projectId` opcional de Studio, incluidos `Export.image.toFolder()` y `Export.table.toFolder()`. El borrador conserva el proyecto de destino aunque cambie el del espacio; siguen siendo necesarios sus permisos. Las ingestas muestran espera, ejecución y finalización, con asset de destino. Operaciones en cola o ejecución permiten cancelar con estado y errores visibles. Mantenga la pestaña abierta para descargas locales.

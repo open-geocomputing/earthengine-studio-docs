@@ -18,3 +18,7 @@ Uploads são processados como tarefas. Verifique formato de origem, tipos de ban
 ## Mover e excluir
 
 Mover altera o ID e pode quebrar scripts existentes. A exclusão é permanente, por isso o Studio exige confirmação explícita e protege pastas com conteúdo contra remoção acidental.
+
+## Funcionamento atual
+
+A busca filtra assets carregados preservando pastas. Ordene por nome ou atualização, sem data por último. Arraste arquivos, pastas ou manifesto local e revise destino e manifesto. Shapefiles soltos exigem `.shp`, `.dbf`, `.shx` e opcionalmente `.prj` juntos. O progresso separa transferência e envio; o botão de fechar oculta a seção. Tasks acompanha ingestão e asset de destino.

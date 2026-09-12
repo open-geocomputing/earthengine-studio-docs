@@ -66,9 +66,7 @@ Earth-Engine-Quellen laden sichtbare XYZ-Kacheln plus einen Rand, je 1.000
 Features pro Seite, höchstens 5.000 pro Abfragekachel und vier Anfragen
 gleichzeitig. Ein 128-Kachel-LRU, Abbruch veralteter Arbeit und Deduplizierung
 verhindern Nähte. Dichte Sammlungen sollten vorab gefiltert werden. Andere
-Geometrien werden mit einer Warnung übersprungen. Diese Darstellung ist in v1
-nur mit MapLibre verfügbar; OpenLayers und Google Maps zeigen eine
-Provider-Warnung.
+Geometrien werden mit einer Warnung übersprungen. Diese Darstellung nutzt MapLibre.
 
 ## Earth Engine UI Apps
 
@@ -126,4 +124,8 @@ Arrays werden als sichtbarer Fehler gemeldet.
 
 Der Inspektor fragt Pixel- und Objektwerte an der gewählten Position ab. Zeichenwerkzeuge erstellen Punkte, Linien und Polygone, die als Variablen oder GeoJSON weiterverwendet werden können. GeoJSON und zeilenweises GeoJSONL lassen sich aus statischen Dateipfaden laden.
 
-Skripte können zusätzliche Karten-Tabs mit MapLibre, OpenLayers oder Google Maps erzeugen. Diese Tabs gehören zum Lauf und müssen nach einem Reload erneut erstellt werden.
+Skripte können zusätzliche Karten-Tabs mit MapLibre erzeugen. Diese Tabs gehören zum Lauf und müssen nach einem Reload erneut erstellt werden.
+
+## Aktueller Ablauf
+
+MapLibre ist der einzige auswählbare Renderer. Gespeicherte OpenLayers-/Google-Maps-Einstellungen werden auf MapLibre umgestellt. Nutzen Sie `Map.create()` oder `Map.create({provider: "maplibre"})`; andere Werte erzeugen Fehler. Basiskarten bleiben wählbar. Verknüpfte Karten synchronisieren native Bewegungen auch bei späterem Einbau in Apps. Unbenannte Layer können abgeleitete Namen erhalten; Kartensteuerungen lassen sich verschieben und kontinuierliche Farbleisten konfigurieren.

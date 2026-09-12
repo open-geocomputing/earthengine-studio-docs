@@ -32,3 +32,7 @@ Chargez GeoJSON et GeoJSONL avec un chemin statique: `loadGeoJSON("./zone.geojso
 ## Enregistrer et partager
 
 Un brouillon reste dans le navigateur jusqu’à son enregistrement dans un dépôt visible et modifiable. Studio vérifie la révision ouverte; une modification distante produit un conflit plutôt qu’un écrasement. **Get Link** crée un instantané immuable du document et de sa géométrie, mais n’accorde aucun accès aux assets privés.
+
+## Fonctionnement actuel
+
+Les diagnostics Console ouvrent la ligne JavaScript ou Python d’origine, y compris modules et sélection exécutée. Les erreurs sont rouges, les avertissements `getInfo()` synchrones ambrés. Les erreurs différées Earth Engine peuvent pointer vers l’opération initiale. Les versions exécutées des dépendances s’ouvrent en lecture seule. Le menu contextuel accède aux assets ou à la documentation API; les onglets proposent des actions de copie. L’IA peut changer le langage des brouillons, mais les fichiers gardent le langage lié à leur chemin.

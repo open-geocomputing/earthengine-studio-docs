@@ -16,3 +16,7 @@ keywords: [console, gráfico, Plotly, Matplotlib, ui.Chart]
 Gráficos `ui.Chart` do JavaScript e figuras Plotly aparecem em **Plots**. Python pode usar Plotly ou Matplotlib. Conforme o tipo, o gráfico pode ser baixado como imagem ou arquivo de dados.
 
 Cada execução possui seu estado de saída. As abas podem ser renomeadas, movidas ou fechadas. Gráficos criados por script não persistem; execute o código novamente para reproduzi-los.
+
+## Funcionamento atual
+
+Uma execução pode terminar enquanto valores impressos ainda carregam. Coleções mostram até 20 elementos; expanda `features` para **Load all**, limitado a 5.000. Desativar o limite aplica esse teto imediatamente. Cancel interrompe prévia pendente; Reset invalida trabalho antigo. Valores estruturados expandem sem JSON duplicado. Python Console e Plotly usam o runtime do navegador; callbacks podem imprimir após o fim do script.

@@ -18,3 +18,7 @@ Las subidas se procesan como tareas. Comprueba formato de origen, tipos de banda
 ## Mover y eliminar
 
 Mover cambia el ID y puede romper scripts existentes. El borrado es permanente, por lo que Studio exige una confirmación explícita y protege las carpetas con contenido frente a eliminaciones accidentales.
+
+## Funcionamiento actual
+
+La búsqueda filtra assets cargados conservando carpetas. Ordene por nombre o actualización, sin fecha al final. Arrastre archivos, carpetas o un manifiesto local y revise destino y manifiesto. Shapefiles sueltos necesitan `.shp`, `.dbf`, `.shx` y opcionalmente `.prj` juntos. El progreso separa transferencia y envío; el botón de cierre oculta la sección. Tasks sigue la ingestión y su asset de destino.

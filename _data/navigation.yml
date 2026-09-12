@@ -28,3 +28,5 @@
       titles: {en: Repositories & sharing, fr: Dépôts et partage, de: Repositories & Teilen, es: Repositorios y uso compartido, pt-br: Repositórios e compartilhamento, zh-cn: 代码库与共享}
     - slug: troubleshooting
       titles: {en: Troubleshooting, fr: Dépannage, de: Fehlerbehebung, es: Solución de problemas, pt-br: Solução de problemas, zh-cn: 故障排除}
+    - slug: local-storage
+      titles: {en: Local storage, fr: Stockage local, de: Lokaler Speicher, es: Almacenamiento local, pt-br: Armazenamento local, zh-cn: 本地存储}

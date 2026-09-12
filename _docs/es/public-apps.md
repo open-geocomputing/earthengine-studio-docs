@@ -109,3 +109,7 @@ tráfico de Earth Engine debe ir directamente a Google. Consulta
 [dominios de Cloud Run](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
 e
 [identidades de servicio](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
+
+## Funcionamiento actual
+
+Los exports incluyen `embed-snippet.html` y `embed-loader.js` para integrar un elemento HTML sin iframe. Mantenga archivos juntos y ajuste rutas de subdirectorios. El despliegue administrado examina el script y módulos `require(...)`; referencias dinámicas sin resolver bloquean. La cuenta de servicio dedicada obtiene acceso lector a assets privados detectados, conservando otros permisos. Los fallos identifican el asset y permiten continuar después.

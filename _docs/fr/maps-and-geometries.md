@@ -5,11 +5,11 @@ permalink: /fr/maps-and-geometries/
 order: 5
 lang: fr
 translation_key: maps-and-geometries
-keywords: [carte, MapLibre, OpenLayers, Inspector, géométrie, GeoJSONL]
+keywords: [carte, MapLibre, Inspector, géométrie, GeoJSONL]
 ---
 ## Cartes et couches
 
-La carte principale utilise l’objet `Map` et mémorise son dernier point de vue. MapLibre est le moteur par défaut et prend en charge toutes les extensions Studio. OpenLayers constitue une alternative SIG; Google Maps n’apparaît que si la clé nécessaire est configurée.
+La carte principale utilise l’objet `Map` et mémorise son dernier point de vue. MapLibre est le seul moteur sélectionnable et prend en charge toutes les extensions Studio.
 
 Les couches Earth Engine utilisent normalement des tuiles XYZ. Avec MapLibre, `computePixels` peut produire des tuiles rendues dans le navigateur et des champs vectoriels. Une valeur plus faible de **Pixels / tile** réduit la mémoire et le détail.
 
@@ -67,8 +67,7 @@ Une source Earth Engine charge les tuiles XYZ visibles avec une marge, par
 pages de 1 000 entités, au plus 5 000 par tuile de requête et quatre requêtes
 simultanées. Le cache LRU de 128 tuiles, l’annulation et la déduplication
 évitent les coutures. Filtrez les collections denses. Les autres géométries
-sont ignorées avec avertissement. Cette fonction v1 exige MapLibre; OpenLayers
-et Google Maps affichent un avertissement de fournisseur.
+sont ignorées avec avertissement. Cette fonction utilise MapLibre.
 
 ## Applications Earth Engine UI
 
@@ -127,3 +126,7 @@ visible si les tableaux manquent ou n’ont pas la même longueur.
 Activez **Inspector**, puis cliquez sur la carte pour échantillonner les couches visibles compatibles. L’échec d’une couche ne bloque pas les autres.
 
 Chaque document JavaScript peut posséder un espace `.geojsonl`. Une seule couche visible est active pour le dessin; les autres restent verrouillées. L’enregistrement distant peut valider le script et sa géométrie associée dans le même commit.
+
+## Fonctionnement actuel
+
+MapLibre est désormais le seul moteur sélectionnable pour la carte principale et les cartes de scripts. Les anciennes préférences OpenLayers ou Google Maps deviennent MapLibre. Utilisez `Map.create()` ou `Map.create({provider: "maplibre"})`; les autres valeurs provoquent une erreur. Les fonds de carte restent configurables. Les cartes liées suivent les mouvements natifs, même après un montage tardif dans une App. Les couches sans nom peuvent recevoir un libellé déduit; les contrôles se déplacent et les barres de couleurs continues sont configurables.

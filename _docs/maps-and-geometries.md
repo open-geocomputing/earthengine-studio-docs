@@ -1,11 +1,11 @@
 ---
 title: Maps & geometries
-description: Display and inspect Earth Engine layers, choose map providers and basemaps, and maintain editable geometry workspaces.
+description: Display and inspect Earth Engine layers, choose basemaps, and maintain editable geometry workspaces.
 permalink: /maps-and-geometries/
 order: 5
 lang: en
 translation_key: maps-and-geometries
-keywords: [Map, MapLibre, OpenLayers, Google Maps, layers, basemaps, inspector, geometry, GeoJSONL, vector field]
+keywords: [Map, MapLibre, layers, basemaps, inspector, geometry, GeoJSONL, vector field]
 ---
 
 ## Work with the main map
@@ -29,18 +29,7 @@ Map.addLayer(cities.style({color: "72f1b8", fillColor: "17324d55"}), {}, "Region
 
 ## Choose a renderer and basemap
 
-Studio keeps a provider-neutral map boundary:
-
-- **MapLibre** is the default and supports the full Studio display extension
-  surface, including compute-pixel and vector-field layers.
-- **OpenLayers** is a GIS-oriented alternative for ordinary Earth Engine
-  display and inspection workflows.
-- **Google Maps** is optional and appears only when the Studio deployment has
-  a configured Google Maps key.
-
-Set the default main-map renderer in **Settings**. A script-created map may
-select its own provider with `Map.create({provider: "openlayers"})`; omission
-uses MapLibre regardless of the current main-map preference.
+MapLibre is now the only selectable renderer for the main map and script-created maps. Saved OpenLayers and Google Maps preferences normalize to MapLibre. Use `Map.create()` or `Map.create({provider: "maplibre"})`; other provider values raise a compatibility error. Basemap choices remain available. Linked maps synchronize native movements, including maps mounted later in Apps. Unnamed layers infer labels where possible, map controls can be repositioned, and continuous color bars support configurable presentation.
 
 OpenStreetMap is the standard basemap. The toolbar and `Map.setOptions(...)`
 also expose attributed Sentinel-2 Cloudless imagery and NASA Blue or Black
@@ -146,8 +135,7 @@ time, cache 128 tiles per layer, cancel stale viewport work, and stop at 5,000
 features per query tile with a warning. Filter dense collections before
 display. Non-point geometries are skipped with a layer warning.
 
-Rich symbols are MapLibre-only in v1. OpenLayers and Google Maps skip the layer
-and show a provider warning. For an empty layer, check the selected provider,
+Rich symbols use MapLibre. For an empty layer, check the source,
 point geometry, label and zoom properties, Earth Engine sign-in, and truncation
 warnings.
 

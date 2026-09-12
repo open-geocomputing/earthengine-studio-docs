@@ -101,3 +101,7 @@ return after a full reload.
 For large tabular or raster results, use an export or Studio local download
 instead of routing the entire payload through a figure. Continue with
 [Tasks & exports]({{ '/tasks-and-exports/' | relative_url }}).
+
+## Current workflow
+
+A run can complete while printed Earth Engine values are still resolving. Collection previews initially request up to 20 elements; expand `features` to reveal **Load all**, capped at 5,000. Turning off the preview limit applies that cap immediately. Cancel stops a pending preview; Reset invalidates old work. Arrays and structured values remain expandable without duplicated JSON. Python Console and Plotly output use the browser runtime; asynchronous callbacks may continue printing after the main script completes.

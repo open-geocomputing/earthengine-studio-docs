@@ -7,6 +7,9 @@ lang: de
 translation_key: troubleshooting
 keywords: [Fehler, Authentifizierung, Berechtigung, Runtime, Download]
 ---
+
+[Lokaler Speicher]({{ '/de/local-storage/' | relative_url }}) — Skripte auf der Festplatte speichern, Google verbinden und Git optional nutzen.
+
 ## Konto und Projekt
 
 Prüfen Sie Google-Konto, ausgewähltes Projekt, Earth-Engine-Registrierung und IAM-Rechte. Nach einem Konto- oder Projektwechsel sind alte Callbacks ungültig; führen Sie Skripte nach abgeschlossener Anmeldung erneut aus.

@@ -27,3 +27,7 @@ JavaScript 在隔离的 SES Worker 中运行，Python 使用 Pyodide。可移植
 JavaScript 使用 `exports` 和 `require(...)`；Python 支持常规 import 与 `require(...)`。静态路径可指向当前代码库、GitHub、GitLab 或 GoogleSource。远程 Python 代码需要信任确认。
 
 保存时，Studio 会检查打开时的版本。若远端已修改，则显示冲突而不直接覆盖。**Get Link** 创建不可变快照，但不会授予私有资产访问权。
+
+## 当前工作流程
+
+Console 诊断跳转到原始 JavaScript/Python 行，包括模块和执行选区。错误以红色标记，同步 `getInfo()` 警告为琥珀色。延迟 Earth Engine 错误可定位到起始操作；已执行依赖版本可作为只读快照打开。编辑器上下文导航打开资产或 API 文档，标签页提供复制操作。AI 可以更改草稿语言；有路径的文件保持由文件名决定的语言。

@@ -16,3 +16,7 @@ Die Katalogsuche umfasst offizielle und Community-Datensätze. Prüfen Sie Anbie
 **Docs** durchsucht Klassen, Methoden und Argumente der Earth-Engine-API und kann Symbole in JavaScript oder Python einfügen. Für vollständige Plattformkonzepte verweisen wir auf die [Earth-Engine-Leitfäden](https://developers.google.com/earth-engine/guides?hl=de) und die [API-Referenz](https://developers.google.com/earth-engine/apidocs?hl=de).
 
 Community-Inhalte können sich ändern. Sperren Sie bei reproduzierbaren Analysen nach Möglichkeit Versionen und dokumentieren Sie die Datenquelle.
+
+## Aktueller Ablauf
+
+Docs, Vervollständigung und Hover enthalten JavaScript-Client-Helfer und geerbte Methoden, etwa `ee.ImageCollection.linkCollection` und Sammlungsaggregationen. Kontextnavigation öffnet API oder Asset. Earth-Engine-Werte bleiben verzögert ausgewertete serverseitige Berechnungen.
