@@ -2,7 +2,7 @@
 title: Local storage mode
 description: Keep scripts on disk, connect Google, use optional Git, and recover folder access.
 permalink: /local-storage/
-order: 12
+order: 13
 lang: en
 translation_key: local-storage
 keywords: [local, storage, folders, Git, vault, Google, offline]

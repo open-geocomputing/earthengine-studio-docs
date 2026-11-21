@@ -2,7 +2,7 @@
 title: Data & Docs
 description: Search official and community datasets, inspect complete metadata, insert starter expressions, and use the in-app API reference.
 permalink: /data-and-docs/
-order: 4
+order: 5
 lang: en
 translation_key: data-and-docs
 keywords: [catalog, datasets, STAC, community data, Docs panel, API reference, search, snippets]
@@ -79,6 +79,6 @@ and reduction.
 Studio documentation concentrates on how those APIs interact with this
 workspace. It does not reproduce the complete Earth Engine teaching material.
 
-## Current workflow
+## Details and limits
 
-Docs, completion and hover help now include high-level JavaScript client helpers and inherited methods as well as server algorithms, for example `ee.ImageCollection.linkCollection`, collection aggregation methods and inherited helpers. Use editor context navigation to open the matching API reference or asset. These additions document the callable surface; Earth Engine values remain lazy server-side computations.
+Docs, completion, and hover help include high-level JavaScript client helpers and inherited methods as well as server algorithms, for example `ee.ImageCollection.linkCollection`, collection aggregation methods and inherited helpers. Use editor context navigation to open the matching API reference or asset. These additions document the callable surface; Earth Engine values remain lazy server-side computations.

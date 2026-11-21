@@ -2,7 +2,7 @@
 title: Maps & geometries
 description: Display and inspect Earth Engine layers, choose basemaps, and maintain editable geometry workspaces.
 permalink: /maps-and-geometries/
-order: 5
+order: 6
 lang: en
 translation_key: maps-and-geometries
 keywords: [Map, MapLibre, layers, basemaps, inspector, geometry, GeoJSONL, vector field]
@@ -29,7 +29,7 @@ Map.addLayer(cities.style({color: "72f1b8", fillColor: "17324d55"}), {}, "Region
 
 ## Choose a renderer and basemap
 
-MapLibre is now the only selectable renderer for the main map and script-created maps. Saved OpenLayers and Google Maps preferences normalize to MapLibre. Use `Map.create()` or `Map.create({provider: "maplibre"})`; other provider values raise a compatibility error. Basemap choices remain available. Linked maps synchronize native movements, including maps mounted later in Apps. Unnamed layers infer labels where possible, map controls can be repositioned, and continuous color bars support configurable presentation.
+MapLibre renders the main map and script-created maps. Saved OpenLayers and Google Maps preferences from older versions are treated as MapLibre. Use `Map.create()` or `Map.create({provider: "maplibre"})`; other provider values raise a compatibility error. Basemap choices remain available. Linked maps synchronize native movements, including maps mounted later in Apps. Unnamed layers infer labels where possible, map controls can be repositioned, and continuous color bars support configurable presentation.
 
 OpenStreetMap is the standard basemap. The toolbar and `Map.setOptions(...)`
 also expose attributed Sentinel-2 Cloudless imagery and NASA Blue or Black

@@ -2,7 +2,7 @@
 title: Console & plots
 description: Inspect structured runtime output and create Plotly, Earth Engine chart, or Matplotlib figure tabs.
 permalink: /console-and-plots/
-order: 6
+order: 7
 lang: en
 translation_key: console-and-plots
 keywords: [Console, print, Plotly, ui.Chart, Matplotlib, figures, CSV, PNG, SVG, events]
@@ -27,8 +27,9 @@ change ends callbacks associated with the previous runtime.
 ## Create a native Plotly figure
 
 `ui.Plotly(...)` accepts Plotly data and layout objects from JavaScript or
-Python and opens an interactive figure tab. Nested Earth Engine computed values
-are resolved before the plot is displayed.
+Python and returns a figure handle. Print the handle, call its `show()` method,
+or add it to a panel to open the interactive figure. Nested Earth Engine
+computed values are resolved before the plot is displayed.
 
 ```javascript
 var observations = [
@@ -37,7 +38,7 @@ var observations = [
   {month: "Jun", value: 0.67}
 ];
 
-ui.Plotly({
+var figure = ui.Plotly({
   data: [{
     x: observations.map(function (item) { return item.month; }),
     y: observations.map(function (item) { return item.value; }),
@@ -47,6 +48,7 @@ ui.Plotly({
   }],
   layout: {title: "Seasonal signal", yaxis: {range: [0, 1]}}
 });
+print(figure);
 ```
 
 Figure handles support display, property setters, serial event listeners, and
@@ -102,6 +104,6 @@ For large tabular or raster results, use an export or Studio local download
 instead of routing the entire payload through a figure. Continue with
 [Tasks & exports]({{ '/tasks-and-exports/' | relative_url }}).
 
-## Current workflow
+## Details and limits
 
 A run can complete while printed Earth Engine values are still resolving. Collection previews initially request up to 20 elements; expand `features` to reveal **Load all**, capped at 5,000. Turning off the preview limit applies that cap immediately. Cancel stops a pending preview; Reset invalidates old work. Arrays and structured values remain expandable without duplicated JSON. Python Console and Plotly output use the browser runtime; asynchronous callbacks may continue printing after the main script completes.

@@ -8,6 +8,8 @@
   items:
     - slug: editor
       titles: {en: Editor, fr: Éditeur, de: Editor, es: Editor, pt-br: Editor, zh-cn: 编辑器}
+    - slug: ai-assistant
+      titles: {en: AI assistant, fr: Assistant IA, de: KI-Assistent, es: Asistente de IA, pt-br: Assistente de IA, zh-cn: AI 助手}
     - slug: data-and-docs
       titles: {en: Data & Docs, fr: Données et Docs, de: Daten & Docs, es: Datos y Docs, pt-br: Dados e Docs, zh-cn: 数据与文档}
     - slug: maps-and-geometries
@@ -30,3 +32,9 @@
       titles: {en: Troubleshooting, fr: Dépannage, de: Fehlerbehebung, es: Solución de problemas, pt-br: Solução de problemas, zh-cn: 故障排除}
     - slug: local-storage
       titles: {en: Local storage, fr: Stockage local, de: Lokaler Speicher, es: Almacenamiento local, pt-br: Armazenamento local, zh-cn: 本地存储}
+- labels: {en: Reference, fr: Référence, de: Referenz, es: Referencia, pt-br: Referência, zh-cn: 参考}
+  items:
+    - slug: studio-reference
+      titles: {en: Studio API reference, fr: Référence de l’API Studio, de: Studio-API-Referenz, es: Referencia de la API de Studio, pt-br: Referência da API do Studio, zh-cn: Studio API 参考}
+    - slug: examples
+      titles: {en: Examples, fr: Exemples, de: Beispiele, es: Ejemplos, pt-br: Exemplos, zh-cn: 示例}

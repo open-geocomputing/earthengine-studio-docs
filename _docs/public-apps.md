@@ -2,7 +2,7 @@
 title: Public Apps
 description: Provision managed public-App credentials, choose independent static hosting, manage exact origins, or export a self-managed deployment.
 permalink: /public-apps/
-order: 8
+order: 9
 lang: en
 translation_key: public-apps
 keywords: [public App, managed App, self-managed, GitHub Pages, static hosting, allowed origins, token broker, CDN, service account]
@@ -150,6 +150,6 @@ limited-availability Preview. See
 and
 [service identities](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
 
-## Current workflow
+## Details and limits
 
 App exports include `embed-snippet.html` and `embed-loader.js` for an inline custom-element embed without an iframe. Keep the bundle and attachments together and adjust paths for subdirectory hosting. Managed deployment scans the entry script and captured `require(...)` modules for assets; unresolved dynamic references block deployment. After creating or reusing the dedicated service account, it grants viewer access on detected private assets while preserving unrelated permissions. Failed grants identify the asset and leave deployment resumable.

@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+- Add three guides in all six languages: **AI assistant** (providers,
+  credential remembering, conversations, Allow/Ask/Off policies, and a Studio
+  function reference generated from the application source), **Studio API
+  reference** (script globals, execution limits, modules, Python, exports, Map,
+  `ui`, plotting, and published App runtime), and **Examples** (the public
+  catalog with **Open in Studio** links). A new **Reference** sidebar group
+  holds the last two.
+- Replace the shortened translations with complete French, German, Spanish,
+  Brazilian Portuguese, and Simplified Chinese translations of every guide.
+  Each records `translated_from`, the English revision it follows;
+  `scripts/check_translations.rb` reports stale translations, and stale pages
+  show a notice linking to the English guide.
+- Rename the release-note "Current workflow" sections to "Details and limits",
+  remove release-note phrasing and internal details, and fix the `ui.Plotly`
+  sample, which never displayed its figure.
+- Add `scripts/sync_studio_data.mjs`, which syncs the AI function table, the
+  example catalog, and the application commit the docs match, and lists
+  application changes since the last sync (`--drift`). Guides show the
+  matching Studio date and commit.
+- SEO: replace `jekyll-seo-tag` with `_includes/seo.html` (branded titles,
+  social card image, `og:locale` and alternates, `TechArticle` and
+  `BreadcrumbList` JSON-LD), date guides and sitemap entries from Git history
+  with `jekyll-last-modified-at`, and mark the 404 page `noindex`.
+- Agents: publish a Markdown copy of every guide at `/<guide>/index.md`, plus
+  `/llms.txt` and `/llms-full.txt`; add `AGENTS.md`.
+- Performance: load the logo animation renderer after page load and play it
+  once per browser session.
+
 - Refresh user documentation against application changes since the July 26 public
   documentation maintenance, through `cab1150`. Add a practical local storage
   guide in all six languages and correct browser-only versus remembered Google

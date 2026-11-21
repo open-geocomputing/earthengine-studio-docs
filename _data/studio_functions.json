@@ -1,0 +1,568 @@
+{
+  "families": [
+    {
+      "id": "editor",
+      "label": "Editor"
+    },
+    {
+      "id": "project",
+      "label": "Project files"
+    },
+    {
+      "id": "runtime",
+      "label": "Run, Console and scene"
+    },
+    {
+      "id": "map",
+      "label": "Map view and layers"
+    },
+    {
+      "id": "inspector",
+      "label": "Inspector"
+    },
+    {
+      "id": "plots",
+      "label": "Charts"
+    },
+    {
+      "id": "geometry",
+      "label": "Geometries"
+    },
+    {
+      "id": "tasks",
+      "label": "Tasks"
+    },
+    {
+      "id": "assets",
+      "label": "Assets"
+    },
+    {
+      "id": "downloads",
+      "label": "Downloads"
+    },
+    {
+      "id": "git",
+      "label": "Git"
+    },
+    {
+      "id": "apps",
+      "label": "Apps"
+    },
+    {
+      "id": "knowledge",
+      "label": "Catalog and documentation"
+    }
+  ],
+  "functions": [
+    {
+      "name": "studio.get_editor_language",
+      "family": "editor",
+      "family_label": "Editor",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read the active editor language, including javascript, python, or a non-executable document language."
+    },
+    {
+      "name": "studio.read_active_file",
+      "family": "editor",
+      "family_label": "Editor",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read the complete file currently active in the code editor."
+    },
+    {
+      "name": "studio.replace_active_file",
+      "family": "editor",
+      "family_label": "Editor",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Replace the active editor file, preserving an undo step. This does not commit the remote file."
+    },
+    {
+      "name": "studio.set_editor_language",
+      "family": "editor",
+      "family_label": "Editor",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Select javascript or python for the active scratch editor using its language controls. Does not translate or run code. Path-bound local, repository, and module files cannot change language here."
+    },
+    {
+      "name": "studio.list_project_files",
+      "family": "project",
+      "family_label": "Project files",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List files and folders at one path in a connected Git project."
+    },
+    {
+      "name": "studio.open_project_file",
+      "family": "project",
+      "family_label": "Project files",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read a Git project file and open it in the Studio editor."
+    },
+    {
+      "name": "studio.capture_screenshot",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "capture",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": true,
+      "description": "Capture the visible map canvas. By default, wait only for the active render and continue immediately when every tracked layer is loaded."
+    },
+    {
+      "name": "studio.get_console_output",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": true,
+      "description": "Read bounded Console messages and resolved print values, optionally from one visible script run. Use this after studio.run_code to verify results and errors."
+    },
+    {
+      "name": "studio.get_info_probe",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "execute",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Run one small read-only Earth Engine expression through getInfo only to improve visible code or select an asset. Never use this hidden exploratory result as the answer to an analytical question."
+    },
+    {
+      "name": "studio.get_scene_status",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Report script execution and per-layer map tile loading progress."
+    },
+    {
+      "name": "studio.reset_runtime",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "execute",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Press the active editor's real Reset action, clearing its execution context, Console, map layers, pending exports, and runtime state."
+    },
+    {
+      "name": "studio.run_code",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "execute",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": true,
+      "description": "Press the active editor file's real Run action. By default wait for that visible script run to finish and return its run ID for Console inspection."
+    },
+    {
+      "name": "studio.wait_for_scene",
+      "family": "runtime",
+      "family_label": "Run, Console and scene",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": true,
+      "description": "Wait only while the current render is active, then return immediately when code execution ends and every tracked map layer finishes loading."
+    },
+    {
+      "name": "studio.get_map_view",
+      "family": "map",
+      "family_label": "Map view and layers",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read a map's centre [longitude, latitude], zoom, bearing, pitch, visible bounds [west, south, east, north], scene mode, current basemap, the selectable basemaps, and the ids of the other open maps."
+    },
+    {
+      "name": "studio.list_map_layers",
+      "family": "map",
+      "family_label": "Map view and layers",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List a map's script layers bottom first with id, name, type, visibility, opacity, stacking order, tile progress, and a compact visualization summary (bands, min/max, palette, styling). Geometry layers are listed by studio.list_geometries."
+    },
+    {
+      "name": "studio.set_map_layer",
+      "family": "map",
+      "family_label": "Map view and layers",
+      "permission": "write",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Change one existing map layer's visibility, opacity (0 to 1), and/or stacking position (order 0 is the bottom). Does not create, delete, or restyle layers; the next script run rebuilds them from code."
+    },
+    {
+      "name": "studio.set_map_view",
+      "family": "map",
+      "family_label": "Map view and layers",
+      "permission": "write",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Move a map: set centre and/or zoom, or fit bounds [west, south, east, north] (optionally with a fixed zoom), and/or change the basemap. Returns the resulting view. This changes only the Studio view, not the script."
+    },
+    {
+      "name": "studio.inspect_map_point",
+      "family": "inspector",
+      "family_label": "Inspector",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read values at a longitude/latitude from a map's visible layers with Studio's Inspector: Earth Engine image band values (sampled at the map zoom's scale unless zoom is given) and properties of local vector features. Results are bounded; unsupported layers say why."
+    },
+    {
+      "name": "studio.get_chart_data",
+      "family": "plots",
+      "family_label": "Charts",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read one chart's title, axis titles, series (name, type, and up to maxPoints x/y/labels/values per series), and its source data table when available. truncated reports any cut data. Static image charts return no data."
+    },
+    {
+      "name": "studio.list_charts",
+      "family": "plots",
+      "family_label": "Charts",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List charts (ui.Chart, Plotly, Matplotlib) most recent first with id, name, status, where they are shown (console, app, or tab), title, chart types, and series count. Set consoleOnly to list only charts printed to the Console."
+    },
+    {
+      "name": "studio.create_geometry",
+      "family": "geometry",
+      "family_label": "Geometries",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Create or replace a validated GeoJSON geometry layer attached to the active editor document and refresh it on the map."
+    },
+    {
+      "name": "studio.delete_geometry",
+      "family": "geometry",
+      "family_label": "Geometries",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Delete one named geometry layer from the active editor document."
+    },
+    {
+      "name": "studio.list_geometries",
+      "family": "geometry",
+      "family_label": "Geometries",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List geometry layers attached to the active editor document, including type, visibility, feature count, color, and bounds."
+    },
+    {
+      "name": "studio.cancel_task",
+      "family": "tasks",
+      "family_label": "Tasks",
+      "permission": "execute",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Cancel one queued or running Earth Engine task by its operation ID (projects/{project}/operations/{ID} or the bare task ID in the current project)."
+    },
+    {
+      "name": "studio.get_task",
+      "family": "tasks",
+      "family_label": "Tasks",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read one Earth Engine task by id or full operation name (projects/<project>/operations/<id>) among the 500 most recent tasks."
+    },
+    {
+      "name": "studio.list_tasks",
+      "family": "tasks",
+      "family_label": "Tasks",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List the signed-in project's Earth Engine tasks, most recent first, with id, description, type, state, timing, compute usage, destinations, and error message. Optionally filter by states or a description substring. Read-only: it does not start or cancel tasks."
+    },
+    {
+      "name": "studio.start_export_task",
+      "family": "tasks",
+      "family_label": "Tasks",
+      "permission": "execute",
+      "default_policy": "ask",
+      "conversation_limit": 5,
+      "can_skip_wait": false,
+      "description": "Start one unsubmitted export from the Tasks panel, exactly as its Run button does. The export must already exist: write an Export.image/table/video.toDrive, toCloudStorage, or toAsset call in the visible script and run it with studio.run_code first. Identify it by draftId or by its exact description. At most 5 starts per conversation."
+    },
+    {
+      "name": "studio.copy_asset",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Copy one Earth Engine image or table asset to a new asset ID. Existing destinations are kept unless overwrite is true."
+    },
+    {
+      "name": "studio.create_asset_folder",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Create one empty Earth Engine folder or image collection. The parent folder must already exist."
+    },
+    {
+      "name": "studio.delete_asset",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "write",
+      "default_policy": "off",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Permanently delete one Earth Engine asset. A non-empty folder or image collection is refused unless recursive is exactly true, and even then only when it holds at most 25 descendants."
+    },
+    {
+      "name": "studio.get_asset_access",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Read who can view or edit one Earth Engine asset: readers, writers, and whether it is public."
+    },
+    {
+      "name": "studio.get_asset_roots",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Report the current project's Earth Engine asset root and, when Earth Engine exposes it for that root, its asset count and storage quota."
+    },
+    {
+      "name": "studio.list_assets",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List one page of the direct children of an Earth Engine asset folder or image collection (at most 100 per call). Omit parent for the current project's asset root."
+    },
+    {
+      "name": "studio.move_asset",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Move or rename one Earth Engine asset. The destination must not exist and its parent folder must exist."
+    },
+    {
+      "name": "studio.search_assets",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Search assets by their own name (case-insensitive substring, not the parent path) below one root folder, descending folders up to maxDepth levels. Bounded by request count and time; reports truncated when the walk stopped early. Image collections are not searched inside unless includeCollectionImages is true."
+    },
+    {
+      "name": "studio.update_asset_access",
+      "family": "assets",
+      "family_label": "Assets",
+      "permission": "write",
+      "default_policy": "off",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Change who can read or write one Earth Engine asset (not its children). addReaders and addWriters set that principal's role (replacing a previous one). Principals must be typed: user:EMAIL, group:EMAIL, serviceAccount:EMAIL, or domain:DOMAIN. Public access changes only when \"public\" is given explicitly. At most 20 principal changes per call. Returns the policy before and after."
+    },
+    {
+      "name": "studio.start_local_download",
+      "family": "downloads",
+      "family_label": "Downloads",
+      "permission": "execute",
+      "default_policy": "ask",
+      "conversation_limit": 5,
+      "can_skip_wait": false,
+      "description": "Start one unsubmitted browser-local download created by Export.image.toFolder or Export.table.toFolder in the visible script, as a ZIP file saved by the browser (folder output needs the user's folder picker in the Tasks panel). Identify it by downloadId or exact description. Raster downloads with explicit dimensions are limited to 100000000 pixels. At most 5 per conversation."
+    },
+    {
+      "name": "studio.ensure_project_branch",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Select an existing Git project branch, or create it from the current branch when requested."
+    },
+    {
+      "name": "studio.git_branches",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Show the linked branch, the default branch, and the branches of the linked repository."
+    },
+    {
+      "name": "studio.git_commit",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Commit unsaved editor changes on the linked branch in one atomic commit: either the listed paths or all changes. Refused on the default branch unless confirmDefaultBranch is true. Returns the commit ID and files."
+    },
+    {
+      "name": "studio.git_delete_branch",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "write",
+      "default_policy": "off",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Delete a branch of the linked repository. Never the default branch or the linked branch. confirmBranch must repeat the branch name exactly."
+    },
+    {
+      "name": "studio.git_diff",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Show a bounded unified diff of unsaved editor changes on the linked branch (scope 'working', whole or one path), or the files that differ between the linked branch and the default branch (scope 'branch')."
+    },
+    {
+      "name": "studio.git_log",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "List the most recent commits on the linked repository branch, newest first."
+    },
+    {
+      "name": "studio.git_status",
+      "family": "git",
+      "family_label": "Git",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Show the linked repository branch: open editor files with unsaved changes on it, and how far the branch is ahead of or behind the default branch."
+    },
+    {
+      "name": "studio.open_app_publish_dialog",
+      "family": "apps",
+      "family_label": "Apps",
+      "permission": "write",
+      "default_policy": "ask",
+      "conversation_limit": 3,
+      "can_skip_wait": false,
+      "description": "Open the open App preview's 'Export public App' dialog with a deployment method preselected ('managed' or 'portable'). Publishes nothing: the user reviews and completes every step in the dialog."
+    },
+    {
+      "name": "studio.preview_app",
+      "family": "apps",
+      "family_label": "Apps",
+      "permission": "capture",
+      "default_policy": "ask",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Run the active script with its real Run action so its ui.root / ui.App opens as an App preview, then return a bounded outline of the App's widgets and, unless captureMaps is false, downscaled images (at most 1024 px) of up to two App maps once their layers load. Widgets outside maps are described, not photographed."
+    },
+    {
+      "name": "studio.get_asset_info",
+      "family": "knowledge",
+      "family_label": "Catalog and documentation",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Inspect exactly one catalog dataset or accessible Earth Engine asset. Return only requested sections, with paginated bands/properties capped at 50; never returns a complete catalog or raw asset payload."
+    },
+    {
+      "name": "studio.get_documentation_entry",
+      "family": "knowledge",
+      "family_label": "Catalog and documentation",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Get one exact Earth Engine or Studio API documentation entry with signature, arguments, defaults, return type, deprecation state, and reference link."
+    },
+    {
+      "name": "studio.get_guide",
+      "family": "knowledge",
+      "family_label": "Catalog and documentation",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Get one concise Earth Engine Studio capability guide without loading unrelated documentation."
+    },
+    {
+      "name": "studio.search_catalog",
+      "family": "knowledge",
+      "family_label": "Catalog and documentation",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Search the official and community Earth Engine dataset catalog with compact results, up to 50 per call, and optional temporal, spatial, resolution, source, type, provider, category, keyword, band, and status filters."
+    },
+    {
+      "name": "studio.search_documentation",
+      "family": "knowledge",
+      "family_label": "Catalog and documentation",
+      "permission": "read",
+      "default_policy": "allow",
+      "conversation_limit": null,
+      "can_skip_wait": false,
+      "description": "Search Earth Engine and Studio API documentation, returning compact signatures and descriptions instead of the complete documentation bundle."
+    }
+  ]
+}

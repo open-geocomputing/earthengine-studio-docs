@@ -10,8 +10,38 @@
   let searchIndex = null;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Fetch the Lottie renderer only after the page has loaded, and play the
+  // logo animation once per browser session rather than on every guide.
+  const lottieSource = document.currentScript?.dataset.lottieSrc;
+  let lottieLoading = null;
+  const loadLottie = () => {
+    if (window.lottie) return Promise.resolve(window.lottie);
+    if (!lottieSource) return Promise.reject(new Error("No Lottie source"));
+    lottieLoading ??= new Promise((resolve, reject) => {
+      const start = () => {
+        const script = document.createElement("script");
+        script.src = lottieSource;
+        script.async = true;
+        script.onload = () => (window.lottie ? resolve(window.lottie) : reject(new Error("Lottie unavailable")));
+        script.onerror = () => reject(new Error("Lottie failed to load"));
+        document.head.append(script);
+      };
+      const idle = () => ("requestIdleCallback" in window ? window.requestIdleCallback(start, { timeout: 2000 }) : window.setTimeout(start, 200));
+      if (document.readyState === "complete") idle();
+      else window.addEventListener("load", idle, { once: true });
+    });
+    return lottieLoading;
+  };
+  let logoPlayed = false;
+  try { logoPlayed = sessionStorage.getItem("studio-docs-logo-played") === "true"; } catch { /* Play the animation. */ }
+
   const initializeLogo = (element) => {
-    if (reducedMotion || element.dataset.logoReady === "true" || !window.lottie) return;
+    if (reducedMotion || logoPlayed || element.dataset.logoReady === "true") return;
+    if (!window.lottie) {
+      loadLottie().then(() => initializeLogo(element)).catch(() => { /* The static logo remains visible. */ });
+      return;
+    }
+    try { sessionStorage.setItem("studio-docs-logo-played", "true"); } catch { /* Storage is optional. */ }
     const container = element.querySelector(".studio-logo-animation");
     const path = element.dataset.animationPath;
     if (!container || !path) return;

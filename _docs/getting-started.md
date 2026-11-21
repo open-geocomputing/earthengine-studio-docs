@@ -128,6 +128,6 @@ for files, modules, saves, and sharing. For Earth Engine data types and analysis
 concepts, use Google's [developer guides](https://developers.google.com/earth-engine/guides)
 as the authoritative reference.
 
-## Current workflow
+## Details and limits
 
 Choose Local with a folder or Online at startup. Google is required for Earth Engine execution, not local file editing. The project picker remains usable after access failures; choose another project or retry, allowing up to one minute for verification. Monthly quota indicators appear only when usage and allocation can be read; missing indicators do not mean zero usage. Local Monitoring consent is optional. Sessions attempt recovery after sleep or reconnect before requiring interactive sign-in.

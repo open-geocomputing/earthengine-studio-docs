@@ -23,8 +23,8 @@ defaults:
       layout: doc
 
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-last-modified-at
 
 markdown: kramdown
 highlighter: rouge
@@ -36,6 +36,7 @@ kramdown:
       line_numbers: false
 
 exclude:
+  - AGENTS.md
   - CHANGES.md
   - Gemfile
   - Gemfile.lock

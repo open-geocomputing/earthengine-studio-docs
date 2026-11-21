@@ -11,8 +11,15 @@ layout: default
         <p class="eyebrow">{{ ui.guide_label }}</p>
         <h1>{{ page.title }}</h1>
         <p>{{ page.description }}</p>
+        {% if page.translation_stale %}
+        {% assign english_url = "/" | append: page.translation_key | append: "/" %}
+        <p class="doc-translation-notice" lang="{{ page.lang }}">{{ ui.translation_stale }} <a href="{{ english_url | relative_url }}" hreflang="en">{{ ui.read_english }}</a></p>
+        {% endif %}
       </header>
       <div class="doc-content" data-doc-content>{{ content }}</div>
+      <p class="doc-meta">
+        {% if site.data.studio.synced_date %}{{ ui.docs_current }} {{ site.data.studio.synced_date | date: "%Y-%m-%d" }} (<code>{{ site.data.studio.synced_commit }}</code>) · {% endif %}<a href="{{ page.url | append: 'index.md' | relative_url }}" type="text/markdown">{{ ui.markdown_copy }}</a>
+      </p>
       {% include doc-pagination.html %}
     </article>
     <aside class="page-toc" aria-label="{{ ui.toc }}">

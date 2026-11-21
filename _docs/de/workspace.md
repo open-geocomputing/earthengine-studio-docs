@@ -1,32 +1,140 @@
 ---
 title: Arbeitsbereich
-description: Panels, Tabs, Layouts, Designs und die Wiederherstellung des Studio-Arbeitsbereichs verwalten.
+description: Studio-Bereiche anordnen, lokalen Kontext bewahren, Einstellungen des Arbeitsbereichs ändern und lokale Zustandsprobleme beheben.
 permalink: /de/workspace/
 order: 2
 lang: de
 translation_key: workspace
-keywords: [Arbeitsbereich, Panels, Tabs, Layout, Design]
+keywords: [Layout, Bereiche, Tabs, Popout, Design, Persistenz, Einstellungen, Zurücksetzen, Wiederherstellung]
+translated_from: 3afc6a807054
 ---
 
-[Lokaler Speicher]({{ '/de/local-storage/' | relative_url }}) — Skripte auf der Festplatte speichern, Google verbinden und Git optional nutzen.
+[Lokaler Speichermodus]({{ '/de/local-storage/' | relative_url }}) — Skripte auf der Festplatte speichern, Google verbinden, optional Git nutzen und den Ordnerzugriff wiederherstellen.
 
-## Aufbau
 
-Studio ordnet **Scripts**, **Docs**, **Assets** und **Tasks** neben Editor, Karten, Konsole und Diagrammen an. Tabs lassen sich verschieben, teilen oder in ein separates Fenster lösen. Panelgrenzen können per Tastatur oder Zeiger angepasst werden.
+## Das Standardlayout verstehen
 
-Studio schützt immer einen Editor-Tab. Weder die Schließen-Schaltfläche noch
+Studio beginnt mit vier Arbeitsbereichen:
+
+- Die linke Tab-Gruppe enthält **Scripts**, **Docs**, **Assets** und
+  **Settings**.
+- Die Mitte nimmt Editor-Dokumente, Dataset-Details, Asset-Details und
+  Diagramm-Tabs auf.
+- Die rechte Tab-Gruppe enthält **Inspector**, **Console** und **Tasks**.
+- Der untere Bereich enthält die Haupt-**Map** und alle von Skripten erzeugten
+  Karten.
+
+Ziehen Sie die Trennlinien, um die Größe eines Bereichs zu ändern. Ziehen Sie
+einen Tab in eine andere Tab-Gruppe, um den Arbeitsbereich neu zu ordnen.
+Maximieren Sie eine Tab-Gruppe, wenn eine Aufgabe mehr Platz braucht, und
+stellen Sie sie anschließend wieder her, ohne die übrige Anordnung zu verlieren.
+
+## Mit Tabs arbeiten
+
+Ein Editor-Tab steht für ein lokal gespeichertes Dokument. Entfernte Dateien
+behalten ihr Repository, ihren Branch, ihren Pfad und die geöffnete Revision.
+Dataset- und Asset-Detail-Tabs halten Referenzinformationen neben der Analyse
+bereit, statt sie zu ersetzen.
+
+Über das Kontextmenü eines Tabs können Sie verwandte Tabs schließen, kürzlich
+geschlossene Editor-Dokumente erneut öffnen oder den Fokus in einem überfüllten
+Layout wiederherstellen. Das Schließen eines lokalen Editors verwirft den
+zugehörigen Wiederherstellungsdatensatz nicht sofort. Studio schützt stets
+einen Editor-Tab: Eine Schaltfläche zum Schließen oder die Sammelaktionen
 **Close**, **Close Other Tabs** oder **Close Tabs to the Right** können das
-letzte Dokument entfernen und den Codebereich verschwinden lassen. Schließbare
-Nicht-Editor-Tabs wie Settings bleiben davon unabhängig.
+letzte Editor-Dokument nicht entfernen und so den Code-Arbeitsbereich zum
+Verschwinden bringen. Schließbare Tabs, die keine Editoren sind, etwa Settings,
+bleiben von dieser Schutzmaßnahme unabhängig.
 
-## Persistenz und Designs
+Map- und Editor-Tabs, die Popout unterstützen, lassen sich in ein separates
+Browserfenster lösen. Das ist für einen zweiten Monitor nützlich, aber das
+abgelöste Fenster gehört weiterhin zur selben Studio-Sitzung. Wird die
+Host-Sitzung geschlossen, enden ihre Laufzeitverbindungen.
 
-Layout, offene Dokumente und Entwürfe werden lokal gespeichert. **Day**, **Night** und **System** ändern die gesamte Oberfläche. Ein gelöstes Fenster gehört weiterhin zur aktuellen Sitzung; schließen Sie es, um den Tab in den Hauptarbeitsbereich zurückzuholen.
+## Layout-Voreinstellungen verwenden
 
-## Wiederherstellung
+Das Steuerelement für den Arbeitsbereich in der oberen Leiste bietet
+aufgabenorientierte Voreinstellungen. Eine Voreinstellung ändert die relative
+Platzierung und Größe der Bereiche; sie löscht keine Dokumente, Geometrien,
+Tasks oder Repositories. Nach der Wahl einer Voreinstellung können Sie weiter
+Größen ändern oder Tabs verschieben – die entstehende Anordnung wird zum
+nächsten gemerkten Layout.
 
-Bei einem defekten Layout setzen Sie zuerst einzelne Panels zurück und laden dann neu. Ein vollständiger Workspace-Reset entfernt lokale Layoutdaten, jedoch keine bereits in einem Repository gespeicherten Dateien. Speichern Sie wichtige Entwürfe vorher.
+**Settings** bietet außerdem ein **AI first**-Layout: ein breiter Seitenbereich
+mit ausgewählter KI-Konversation neben Editor, Ausgabe und Karte.
 
-## Aktueller Ablauf
+Wenn ein Bereich geschlossen ist, öffnen Sie ihn über dasselbe
+Arbeitsbereich-Steuerelement erneut. Unabhängige Bereiche werden nur bei Bedarf
+geladen und zeigen eine Wiederholen-Aktion, wenn ein Feature-Bundle nicht
+startet.
 
-Die Werkzeugleiste passt sich schmalen Bereichen an. Loom Companion bestätigt Abschlüsse und verhindert falsche Verbindungsfehler nach fertigen Codex-Antworten. Entwicklungsverbindungen können auf die veröffentlichte Erweiterung zurückfallen; Freigabe der exakten Herkunft bleibt nötig. KI-Repositoryfehler zeigen lesbare Meldungen. Interne Refaktorierungen erhalten Layout und Skript-API; Architektur und Prüfabläufe stehen im Quellrepository.
+## Wissen, was Studio sich merkt
+
+Studio speichert Arbeitskontext im Browser, darunter:
+
+- geöffnete Editor-Dokumente und das ausgewählte Dokument;
+- FlexLayout-Positionen, -Größen und ausgewählte Tabs;
+- Einrückung und Sprachwahl des Editors für Entwürfe;
+- die Designeinstellung Day, Night oder Auto;
+- Renderer, Basiskarte und zuletzt verwendeten Ausschnitt der Hauptkarte;
+- angezeigte Repositories, ausgewählte Branches und aufgeklappte Ordner;
+- ausgewählte Verhaltensweisen des Arbeitsbereichs, etwa das Öffnen von Console
+  bei Fehlern.
+
+Dieser lokale Zustand ist praktisch, aber kein Ersatz für die Speicherung in
+einem Repository. Ungespeicherte Entwürfe und begleitende
+Geometrie-Arbeitsbereiche existieren nur im aktuellen Browserprofil, bis Sie
+sie remote speichern oder den Arbeitsbereich zurücksetzen.
+
+Von Skripten erzeugte Map-Tabs und Plot-Tabs sind Sitzungszustand. Sie werden
+nach einem vollständigen Neuladen nicht als entfernte Artefakte
+wiederhergestellt.
+
+## Einstellungen ändern
+
+Öffnen Sie **Settings** über den linken Bereich oder die obere Leiste.
+Häufige Optionen sind:
+
+- **Theme:** Auto folgt dem Betriebssystem; Day und Night bleiben fest.
+- **Indentation:** Wählen Sie die für neue Bearbeitungen verwendete
+  Tab-Breite des Editors.
+- **Workspace modes:** Aktivieren Sie Local folders, Hosted services oder
+  beides; wählen Sie das bevorzugte Ziel für neue Dateien. Karten verwenden
+  MapLibre.
+- **Default basemap:** Wählen Sie den Starthintergrund der Hauptkarte.
+- **Approximate location:** Fordern Sie optional eine ungenaue
+  Browser-Standortbestimmung an, wenn keine gemerkte Kartenansicht vorhanden
+  ist.
+- **Plot destination:** Legen Sie fest, wo neue Diagramm-Tabs eingefügt werden.
+- **Console on error:** Bringt Console nach vorn, wenn ein Lauf einen Fehler
+  meldet.
+
+Einstellungen, die die aktive Laufzeit betreffen, gelten für künftige
+Aktivitäten. Bereits von Skripten erzeugte Karten behalten den Provider, der
+bei ihrer Erstellung gewählt war.
+
+## Lokalen Zustand sicher zurücksetzen
+
+Verwenden Sie die Zurücksetzen-Aktion in Settings, wenn beschädigter lokaler
+Zustand den normalen Start verhindert oder Sie einen sauberen
+Browser-Arbeitsbereich wünschen. Studio listet vor der Bestätigung die
+betroffenen Browser- und Remote-Einstellungsbereiche auf.
+
+Das Zurücksetzen löscht **keine** Earth-Engine-Assets, keine Dateien in
+entfernten Repositories und keine bereits gesendeten Earth-Engine-Operationen.
+Es kann ungespeicherte lokale Entwürfe, angehängte lokale Dateien, gemerkte
+Layouts, Geometrie-Arbeitsbereiche und lokale UI-Einstellungen entfernen.
+Speichern Sie wertvolle Arbeit in einem Repository, bevor Sie bestätigen.
+
+Bei einem Problem mit einem einzelnen Bereich versuchen Sie zuerst dessen
+Wiederholen-Steuerelement oder laden Sie die Seite neu, bevor Sie alles
+zurücksetzen. Hinweise zur Wiederherstellung bei Authentifizierungs- und
+Laufzeitproblemen finden Sie unter
+[Fehlerbehebung]({{ '/de/troubleshooting/' | relative_url }}).
+
+## Details und Grenzen
+
+Die Symbolleiste passt sich schmalen Arbeitsbereichen an und gibt der Suche die
+verfügbare Breite. Zum KI-Tab, seinen Providern und seinen
+Genehmigungsrichtlinien siehe
+[KI-Assistent]({{ '/de/ai-assistant/' | relative_url }}).

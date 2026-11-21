@@ -51,6 +51,9 @@ the relative placement and size of panels; it does not delete documents,
 geometries, tasks, or repositories. After choosing a preset, continue resizing
 or moving tabs—the resulting arrangement becomes the next remembered layout.
 
+**Settings** also offers an **AI first** layout: a wide side pane with the AI
+conversation selected, beside the editor, output, and map.
+
 If a panel is closed, reopen it from the same workspace control. Independent
 panels load only when needed and show a retry action if a feature bundle fails
 to start.
@@ -106,6 +109,8 @@ For a single panel problem, try its retry control or reload the page before
 resetting everything. See [Troubleshooting]({{ '/troubleshooting/' | relative_url }})
 for authentication and runtime recovery steps.
 
-## Current workflow
+## Details and limits
 
-The toolbar adapts to narrow workspaces and gives search available width. Loom Companion completion acknowledgements prevent completed Codex responses from being mislabeled as disconnected. Development connections may fall back to the published extension when the configured extension is unavailable; exact-origin approval still applies. AI repository failures now show readable provider messages. Internal refactors preserve the workspace layout and public script APIs; contributor architecture and validation details remain in the source repository.
+The toolbar adapts to narrow workspaces and gives search the available width.
+For the AI tab, its providers, and its approval policies, see
+[AI assistant]({{ '/ai-assistant/' | relative_url }}).

@@ -1,0 +1,629 @@
+{
+  "repository": "https://github.com/open-geocomputing/earthengine-studio-examples",
+  "groups": [
+    {
+      "id": "examples",
+      "title": "Studio basics",
+      "examples": [
+        {
+          "id": "sentinel-2-map-layer",
+          "title": "Sentinel-2 map layer",
+          "summary": "Adds NDVI, mosaics Sentinel-2, and draws a true-color layer.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Fsentinel-2-map-layer.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/sentinel-2-map-layer.ee.js"
+        },
+        {
+          "id": "collection-summary",
+          "title": "Collection summary",
+          "summary": "Prints count, scene IDs, cloud values, and first image.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Fcollection-summary.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/collection-summary.ee.js"
+        },
+        {
+          "id": "ndvi-bands",
+          "title": "NDVI bands",
+          "summary": "Maps over images, adds NDVI, and selects derived bands.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Fndvi-bands.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/ndvi-bands.ee.js"
+        },
+        {
+          "id": "plotly-and-ui-chart",
+          "title": "Plotly and ui.Chart",
+          "summary": "Opens native Plotly and Earth Engine time-series tabs with interactive callbacks.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Fplotly-and-ui-chart.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/plotly-and-ui-chart.ee.js"
+        },
+        {
+          "id": "map-layer-opacity",
+          "title": "Map layer opacity",
+          "summary": "Adds visible and hidden layers with separate opacity values.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Fmap-layer-opacity.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/map-layer-opacity.ee.js"
+        },
+        {
+          "id": "animated-wind-field",
+          "title": "Animated wind field",
+          "summary": "Renders ERA5 particles and zoom-adaptive equal-area globe arrows without polar clustering.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Fanimated-wind-field.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/animated-wind-field.ee.js"
+        },
+        {
+          "id": "local-folder-downloads",
+          "title": "Local folder downloads",
+          "summary": "Registers a tiny elevation raster and three-point table for local-download testing.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fexamples%2Flocal-downloads.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/examples/local-downloads.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "ui-apps",
+      "title": "UI Apps",
+      "examples": [
+        {
+          "id": "ui-apps-console-widgets",
+          "title": "Interactive Console widgets",
+          "summary": "Prints live UI controls in Console without opening an App.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fconsole-widgets.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/console-widgets.ee.js"
+        },
+        {
+          "id": "ui-apps-styled-app",
+          "title": "Styled App and header",
+          "summary": "Builds an App with a page header, reusable classes, scoped CSS, and callbacks.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fstyled-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/styled-app.ee.js"
+        },
+        {
+          "id": "ui-apps-map-overlay",
+          "title": "Map overlay App",
+          "summary": "Adds interactive controls over an App map while preserving Studio's main Map.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fmap-overlay-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/map-overlay-app.ee.js"
+        },
+        {
+          "id": "ui-apps-cartographic-display-overlays",
+          "title": "Cartographic display overlays",
+          "summary": "Explores rotating north symbols, adaptive graticules, WebGL scale styles, units, layouts, and decorative map annotations.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fcartographic-display-overlays.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/cartographic-display-overlays.ee.js"
+        },
+        {
+          "id": "ui-apps-split-map",
+          "title": "Split-map App",
+          "summary": "Composes two independent ui.Map widgets in a horizontal SplitPanel.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fsplit-map-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/split-map-app.ee.js"
+        },
+        {
+          "id": "ui-apps-linked-maps",
+          "title": "Linked-map App",
+          "summary": "Synchronizes two App maps so panning or zooming either viewport moves both.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Flinked-maps-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/linked-maps-app.ee.js"
+        },
+        {
+          "id": "ui-apps-angled-split-panel",
+          "title": "Angled SplitPanel App",
+          "summary": "Uses Studio's draggable angled wipe to compare two linked maps.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fangled-split-panel-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/angled-split-panel-app.ee.js"
+        },
+        {
+          "id": "ui-apps-corine-legend",
+          "title": "CORINE metadata legend",
+          "summary": "Builds a 44-class map legend automatically from homogeneous ImageCollection metadata.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fcorine-legend-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/corine-legend-app.ee.js"
+        },
+        {
+          "id": "ui-apps-color-bar",
+          "title": "Continuous color bars",
+          "summary": "Reuses logarithmic map visualization parameters in horizontal custom-tick and vertical automatic-tick color bars.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fcolor-bar-app.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/color-bar-app.ee.js"
+        },
+        {
+          "id": "ui-apps-chart-dashboard",
+          "title": "Embedded chart dashboard",
+          "summary": "Embeds a Plotly chart in an App and routes point clicks back to the Worker.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fui-apps%2Fchart-dashboard.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/ui-apps/chart-dashboard.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "map-experiments",
+      "title": "Map Experiments",
+      "examples": [
+        {
+          "id": "client-side-point-symbols",
+          "title": "Client-side point symbols",
+          "summary": "Combines local GeoJSON, literal Earth Engine points, and WRI global power plants with MapLibre symbols, multiline labels, property overrides, zoom visibility, effects, and screen-stable orientation.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Fclient-side-point-symbols.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/client-side-point-symbols.ee.js"
+        },
+        {
+          "id": "sentinel-2-single-orbit-globe",
+          "title": "Sentinel-2 orbit globe",
+          "summary": "Recovered globe-view script using Map.setViewStyle from the dynamic map branch.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Fsentinel-2-orbit-globe.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/sentinel-2-orbit-globe.ee.js"
+        },
+        {
+          "id": "dynamic-compute-pixels-globe",
+          "title": "Dynamic computePixels globe",
+          "summary": "Renders raw Earth Engine pixels dynamically with a projection-aware palette on the globe.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Fdynamic-compute-pixels-globe.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/dynamic-compute-pixels-globe.ee.js"
+        },
+        {
+          "id": "custom-shader-globe",
+          "title": "Custom shader globe",
+          "summary": "Defines a constrained GLSL color expression in Earth Engine code and curves it over the globe.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Fcustom-shader-globe.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/custom-shader-globe.ee.js"
+        },
+        {
+          "id": "multiple-maps",
+          "title": "Multiple maps",
+          "summary": "Recovered ui.Map demo that opens separate Alps and Patagonia map tabs.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Fmultiple-maps.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/multiple-maps.ee.js"
+        },
+        {
+          "id": "innsbruck-3d-terrain",
+          "title": "Innsbruck 3D terrain",
+          "summary": "Recovered SCENE3D GLO30 terrain and Sentinel-2 imagery preset.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Finnsbruck-3d-terrain.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/innsbruck-3d-terrain.ee.js"
+        },
+        {
+          "id": "torres-del-paine-globe-terrain",
+          "title": "Torres del Paine terrain",
+          "summary": "Recovered globe terrain scene with Sentinel-2 and Landsat 9 imagery.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Ftorres-del-paine-terrain.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/torres-del-paine-terrain.ee.js"
+        },
+        {
+          "id": "himalaya-globe-terrain",
+          "title": "Himalaya terrain",
+          "summary": "Recovered Everest globe terrain scene with Sentinel-2 and Landsat 9 imagery.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmap-experiments%2Fhimalaya-terrain.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/map-experiments/himalaya-terrain.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "maplibre-6",
+      "title": "MapLibre 6",
+      "examples": [
+        {
+          "id": "maplibre-6-relief-and-contours",
+          "title": "Relief and contour lines",
+          "summary": "Combines five-method hillshade, zoom-adaptive metric contours, Hybrid imagery, and Earth Engine 3D terrain.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmaplibre-6%2Frelief-and-contours.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/maplibre-6/relief-and-contours.ee.js"
+        },
+        {
+          "id": "maplibre-6-heatmap-and-pulsing-icons",
+          "title": "Heatmap and pulsing icons",
+          "summary": "Renders weighted local GeoJSON as a heatmap and reduced-motion-aware animated point icons.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmaplibre-6%2Fheatmap-and-pulsing-icons.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/maplibre-6/heatmap-and-pulsing-icons.ee.js"
+        },
+        {
+          "id": "maplibre-6-animated-routes",
+          "title": "Animated routes",
+          "summary": "Progressively reveals LineString and MultiLineString paths with layer-card and script playback controls.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmaplibre-6%2Fanimated-routes.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/maplibre-6/animated-routes.ee.js"
+        },
+        {
+          "id": "maplibre-6-image-collection-timeline",
+          "title": "ImageCollection timeline",
+          "summary": "Prepares a bounded MODIS collection for timestamped playback with frame, speed, loop, and callback controls.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmaplibre-6%2Fimage-collection-timeline.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/maplibre-6/image-collection-timeline.ee.js"
+        },
+        {
+          "id": "maplibre-6-camera-and-three-map-sync",
+          "title": "Camera and three-map sync",
+          "summary": "Demonstrates flyTo, easeTo, orbit control, and variadic center/zoom/bearing/pitch synchronization.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmaplibre-6%2Fcamera-and-three-map-sync.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/maplibre-6/camera-and-three-map-sync.ee.js"
+        },
+        {
+          "id": "maplibre-6-hybrid-globe-and-proxy",
+          "title": "Hybrid globe and MapLibre proxy",
+          "summary": "Combines Hybrid globe terrain with ordered raw sources, layers, state reads, and serializable click events.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmaplibre-6%2Fhybrid-globe-and-proxy.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/maplibre-6/hybrid-globe-and-proxy.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "hazards-and-response",
+      "title": "Hazards & Response",
+      "examples": [
+        {
+          "id": "flood-radar",
+          "title": "FLOOD//RADAR",
+          "summary": "Maps the 2022 Sindh floods with Sentinel-1 change detection and an angled radar wipe.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fhazards-and-response%2Fflood-radar.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/hazards-and-response/flood-radar.ee.js"
+        },
+        {
+          "id": "fire-pulse",
+          "title": "FIRE//PULSE",
+          "summary": "Combines Sentinel-2 burn severity, VIIRS detections, ERA5 wind, and a linked impact App.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fhazards-and-response%2Ffire-pulse.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/hazards-and-response/fire-pulse.ee.js"
+        },
+        {
+          "id": "volcano-thermal-watch",
+          "title": "VOLCANO//THERMAL WATCH",
+          "summary": "Places MODIS thermal detections above Sentinel-2 imagery on a pitched Mount Etna terrain scene.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fhazards-and-response%2Fvolcano-thermal-watch.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/hazards-and-response/volcano-thermal-watch.ee.js"
+        },
+        {
+          "id": "air-quality-globe",
+          "title": "AIR//QUALITY GLOBE",
+          "summary": "Renders Sentinel-5P NO2 with a custom globe shader and equal-area ERA5 wind arrows.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fhazards-and-response%2Fair-quality-globe.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/hazards-and-response/air-quality-globe.ee.js"
+        },
+        {
+          "id": "coast-time-machine",
+          "title": "COAST//TIME MACHINE",
+          "summary": "Compares 1990 and 2024 Landsat water extent across the Ganges-Brahmaputra delta.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fhazards-and-response%2Fcoast-time-machine.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/hazards-and-response/coast-time-machine.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "climate-and-water",
+      "title": "Climate & Water",
+      "examples": [
+        {
+          "id": "reservoir-pulse",
+          "title": "RESERVOIR//PULSE",
+          "summary": "Pairs a Lake Mead satellite map with two decades of annual surface-water measurements.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fclimate-and-water%2Freservoir-pulse.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/climate-and-water/reservoir-pulse.ee.js"
+        },
+        {
+          "id": "snow-melt",
+          "title": "SNOW//MELT",
+          "summary": "Shows MODIS Alpine snow cover over 3D terrain and opens a daily seasonal chart.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fclimate-and-water%2Fsnow-melt.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/climate-and-water/snow-melt.ee.js"
+        },
+        {
+          "id": "drought-signal",
+          "title": "DROUGHT//SIGNAL",
+          "summary": "Uses a compute-pixel shader and time series to explore European TerraClimate PDSI.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fclimate-and-water%2Fdrought-signal.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/climate-and-water/drought-signal.ee.js"
+        },
+        {
+          "id": "alpine-pulse",
+          "title": "ALPINE//PULSE",
+          "summary": "Creates an angled Aletsch comparison between natural color and a snow-and-ice index.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fclimate-and-water%2Falpine-pulse.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/climate-and-water/alpine-pulse.ee.js"
+        },
+        {
+          "id": "blue-planet",
+          "title": "BLUE//PLANET",
+          "summary": "Animates HYCOM surface currents above a shader-colored sea-surface-temperature globe.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fclimate-and-water%2Fblue-planet.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/climate-and-water/blue-planet.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "land-change",
+      "title": "Land Change",
+      "examples": [
+        {
+          "id": "forest-loss-detective",
+          "title": "FOREST//LOSS DETECTIVE",
+          "summary": "Maps annual Hansen forest loss in Rondonia and charts the affected area by year.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fland-change%2Fforest-loss-detective.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/land-change/forest-loss-detective.ee.js"
+        },
+        {
+          "id": "city-night-shift",
+          "title": "CITY//NIGHT SHIFT",
+          "summary": "Links a Sentinel-2 daylight map to a glowing VIIRS night-light portrait of Cairo.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fland-change%2Fcity-night-shift.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/land-change/city-night-shift.ee.js"
+        },
+        {
+          "id": "coral-reef-lens",
+          "title": "CORAL//REEF LENS",
+          "summary": "Wipes between Sentinel-2 reef imagery and Allen Coral Atlas benthic habitat.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fland-change%2Fcoral-reef-lens.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/land-change/coral-reef-lens.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "analysis-labs",
+      "title": "Analysis Labs",
+      "examples": [
+        {
+          "id": "spectral-signature-lab",
+          "title": "Spectral Signature Lab",
+          "summary": "Turns map clicks into resolved Sentinel-2 band profiles in native Plotly tabs.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fanalysis-labs%2Fspectral-signature-lab.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/analysis-labs/spectral-signature-lab.ee.js"
+        },
+        {
+          "id": "cloud-mask-shootout",
+          "title": "Cloud Mask Shootout",
+          "summary": "Wipes between a deliberately cloudy tropical Sentinel-2 scene and its SCL cloud-and-shadow mask.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fanalysis-labs%2Fcloud-mask-shootout.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/analysis-labs/cloud-mask-shootout.ee.js"
+        },
+        {
+          "id": "change-detection-workbench",
+          "title": "Change Detection Workbench",
+          "summary": "Provides toggleable NDVI, NDWI, and NBR change layers from annual Landsat composites.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fanalysis-labs%2Fchange-detection-workbench.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/analysis-labs/change-detection-workbench.ee.js"
+        },
+        {
+          "id": "classification-studio",
+          "title": "Classification Studio",
+          "summary": "Trains a Sentinel-2 random forest, maps four classes, and reports validation accuracy.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fanalysis-labs%2Fclassification-studio.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/analysis-labs/classification-studio.ee.js"
+        },
+        {
+          "id": "multi-region-comparison",
+          "title": "Multi-Region Comparison",
+          "summary": "Compares three years of MODIS vegetation histories across Vienna, Paris, and Madrid.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fanalysis-labs%2Fmulti-region-comparison.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/analysis-labs/multi-region-comparison.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "complete-workflows",
+      "title": "Complete Workflows",
+      "examples": [
+        {
+          "id": "satellite-movie-factory",
+          "title": "Satellite Movie Factory",
+          "summary": "Builds a year of colored NDVI frames and registers a reviewable video export task.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fcomplete-workflows%2Fsatellite-movie-factory.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/complete-workflows/satellite-movie-factory.ee.js"
+        },
+        {
+          "id": "reproducible-research-package",
+          "title": "Reproducible Research Package",
+          "summary": "Combines a local module, Earth Engine map, Plotly figure, Console summary, and CSV task.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fcomplete-workflows%2Freproducible-research-package.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/complete-workflows/reproducible-research-package.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "python-and-interop",
+      "title": "Python & Interop",
+      "examples": [
+        {
+          "id": "python-scientific-smoke",
+          "title": "NumPy and Matplotlib",
+          "summary": "Computes a NumPy array and opens a static Matplotlib figure tab.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fpython-and-interop%2Fnumpy-matplotlib-smoke.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/python-and-interop/numpy-matplotlib-smoke.ee.py"
+        },
+        {
+          "id": "python-earth-engine-smoke",
+          "title": "Earth Engine Python",
+          "summary": "Queries Earth Engine through Python and adds a layer through the shared Map bridge.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fpython-and-interop%2Fearth-engine-python-smoke.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/python-and-interop/earth-engine-python-smoke.ee.py"
+        },
+        {
+          "id": "python-plotly",
+          "title": "Plotly Python",
+          "summary": "Uses signed-out Plotly Express and Studio ui.Plotly figures.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fpython-and-interop%2Fplotly-python.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/python-and-interop/plotly-python.ee.py"
+        },
+        {
+          "id": "interop-javascript-setup",
+          "title": "1. JavaScript publishes bindings",
+          "summary": "Publishes a JavaScript function and variable into the workspace registry.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fpython-and-interop%2Finterop-1-javascript.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/python-and-interop/interop-1-javascript.ee.js"
+        },
+        {
+          "id": "interop-python-round-trip",
+          "title": "2. Python consumes and publishes",
+          "summary": "Calls JavaScript from Python, then publishes Python values and a function.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fpython-and-interop%2Finterop-2-python.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/python-and-interop/interop-2-python.ee.py"
+        },
+        {
+          "id": "interop-javascript-verify",
+          "title": "3. JavaScript verifies Python",
+          "summary": "Calls the Python function and reads Python values back in JavaScript.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fpython-and-interop%2Finterop-3-javascript.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/python-and-interop/interop-3-javascript.ee.js"
+        }
+      ]
+    },
+    {
+      "id": "plots",
+      "title": "Charts & Plots",
+      "examples": [
+        {
+          "id": "standalone-plotly-javascript",
+          "title": "Plotly JavaScript",
+          "summary": "Creates a native Plotly figure with a click listener and incremental update.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fstandalone%2Fplotly-javascript.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/standalone/plotly-javascript.ee.js"
+        },
+        {
+          "id": "standalone-plotly-python",
+          "title": "Plotly.py graph objects",
+          "summary": "Creates a signed-out Plotly.py graph-object figure.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fstandalone%2Fplotly-python.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/standalone/plotly-python.ee.py"
+        },
+        {
+          "id": "ui-chart-time-axis",
+          "title": "ui.Chart time axis",
+          "summary": "Converts Earth Engine epoch milliseconds into a readable Plotly date axis.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fstandalone%2Fui-chart-time-axis.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/standalone/ui-chart-time-axis.ee.js"
+        },
+        {
+          "id": "ui-chart-earth-engine",
+          "title": "Earth Engine ui.Chart",
+          "summary": "Demonstrates an authenticated image series, loading state, and click callback.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fstandalone%2Fui-chart-earth-engine.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/standalone/ui-chart-earth-engine.ee.js"
+        },
+        {
+          "id": "plotly-earth-engine-python",
+          "title": "Earth Engine Plotly Python",
+          "summary": "Builds Python ui.Plotly content from nested Earth Engine values and registers an event.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fstandalone%2Fplotly-earth-engine.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/standalone/plotly-earth-engine.ee.py"
+        }
+      ]
+    },
+    {
+      "id": "modules",
+      "title": "Modules",
+      "examples": [
+        {
+          "id": "module-python-import-javascript",
+          "title": "Python imports JavaScript",
+          "summary": "Imports the adjacent calculator module with Python import syntax.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Fuse_calculator_import.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/use_calculator_import.ee.py"
+        },
+        {
+          "id": "module-python-require-javascript",
+          "title": "Python requires JavaScript",
+          "summary": "Loads the adjacent calculator module with require().",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Fuse_calculator_require.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/use_calculator_require.ee.py"
+        },
+        {
+          "id": "module-javascript-requires-python",
+          "title": "JavaScript requires Python",
+          "summary": "Calls exported functions from the adjacent Python statistics module.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Fjs_requires_python.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/js_requires_python.ee.js"
+        },
+        {
+          "id": "module-local-python-package",
+          "title": "Local Python package",
+          "summary": "Imports a namespace package from a literal relative repository root.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Fuse_local_package.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/use_local_package.ee.py"
+        },
+        {
+          "id": "module-remote-repository-paths",
+          "title": "Remote repository paths",
+          "summary": "Imports a Python package from a real public GitHub repository root.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Fremote_repository_paths.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/remote_repository_paths.ee.py"
+        },
+        {
+          "id": "module-oeel-python",
+          "title": "OEEL from Python",
+          "summary": "Demonstrates a native GoogleSource OEEL import from Python.",
+          "language": "Python",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Foeel.ee.py",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/oeel.ee.py"
+        },
+        {
+          "id": "module-oeel-javascript",
+          "title": "OEEL from JavaScript",
+          "summary": "Demonstrates a native GoogleSource OEEL import from JavaScript.",
+          "language": "JavaScript",
+          "open_url": "https://code.earthengine.studio/?repo=https%3A%2F%2Fgithub.com%2Fopen-geocomputing%2Fearthengine-studio-examples&repo_ref=master&repo_path=catalog%2Fmodules%2Foeel.ee.js",
+          "source_url": "https://github.com/open-geocomputing/earthengine-studio-examples/blob/master/catalog/modules/oeel.ee.js"
+        }
+      ]
+    }
+  ]
+}

@@ -1,40 +1,41 @@
 ---
 title: Stockage local
-description: Enregistrer les scripts sur disque, connecter Google et utiliser Git en option.
+description: Conservez vos scripts sur disque, connectez Google, utilisez Git en option et retrouvez l’accès à votre dossier.
 permalink: /fr/local-storage/
-order: 12
+order: 13
 lang: fr
 translation_key: local-storage
-keywords: [local, storage, folders, Git, vault, Google, offline]
+keywords: [local, stockage, dossiers, Git, coffre, Google, hors ligne]
+translated_from: d19f26c621aa
 ---
 
-## Choisir un dossier
+## Démarrer avec un dossier local
 
-1. Ouvrez Studio en HTTPS dans Chrome ou Edge sur ordinateur.
-2. Choisissez **Local** au démarrage et autorisez la lecture et l’écriture d’un dossier, nommé `Earthengine` par convention. Si vous annulez, choisissez ensuite un dossier ou **Online**.
-3. Dans **Scripts → Local folders**, créez ou ouvrez un sous-dossier direct. Ouvrez un fichier, modifiez-le et enregistrez-le sur disque. Ni Git ni une connexion Google ne sont nécessaires pour cette édition.
-4. Dans **Settings → Workspace modes**, reconnectez ou changez le dossier, réglez le projet Earth Engine et l’auteur Git. **Hosted services** peut coexister avec **Local folders**. Le mode préféré concerne les nouveaux brouillons; les fichiers existants gardent leur destination. Aucun fichier n’est déplacé automatiquement.
+1. Utilisez un navigateur de bureau basé sur Chromium (Chrome ou Edge) sur le site Studio en HTTPS.
+2. Choisissez **Local** dans la boîte de dialogue de démarrage et accordez l’accès en lecture/écriture à un dossier, conventionnellement nommé `Earthengine`. Si vous annulez, le sélecteur reste ouvert ; sélectionnez un dossier ou choisissez **Online**.
+3. Dans **Scripts → Local folders**, créez un dossier de projet ou développez un enfant direct existant du dossier que vous avez sélectionné. Ouvrez un fichier, modifiez-le et enregistrez-le sur le disque. Git et la connexion Google ne sont pas nécessaires pour modifier des fichiers locaux.
+4. Utilisez **Settings → Workspace modes** pour reconnecter ou changer le dossier, configurer l’identifiant du projet Earth Engine et l’auteur Git, ou activer **Hosted services** en plus de **Local folders**. Le mode préféré contrôle les nouveaux brouillons ; les fichiers existants s’enregistrent dans leur source d’origine. Changer de mode ne déplace pas les fichiers.
 
-## Connecter Google
+## Connecter Earth Engine
 
-Le stockage est local, mais les calculs Earth Engine nécessitent Internet et un projet Google Cloud autorisé. Cliquez sur **Sign in** ou **Connect Google and remember**. Aucun terminal ni mot de passe de coffre n’est requis. Le projet Earth Engine par défaut est choisi si disponible, sauf si un choix est déjà enregistré. Changez-le dans le sélecteur supérieur; si la découverte échoue, saisissez son ID dans Workspace modes. La vérification peut durer une minute; après un échec, le sélecteur reste accessible.
+Le stockage local garde les fichiers sur votre ordinateur ; le calcul Earth Engine nécessite toujours un accès à Internet et un projet Google Cloud autorisé. Cliquez sur **Sign in** ou **Connect Google and remember** et autorisez l’accès dans la fenêtre de Google. Aucun terminal ni mot de passe de coffre n’est nécessaire pour une connexion créée dans le navigateur. Le projet Earth Engine par défaut est sélectionné lorsqu’il est disponible, sauf si vous avez déjà enregistré un choix. Utilisez le sélecteur de projet de la barre supérieure pour changer de projet ; si la découverte échoue, saisissez l’identifiant du projet dans Workspace modes. La vérification peut prendre jusqu’à une minute. Après un échec d’accès, le sélecteur reste disponible pour un autre projet ou une nouvelle tentative.
 
-Avec le service d’authentification, une autorisation chiffrée par le serveur et liée à l’origine est enregistrée dans `.earthengine.studio/google-connection.json`. Elle est restaurée dès que le dossier est accessible. Le service renouvelle les identifiants sans conserver de fiche d’identifiants utilisateur; les jetons d’accès restent en mémoire. Gardez ce dossier privé. **Remove saved Google connection** supprime la copie locale sans révoquer l’autorisation Google ni les sauvegardes. Une connexion explicite rouvre le consentement; le renouvellement automatique reste silencieux. L’accès Monitoring en lecture seule est facultatif; une jauge masquée ne signifie pas une consommation nulle.
+Lorsqu’un service d’authentification est configuré, Studio enregistre dans `.earthengine.studio/google-connection.json` une autorisation chiffrée côté serveur et liée à l’origine. Elle est restaurée automatiquement dès que l’autorisation d’accès au dossier est disponible. Le service échange et renouvelle les identifiants sans stocker d’enregistrement d’identifiants utilisateur ; les jetons d’accès restent en mémoire. Traitez l’autorisation enregistrée comme un identifiant et gardez le dossier privé. **Remove saved Google connection** supprime la copie locale, mais ne révoque pas l’autorisation chez Google et ne supprime pas les sauvegardes. Une connexion explicite rouvre le consentement ; le renouvellement automatique ne le fait pas. L’autorisation facultative de Monitoring en lecture seule active l’affichage de l’utilisation mensuelle lorsqu’elle est disponible ; une jauge masquée ne signifie pas une utilisation nulle ni un échec de l’accès à Earth Engine.
 
-Sans service d’authentification, la connexion Google du navigateur nécessite parfois une nouvelle autorisation. L’administrateur configure l’ID client OAuth. Si Hosted services est activé, sa session assure l’authentification Earth Engine; désactivez-le pour utiliser la connexion locale.
+Sur un déploiement statique sans le service d’authentification, la connexion Google du navigateur nécessite une réautorisation occasionnelle. L’administrateur du déploiement configure l’identifiant client OAuth. Lorsque Hosted services est activé, l’authentification hébergée fournit la session Earth Engine partagée ; désactivez-le pour utiliser la connexion locale.
 
 ## Fichiers, Git et téléchargements
 
-Placez les projets sous `Earthengine/`, par exemple `project-a/main.js`. Les réglages privés sont dans `.earthengine.studio/`. **Show all file types** affiche les extensions normalement filtrées; les fichiers cachés (sauf `.gitignore`), dossiers cachés et dossiers `__name__` restent masqués. Les imports Python et `require()` relatifs fonctionnent; `require('lh:project-b/module.js')` accède à un autre projet du même espace.
+Chaque projet est un dossier enfant, par exemple `Earthengine/project-a/main.js`. Les paramètres privés et les identifiants se trouvent dans `Earthengine/.earthengine.studio/`. Scripts affiche par défaut les fichiers JavaScript, Python, Markdown et sans extension ; **Show all file types** révèle les autres fichiers. Les fichiers commençant par un point (sauf `.gitignore`), les dossiers commençant par un point et les répertoires `__name__` restent masqués.
 
-Enregistrer ne crée pas de commit. Dépliez le projet puis utilisez son bouton de branche et, si nécessaire, **Initialize Git**. Donnez un chemin à **stage**/**unstage**, un message à **commit**, un nom à **branch**/**checkout**. Réglez l’auteur Git dans Workspace modes. **status**, **diff**, **log** et **branches** permettent l’inspection. Checkout exige un arbre propre, fichiers non suivis compris.
+Les `require()` JavaScript relatifs et les imports Python fonctionnent à l’intérieur des projets. `require('lh:project-b/module.js')` charge un autre projet du même espace de travail. Enregistrer ne crée pas de commit. Pour utiliser Git en option, développez le projet et ouvrez son bouton de branche, puis choisissez **Initialize Git** si nécessaire. Saisissez un chemin pour **stage**/**unstage**, un message pour **commit**, ou un nom pour **branch**/**checkout**. Définissez le nom et l’e-mail de l’auteur Git dans Workspace modes. **status**, **diff**, **log** et **branches** inspectent le dépôt. Checkout exige un arbre de travail propre, y compris sans fichiers non suivis.
 
-Utilisez Git sur ordinateur pour clone, pull, push, conflits, sous-modules et worktrees liés, sans opération Git simultanée dans Studio. Limites du Git navigateur : 20 000 fichiers, 128 Mio avec l’historique, 40 niveaux. Les téléchargements vers un dossier utilisent par défaut `downloads/<description>`; gardez l’onglet ouvert et les gros résultats hors des projets.
+Utilisez Git de bureau pour clone, pull, push, les conflits, les sous-modules et les worktrees liés. N’exécutez pas Git de bureau en même temps que les opérations Git de Studio. Git dans le navigateur prend en charge les dépôts ordinaires jusqu’à 20 000 fichiers, 128 Mio historique compris et 40 niveaux de répertoires. Gardez les sorties volumineuses en dehors des projets. Les téléchargements vers un dossier utilisent par défaut `downloads/<description>` dans l’espace de travail. Gardez l’onglet du navigateur ouvert jusqu’à la fin.
 
-## Reprise et coffre facultatif
+## Rouvrir, sauvegarder et récupérer
 
-Utilisez **Reconnect folder** si l’autorisation expire. Effacer les données du site oublie éventuellement le dossier, sans supprimer ses fichiers. Sauvegardez vos projets; les brouillons non enregistrés dépendent de la récupération du navigateur. Préservez vos modifications avant de recharger un fichier changé ailleurs.
+Utilisez **Reconnect folder** si l’autorisation expire, ou choisissez de nouveau le dossier d’origine. Effacer les données du site peut faire oublier le descripteur du dossier mais ne supprime pas les fichiers du disque. Sauvegardez les fichiers de projet indépendamment ; les brouillons non enregistrés utilisent le stockage de récupération du navigateur. Si une autre application modifie un fichier, conservez vos modifications non enregistrées avant d’accepter le rechargement.
 
-**Unlock or create vault** crée un coffre avec une phrase secrète d’au moins 12 caractères, compatible avec les gestionnaires de mots de passe. Il se verrouille au rechargement ou à la déconnexion du dossier. Les identifiants Google importés via les options avancées nécessitent ce déverrouillage, contrairement à la connexion créée dans le navigateur. Aucun mot de passe perdu ne peut être récupéré.
+Le coffre facultatif stocke des secrets nommés ou des identifiants Google avancés importés. Choisissez **Unlock or create vault** avec une phrase secrète d’au moins 12 caractères ; le remplissage automatique par un gestionnaire de mots de passe est pris en charge. Le coffre se verrouille au rechargement ou à la déconnexion. Les identifiants importés nécessitent un déverrouillage après un redémarrage ; les connexions Google créées dans le navigateur n’en ont pas besoin. Studio ne peut pas récupérer une phrase secrète oubliée.
 
-Ne partagez pas `.earthengine.studio/`. Après une transaction Git interrompue, conservez le journal et les sauvegardes avant restauration avec Git sur ordinateur. Les snippets hébergés et le provisionnement d’Apps gérées nécessitent Hosted services.
+Ne validez pas et ne partagez pas `.earthengine.studio/`. Si Git signale une transaction interrompue, conservez son journal de récupération et ses sauvegardes avant d’utiliser Git de bureau pour récupérer. Le [guide de récupération du dépôt](https://github.com/open-geocomputing/earthengine-studio-editor/blob/master/LOCAL_WORKSPACE.md#recovery) décrit la procédure. Les extraits hébergés (snippets) et le provisionnement des Apps gérées nécessitent Hosted services ; le mode local ne rend pas ces services disponibles hors ligne.

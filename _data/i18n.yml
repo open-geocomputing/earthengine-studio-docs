@@ -30,6 +30,10 @@ en:
   copy: Copy
   copied: Copied
   copy_fallback: Select to copy
+  docs_current: "Matches Earth Engine Studio as of"
+  translation_stale: "This translation may lag behind the English guide."
+  read_english: "Read the English version"
+  markdown_copy: "View as Markdown"
 fr:
   docs: Documentation
   skip: Aller au contenu
@@ -62,6 +66,10 @@ fr:
   copy: Copier
   copied: Copié
   copy_fallback: Sélectionner pour copier
+  docs_current: "Correspond à Earth Engine Studio au"
+  translation_stale: "Cette traduction peut être en retard sur la version anglaise."
+  read_english: "Lire la version anglaise"
+  markdown_copy: "Voir en Markdown"
 de:
   docs: Dokumentation
   skip: Zum Inhalt springen
@@ -94,6 +102,10 @@ de:
   copy: Kopieren
   copied: Kopiert
   copy_fallback: Zum Kopieren auswählen
+  docs_current: "Entspricht Earth Engine Studio mit Stand"
+  translation_stale: "Diese Übersetzung ist möglicherweise älter als die englische Fassung."
+  read_english: "Englische Fassung lesen"
+  markdown_copy: "Als Markdown anzeigen"
 es:
   docs: Documentación
   skip: Ir al contenido
@@ -126,6 +138,10 @@ es:
   copy: Copiar
   copied: Copiado
   copy_fallback: Seleccionar para copiar
+  docs_current: "Corresponde a Earth Engine Studio a fecha de"
+  translation_stale: "Es posible que esta traducción no refleje la versión en inglés más reciente."
+  read_english: "Leer la versión en inglés"
+  markdown_copy: "Ver como Markdown"
 pt-br:
   docs: Documentação
   skip: Ir para o conteúdo
@@ -158,6 +174,10 @@ pt-br:
   copy: Copiar
   copied: Copiado
   copy_fallback: Selecionar para copiar
+  docs_current: "Corresponde ao Earth Engine Studio em"
+  translation_stale: "Esta tradução pode estar desatualizada em relação à versão em inglês."
+  read_english: "Ler a versão em inglês"
+  markdown_copy: "Ver como Markdown"
 zh-cn:
   docs: 文档
   skip: 跳到正文
@@ -190,3 +210,7 @@ zh-cn:
   copy: 复制
   copied: 已复制
   copy_fallback: 选择后复制
+  docs_current: "对应的 Earth Engine Studio 版本日期："
+  translation_stale: "此译文可能落后于英文版本。"
+  read_english: "阅读英文版本"
+  markdown_copy: "以 Markdown 查看"

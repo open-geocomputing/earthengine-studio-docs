@@ -2,7 +2,7 @@
 title: Tasks & exports
 description: Review and submit Earth Engine exports or stream high-volume raster and table results to local folders and ZIP files.
 permalink: /tasks-and-exports/
-order: 7
+order: 8
 lang: en
 translation_key: tasks-and-exports
 keywords: [Tasks, Export, batch, Drive, Cloud Storage, assets, BigQuery, local download, folder, ZIP, GeoTIFF]
@@ -97,6 +97,6 @@ Task exports and public App publishing have different security models. To
 publish an anonymous interactive App with managed or self-managed credentials,
 continue with the [Public Apps guide]({{ '/public-apps/' | relative_url }}).
 
-## Current workflow
+## Details and limits
 
 JavaScript and Python `Export.*` configurations accept Studio's optional `projectId`, including `Export.image.toFolder()` and `Export.table.toFolder()`. It selects the submission/download project without changing the workspace project; drafts retain and display it across project switches. Permissions still apply to that target. Ingestion tasks show queued/running/finished phases and the destination asset; queued or running operations expose cancellation with pending/error feedback. Local folder downloads require the tab to remain open.

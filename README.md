@@ -24,6 +24,7 @@ links with:
 bundle exec jekyll build --strict_front_matter
 bundle exec htmlproofer ./_site --disable-external
 ruby scripts/check_translations.rb
+node scripts/sync_studio_data.mjs --drift
 ```
 
 External links are intentionally excluded from the repeatable validation step;
@@ -41,12 +42,17 @@ Guides live in `_docs/`. Each guide has YAML front matter with:
 - `lang`: one of `en`, `fr`, `de`, `es`, `pt-br`, or `zh-cn`.
 - `translation_key`: the shared guide identifier used by language switching.
 - `keywords`: extra terms for the local search index.
+- `translated_from` (translations only): the hash of the English body the
+  translation was made from; see below.
 
 English guides live directly in `_docs/`; translations live below their locale,
-for example `_docs/fr/editor.md`. Every language must contain the same twelve
+for example `_docs/fr/editor.md`. Every language must contain the same fifteen
 `translation_key` values and orders. Run `ruby scripts/check_translations.rb`
 before committing to catch missing pages, duplicate keys, bad permalinks, or
-order drift.
+order drift. It also compares each translation's `translated_from` with the
+current English hash (`--hashes` prints them) and warns about stale
+translations; `--strict` turns those warnings into errors. A stale translated
+page shows a notice linking to the English guide.
 
 When an Earth Engine Studio release changes user-visible technical behavior,
 update the relevant workflow guide in every language in the same commit. In
@@ -73,11 +79,42 @@ languages: local and Earth Engine sources, property fallback, zoom visibility,
 collision and orientation behavior, glyph coverage, request safeguards, and
 provider troubleshooting.
 
+## Generated data and drift
+
+`node scripts/sync_studio_data.mjs` reads the application checkout
+(`../eathengine.studio` by default, `--editor PATH` otherwise) and the example
+catalog (`../earthengine-studio-examples`, `--examples PATH`) and writes:
+
+- `_data/studio_functions.json` — every AI assistant function with its
+  permission, default policy, limit, and model-facing description, parsed from
+  `src/ai/tools` with the TypeScript compiler (nothing is executed);
+- `_data/examples.json` — the public example catalog with **Open in Studio**
+  deep links;
+- `_data/studio.yml` — the application commit and date the docs match, shown on
+  every guide.
+
+`--drift` lists the application's `feat`/`fix` commits since that commit.
+
+## Agents and search engines
+
+Language-model agents, including Studio's own AI assistant, read these guides.
+`_plugins/agent_outputs.rb` writes a Liquid-rendered Markdown copy of every
+guide at `/<guide>/index.md` (advertised with `<link rel="alternate"
+type="text/markdown">`), an [llms.txt](https://llmstxt.org/) index at
+`/llms.txt`, and every English guide in `/llms-full.txt`.
+
+`_includes/seo.html` writes titles, descriptions, canonical URLs, Open Graph
+and Twitter tags (with `assets/images/social-card.jpg`), and JSON-LD
+(`TechArticle` plus `BreadcrumbList` for guides, `WebSite` for home pages).
+`jekyll-last-modified-at` dates guides from Git history, so CI checks out the
+full history. See [AGENTS.md](AGENTS.md) for the rules agents follow.
+
 ## Site structure
 
 - `_layouts/` contains the home, guide, and fallback page shells.
 - `_includes/` contains shared navigation, header, footer, and pagination.
 - `_data/navigation.yml` is the source of truth for the sidebar.
+- `_plugins/` holds the translation-hash and agent-output build hooks.
 - `_data/languages.yml`, `_data/i18n.yml`, and `_data/home.yml` configure the
   six language editions and their shared interface.
 - `assets/` contains the documentation CSS and dependency-free browser

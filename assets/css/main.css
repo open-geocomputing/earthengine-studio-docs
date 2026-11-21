@@ -329,3 +329,7 @@ main + .site-footer { max-width: 1180px; margin-left: auto; margin-right: auto; 
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+.doc-translation-notice { margin-top: 14px; padding: 10px 14px; border: 1px solid var(--line-strong); border-left: 3px solid var(--engine, #1772aa); border-radius: 8px; background: var(--surface-soft); color: var(--muted); font-size: 14px; }
+.doc-meta { margin: 36px 0 0; color: var(--muted); font-size: 13px; }
+.doc-meta code { font-size: 12px; }

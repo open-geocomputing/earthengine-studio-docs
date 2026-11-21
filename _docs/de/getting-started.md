@@ -1,40 +1,141 @@
 ---
 title: Erste Schritte
-description: Studio mit einem Earth-Engine-fähigen Cloud-Projekt verbinden und die erste Analyse ausführen.
+description: Verbinden Sie Earth Engine Studio mit einem aktivierten Cloud-Projekt und führen Sie Ihre erste Analyse in JavaScript oder Python aus.
 permalink: /de/getting-started/
 order: 1
 lang: de
 translation_key: getting-started
-keywords: [Anmeldung, Cloud-Projekt, JavaScript, Python, ausführen]
+keywords: [Anmeldung, Cloud-Projekt, erstes Skript, ausführen, JavaScript, Python, Authentifizierung]
+translated_from: 935c99744348
 ---
 
-[Lokaler Speicher]({{ '/de/local-storage/' | relative_url }}) — Skripte auf der Festplatte speichern, Google verbinden und Git optional nutzen.
+[Lokaler Speichermodus]({{ '/de/local-storage/' | relative_url }}) — Skripte auf der Festplatte speichern, Google verbinden, optional Git nutzen und den Ordnerzugriff wiederherstellen.
 
-## Voraussetzungen
 
-Sie benötigen einen modernen Browser, ein Google-Konto und ein für Earth Engine registriertes Cloud-Projekt. Der [Earth-Engine-Zugangsleitfaden](https://developers.google.com/earth-engine/guides/access?hl=de) erklärt Registrierung und Berechtigungen.
+## Was Sie benötigen
 
-## Erste Ausführung
+Studio läuft in einem modernen Browser. Um Earth-Engine-Anfragen auszuführen,
+benötigen Sie außerdem ein Google-Konto und ein Google-Cloud-Projekt, das für
+die Nutzung von Earth Engine registriert ist. Der
+[Earth-Engine-Zugriffsleitfaden](https://developers.google.com/earth-engine/guides/access)
+von Google erklärt Registrierung, Projekttypen, Abrechnung und Berechtigungen.
 
-1. Öffnen Sie [Earth Engine Studio](https://code.earthengine.studio/), melden Sie sich an und wählen Sie ein Projekt.
-2. Erstellen Sie unter **Scripts** ein JavaScript- oder Python-Dokument.
-3. Klicken Sie auf **Run**.
-4. Prüfen Sie Layer in **Map** und Werte in **Console**.
+Sie können die Oberfläche ohne Anmeldung öffnen und Aufbau, Beispiele und
+Dokumentation erkunden. Anfragen, die Earth-Engine-Daten lesen, Assets
+untersuchen oder Exporte erstellen, erfordern ein authentifiziertes Projekt.
+
+<div class="notice" markdown="1">
+**Über die Plattform**
+
+Earth Engine Studio stellt den Arbeitsbereich bereit. Google Earth Engine
+liefert den Katalog, den Berechnungsdienst und die Earth-Engine-APIs. Studio
+ist unabhängig und kein offizielles Google-Produkt.
+</div>
+
+## Konto und Projekt verbinden
+
+1. Öffnen Sie [Earth Engine Studio](https://code.earthengine.studio/) und
+   wählen Sie **Local** mit einem Ordner oder **Online**.
+2. Melden Sie sich über das Konto-Steuerelement oben rechts mit Google an.
+3. Wählen Sie ein Cloud-Projekt, für das Earth Engine aktiviert ist und das Ihr
+   Konto verwenden darf.
+4. Warten Sie, bis der Verbindungsstatus das ausgewählte Projekt bestätigt.
+
+Das Projekt ist mehr als eine Anzeigeeinstellung. Es wird für
+Earth-Engine-Anfragen, die Asset-Suche, Exporte und die Studio-Dienste
+verwendet, die Repository-Einstellungen oder Zugangsdaten speichern. Ein
+Wechsel macht aktive Laufzeit-Callbacks ungültig und aktualisiert
+projektbezogene Bereiche.
+
+Studio hält Google-Zugriffstokens im Arbeitsspeicher und nicht im lokalen
+Browser-Speicher. Die serverseitige Sitzung kann die Autorisierung erneuern,
+solange der Arbeitsbereich geöffnet ist.
+
+## Ein erstes Skript öffnen
+
+Wählen Sie im linken Bereich **Scripts**, klappen Sie **Built-in examples**
+auf und öffnen Sie ein kompaktes Beispiel. Jede geöffnete Datei erhält einen
+eigenen Editor-Tab. Mit dem Steuerelement für neue Dateien können Sie auch ein
+ungespeichertes Dokument beginnen.
+
+Als eigenständigen JavaScript-Ausgangspunkt fügen Sie Folgendes in einen leeren
+Editor ein. Das Skript zeichnet eine Geländeansicht über einem Teil der
+Ostalpen und gibt die Fläche des Analysegebiets aus.
 
 ```javascript
-var zone = ee.Geometry.Rectangle([10.8, 46.4, 12.4, 47.4]);
-var elevation = ee.Image("NASA/NASADEM_HGT/001").clip(zone);
-Map.centerObject(zone, 8);
-Map.addLayer(elevation, {min: 400, max: 3200}, "Elevation");
-print("Area km²", zone.area().divide(1e6));
+var region = ee.Geometry.Rectangle([10.8, 46.4, 12.4, 47.4]);
+var elevation = ee.Image("NASA/NASADEM_HGT/001").clip(region);
+
+Map.centerObject(region, 8);
+Map.addLayer(
+  elevation,
+  {min: 400, max: 3200, palette: ["17324d", "5fa67a", "f0d28b", "f7f7f2"]},
+  "Alpine elevation"
+);
+
+print("Region area in km²", region.area().divide(1e6));
 ```
 
-Python verwendet einen bereits authentifizierten Earth-Engine-Client; der erste Pyodide-Start kann länger dauern.
+Wählen Sie im Sprachsteuerelement des Editors **JavaScript**, falls der
+Dateiname nicht bereits auf `.js` oder `.ee.js` endet, und klicken Sie dann auf
+**Run**. Die Ebene erscheint in **Map**, und der berechnete Wert erscheint in
+**Console**.
 
-## Ergebnisse
+## Denselben Ablauf in Python ausprobieren
 
-**Map** zeigt Layer, **Console** Werte und Fehler, **Plots** Diagramme und **Tasks** noch zu bestätigende Exporte. Das ausgewählte Projekt bestimmt Anfragen, Assets und Exporte.
+Erstellen Sie ein weiteres leeres Dokument, wählen Sie **Python** und
+verwenden Sie einen Dateinamen mit `.py` oder `.ee.py`. Studio stellt den
+authentifizierten Earth-Engine-Client in seiner Python-Laufzeit im Browser
+bereit, sodass ein normales Studio-Skript keinen separaten
+Authentifizierungsablauf starten muss.
 
-## Aktueller Ablauf
+```python
+import ee
 
-Beim Start wählen Sie Local mit Ordner oder Online. Google ist für Earth-Engine-Berechnungen nötig, nicht für lokale Bearbeitung. Nach Zugriffsfehlern bleibt die Projektauswahl verfügbar; die Prüfung kann eine Minute dauern. Monatsanzeigen erscheinen nur bei lesbarem Verbrauch und Kontingent; ihr Fehlen bedeutet nicht null. Lokaler Monitoring-Zugriff ist optional. Sitzungen versuchen nach Standby oder Netzrückkehr eine Wiederherstellung.
+region = ee.Geometry.Rectangle([10.8, 46.4, 12.4, 47.4])
+elevation = ee.Image("NASA/NASADEM_HGT/001").clip(region)
+
+Map.centerObject(region, 8)
+Map.addLayer(
+    elevation,
+    {"min": 400, "max": 3200,
+     "palette": ["17324d", "5fa67a", "f0d28b", "f7f7f2"]},
+    "Alpine elevation",
+)
+
+print("Region area in km²", region.area().divide(1e6))
+```
+
+Der erste Python-Lauf kann länger dauern, während Studio die fest versionierte
+Browser-Laufzeit vorbereitet. Spätere Läufe verwenden sie weiter, bis der
+Worker oder der Authentifizierungskontext zurückgesetzt wird.
+
+## Das Ergebnis lesen
+
+Ein Skript kann mehrere Teile des Arbeitsbereichs aktualisieren:
+
+- **Map** zeigt Ebenen an und bietet Steuerelemente für Sichtbarkeit,
+  Deckkraft, Basiskarte, Zeichnen und Inspektion.
+- **Console** zeigt die Ausgabe von `print()`, Warnungen und Fehler an.
+  Strukturierte Earth-Engine-Werte lassen sich aufklappen.
+- **Plots** öffnen sich als Tabs im mittleren Bereich, wenn Code Plotly-,
+  Chart- oder Matplotlib-Ausgaben erzeugt.
+- **Tasks** nimmt Exportdefinitionen auf. Sie bleiben ungesendet, bis Sie sie
+  ausdrücklich prüfen und starten.
+
+Wenn Code im Editor markiert ist, werten Sie mit **Run selection** nur dieses
+Fragment aus. Verwenden Sie einen vollständigen Lauf, wenn spätere Anweisungen
+von zuvor im Dokument erzeugten Bindungen abhängen.
+
+## Wie es weitergeht
+
+Im [Arbeitsbereich-Leitfaden]({{ '/de/workspace/' | relative_url }}) erfahren
+Sie, wie Bereiche und Persistenz funktionieren. Der
+[Editor-Leitfaden]({{ '/de/editor/' | relative_url }}) behandelt Dateien,
+Module, Speichern und Teilen. Für Earth-Engine-Datentypen und
+Analysekonzepte sind die [Entwicklerleitfäden](https://developers.google.com/earth-engine/guides)
+von Google die maßgebliche Referenz.
+
+## Details und Grenzen
+
+Wählen Sie beim Start Local mit einem Ordner oder Online. Google ist für die Ausführung von Earth Engine erforderlich, nicht für die Bearbeitung lokaler Dateien. Die Projektauswahl bleibt nach Zugriffsfehlern nutzbar; wählen Sie ein anderes Projekt oder versuchen Sie es erneut und rechnen Sie mit bis zu einer Minute für die Überprüfung. Anzeigen zum monatlichen Kontingent erscheinen nur, wenn Nutzung und Zuteilung gelesen werden können; fehlende Anzeigen bedeuten nicht, dass keine Nutzung vorliegt. Die Zustimmung zu Local Monitoring ist optional. Sitzungen versuchen nach Ruhezustand oder erneuter Verbindung, sich wiederherzustellen, bevor eine interaktive Anmeldung erforderlich wird.

@@ -1,43 +1,49 @@
 ---
 title: Apps publiques
-description: Configurez les identifiants gérés d'une App publique, choisissez son hébergement statique et gérez ses origines exactes.
+description: Provisionnez les identifiants d’une App publique gérée, choisissez un hébergement statique, gérez les origines exactes ou exportez un déploiement autogéré.
 permalink: /fr/public-apps/
-order: 8
+order: 9
 lang: fr
 translation_key: public-apps
-keywords: [App publique, App gérée, autogéré, GitHub Pages, hébergement statique, origines autorisées, CDN]
+keywords: [App publique, App gérée, autogérée, GitHub Pages, hébergement statique, origines autorisées, courtier de jetons, CDN, compte de service]
+translated_from: af8798a3b421
 ---
 
 ## Séparer les identifiants de l’hébergement
 
-Exécutez l’App avec succès, puis choisissez **Export App** dans son aperçu.
-Studio propose deux modèles :
+Exécutez l’App avec succès, puis choisissez **Export App** dans son aperçu. Studio
+propose deux modèles d’identifiants :
 
-- **Managed App** crée un compte de service Google dédié et sans clé. Earth
-  Engine Studio fournit les jetons temporaires via
+- **Managed App** provisionne un compte de service Google dédié et sans clé pour
+  l’App. Earth Engine Studio exploite l’émetteur d’identifiants à courte durée de vie à
   `auth.earthengine.studio`.
-- **Self-managed ZIP** conserve le déploiement portable existant. Vous gérez le
-  service de jetons fourni et son identité Google Cloud.
+- **Self-managed ZIP** conserve le flux de travail portable existant. Vous exploitez le
+  modèle de service de jetons inclus et son identité Google Cloud.
 
-Une App gérée n’impose pas GitHub Pages. Les autorisations Google servent au
-compte de service; les autorisations GitHub servent uniquement à publier les
-fichiers statiques.
+Managed App n’implique pas GitHub Pages. Les identifiants et l’hébergement statique
+sont deux décisions distinctes, et les autorisations Google et GitHub restent indépendantes.
 
-## Choisir l’hébergement statique
+## Choisir où s’exécute le site statique
 
-**Download managed site bundle** produit un ZIP statique à placer sur un
-domaine personnalisé, un serveur existant ou tout autre hébergeur statique. Sa
-configuration utilise déjà le point d’accès géré.
+Après avoir sélectionné Managed App, choisissez l’une de ces voies d’hébergement :
 
-**Deploy to GitHub Pages** n’est proposé que si le document d’entrée appartient
-à un dépôt GitHub connecté et modifiable. Le dépôt du document d’entrée reçoit
-la branche générée. Les modules résolus et les pièces jointes provenant
-d’autres sources sont incorporés au site public. Aucun jeton, clé de compte de
-service, identifiant GitHub ou code du service de jetons n’est publié.
+- **Download managed site bundle** crée un ZIP statique pouvant être téléversé vers
+  un domaine personnalisé, un serveur web existant ou un autre hébergeur statique. Sa
+  configuration utilise déjà le point de terminaison de jetons géré.
+- **Deploy to GitHub Pages** est une commodité facultative, affichée uniquement lorsque le
+  document d’entrée de l’App appartient à un dépôt GitHub connecté et modifiable.
+  Studio écrit une branche générée complète et configure GitHub Pages basé sur une branche
+  seulement après une confirmation explicite.
 
-## Gérer plusieurs origines exactes
+Pour GitHub Pages, le dépôt du document d’entrée est la cible du déploiement.
+Les modules résolus et les pièces jointes provenant d’autres sources sont intégrés au site
+public. La branche générée ne contient aucun identifiant Google, jeton GitHub, clé de
+compte de service ni source du service de jetons.
 
-Une App accepte de 1 à 10 origines exactes, par exemple :
+## Configurer les origines autorisées exactes
+
+Le courtier public n’émet des jetons que si l’en-tête `Origin` normalisé exact du navigateur
+figure dans l’enregistrement de confiance de l’App. Une App prend en charge de 1 à 10 origines :
 
 ```json
 {
@@ -49,68 +55,100 @@ Une App accepte de 1 à 10 origines exactes, par exemple :
 }
 ```
 
-Une origine contient uniquement le schéma, le nom d’hôte et éventuellement le
-port. Ainsi, l’origine de `https://alice.github.io/forest-map/` est
-`https://alice.github.io`. GitHub Pages ajoute son origine à la liste sans
-remplacer les domaines personnalisés.
+Une origine ne contient que le schéma, le nom d’hôte et un port facultatif. Elle n’a pas de chemin ; ainsi,
+l’origine de `https://alice.github.io/forest-map/` est
+`https://alice.github.io`. L’ajout d’un déploiement Pages fusionne cette origine avec
+la liste existante au lieu de remplacer les domaines personnalisés.
 
-Toutes les origines d’une App partagent le même compte de service, les quotas
-et les limites. Créez des App IDs distincts pour isoler les quotas ou la
-sécurité.
+Toutes les origines d’une même App partagent son compte de service, son quota, ses limitations de débit et son cache
+de jetons. Créez des identifiants d’App distincts lorsque des déploiements ont besoin de quotas indépendants ou
+d’une isolation de sécurité.
 
-## Suivre le workflow géré
+## Terminer le flux de travail géré
 
-Studio valide l’App, vérifie l’inscription Earth Engine et les API, crée le
-compte de service propre à l’App, lui accorde seulement Earth Engine Resource
-Viewer et Service Usage Consumer, puis accorde au courtier central Token
-Creator uniquement sur ce compte précis. L’usurpation est vérifiée avec un
-jeton temporaire en lecture seule avant la préparation du site et l’activation.
+Studio conserve l’état des étapes terminées afin qu’un consentement refusé, une autorisation manquante ou une
+défaillance du fournisseur puisse être retenté sans répéter les modifications réussies. Le
+flux de travail :
 
-Chaque modification externe est expliquée et confirmée. Un refus ou une erreur
-conserve les étapes terminées. Studio ne crée jamais de clé de compte de
-service et ne supprime pas silencieusement les ressources déjà créées. Les
-contrôles finaux permettent de télécharger, redéployer, modifier les origines,
-vérifier IAM, désactiver l’émission ou révoquer l’usurpation.
+1. valide l’App et passe en revue l’autorisation Google ;
+2. vérifie l’enregistrement du projet Earth Engine et les API requises ;
+3. crée ou réutilise le compte de service propre à l’App ;
+4. n’accorde que Earth Engine Resource Viewer et Service Usage Consumer ;
+5. n’accorde au courtier central Token Creator que sur ce compte précis ;
+6. vérifie l’usurpation d’identité (impersonation) avec un jeton temporaire en lecture seule ;
+7. prépare le site statique et l’hébergement sélectionné ;
+8. stocke les origines autorisées exactes, revérifie IAM et active l’émission.
 
-## Comprendre la limite de sécurité publique
+Chaque modification externe est décrite avant d’avoir lieu. Studio ne crée jamais de clé de
+compte de service et ne supprime pas silencieusement de ressources après un échec
+ultérieur. Les contrôles finaux permettent de télécharger de nouveau, de déployer ou redéployer Pages, de gérer les
+origines, de vérifier IAM, de désactiver l’émission ou de révoquer l’usurpation d’identité par le courtier.
 
-Les visiteurs ne se connectent pas. Le code exporté, les pièces jointes et les
-identifiants d’assets sont publics. Un asset privé doit accorder explicitement
-la lecture au compte de service de l’App.
+## Comprendre la frontière de sécurité publique
 
-Un visiteur peut extraire le jeton visible dans le navigateur et le réutiliser
-jusqu’à son expiration. La vérification de l’origine limite l’émission, mais ne
-lie pas cryptographiquement le jeton au site. Les requêtes Earth Engine vont
-directement vers les API standard et high-volume; le courtier ne relaie aucun
-calcul, tuile, inspection, carte ou téléchargement. Drive, Cloud Storage,
-l’écriture d’assets, l’ingestion, les exports batch et la gestion des tâches
-sont bloqués.
+Les visiteurs publics ne se connectent pas. Le code source exporté, le contenu des pièces jointes et les identifiants
+d’éléments sont publics. Les éléments Earth Engine privés doivent accorder explicitement l’accès en lecture
+au compte de service de l’App.
 
-## Exploiter le CDN et le courtier
+Le jeton d’accès ne reste que dans la mémoire du navigateur et du Worker, mais un visiteur peut
+l’extraire et le réutiliser jusqu’à son expiration. La validation de l’origine contrôle l’émission ;
+elle ne lie pas cryptographiquement un jeton porteur à un site web. Utilisez des comptes de service distincts
+à privilèges minimaux, un IAM en lecture seule, des quotas, une limitation de débit et des identifiants
+d’App distincts pour une isolation réelle.
 
-Les limites de production sont distinctes :
+Les Apps portables appellent directement les API Earth Engine standard et à gros volume.
+Drive, Cloud Storage, les écritures d’éléments, l’ingestion, les exportations par lots et la gestion des tâches
+sont bloqués. Aucune requête Earth Engine de calcul, de tuile, de carte, d’inspection ou de
+téléchargement ne transite par l’émetteur d’identifiants.
 
-- `code.earthengine.studio` : éditeur, assistant et API de gestion;
-- `cdn.earthengine.studio` : player immuable sous `/portable/v1/` et runtime
-  Python sous `/python-runtime/314.0.2/`;
-- `auth.earthengine.studio` : uniquement `POST`/`OPTIONS
-  `/v1/apps/{appId}/token` et `GET /healthz`.
+## Exploiter le CDN et l’émetteur d’identifiants
 
-Configurez DNS et TLS pour chaque hôte. Ils peuvent utiliser le même serveur
-physique, mais doivent rester des hôtes virtuels séparés, sans redirection vers
-`code`. Le CDN exige CORS public, cache immuable et types MIME corrects. Le
-courtier utilise une identité de service sans clé et un accès conditionnel en
-lecture seule à la base Firestore dédiée; aucune opération de gestion ne doit
-être placée sur `auth`.
+La production utilise des frontières d’hôtes distinctes :
 
-Publiez d’abord le CDN, puis déployez et vérifiez le courtier, configurez
-DNS/TLS, testez depuis une origine HTTPS indépendante et activez enfin les
-Apps. Seules les requêtes de jeton doivent atteindre `auth`; le trafic Earth
-Engine doit aller directement à Google. Consultez la documentation
-[des domaines Cloud Run](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
-et des
-[identités de service](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
+| Hôte | Responsabilité |
+| --- | --- |
+| `code.earthengine.studio` | Éditeur authentifié, assistant de déploiement et API de gestion |
+| `cdn.earthengine.studio` | Lecteur portable immuable et environnement Python figé |
+| `auth.earthengine.studio` | Émetteur d’identifiants d’Apps publiques uniquement |
 
-## Fonctionnement actuel
+Faites pointer `cdn.earthengine.studio` et `auth.earthengine.studio` vers leurs points de service
+avec DNS et TLS. Ils peuvent se terminer sur le même serveur physique, mais
+doivent rester des hôtes virtuels distincts ; ne redirigez aucun des deux noms vers
+`code.earthengine.studio`.
 
-Les exports contiennent `embed-snippet.html` et `embed-loader.js` pour intégrer un élément HTML sans iframe. Gardez les fichiers ensemble et ajustez les chemins en sous-répertoire. Le déploiement géré analyse le script et ses modules `require(...)`; les références dynamiques non résolues le bloquent. Le compte de service dédié reçoit l’accès lecteur aux assets privés détectés, sans supprimer les autres permissions. Un échec identifie l’asset et permet de reprendre.
+Publiez ces préfixes CDN immuables :
+
+- `/portable/v1/`
+- `/python-runtime/314.0.2/`
+
+Les réponses du CDN nécessitent un accès GET public inter-origines, une mise en cache immuable
+de longue durée et des types MIME corrects pour JavaScript, JSON, CSS, WASM et wheel. Exécutez
+`npm run cdn-release:prepare` dans le dépôt source de Studio pour assembler
+une nouvelle arborescence de version.
+
+L’hôte d’authentification n’expose que :
+
+- `POST` et `OPTIONS /v1/apps/{appId}/token`
+- `GET /healthz`
+
+Déployez le courtier avec son identité de service Cloud Run dédiée gérée par l’utilisateur
+et des Application Default Credentials sans clé, ou exécutez-le en boucle locale derrière un hôte virtuel de
+proxy inverse distinct sur une machine dotée d’une identité sans clé équivalente. Donnez-lui un accès
+conditionnel en lecture seule uniquement à la base Firestore dédiée aux Apps publiques. Ne placez pas de routes de gestion sur cet hôte.
+
+Déployez dans cet ordre : publier et vérifier le CDN, déployer le courtier et tester son état de santé, configurer DNS/TLS, tester depuis une origine HTTPS
+indépendante, puis activer les Apps gérées. L’inspection réseau doit montrer que seules les requêtes de jeton parviennent à
+`auth.earthengine.studio` ; le trafic Earth Engine doit aller directement à Google.
+Revenez à la révision précédente du courtier et désactivez les enregistrements d’App concernés
+si nécessaire. Ne modifiez jamais une version immuable du CDN déjà publiée.
+
+Les recommandations de production actuelles de Google préconisent un équilibreur de charge d’application externe
+global pour un domaine personnalisé Cloud Run ; le mappage direct de domaine Cloud Run est
+en préversion à disponibilité limitée. Voir
+[Cloud Run custom domains](https://docs.cloud.google.com/run/docs/mapping-custom-domains)
+et
+[service identities](https://docs.cloud.google.com/run/docs/configuring/services/service-identity).
+
+## Détails et limites
+
+Les exportations d’App incluent `embed-snippet.html` et `embed-loader.js` pour une intégration en élément personnalisé en ligne, sans iframe. Gardez le bundle et les pièces jointes ensemble et ajustez les chemins pour un hébergement en sous-répertoire. Le déploiement géré analyse le script d’entrée et les modules `require(...)` capturés pour y repérer des éléments ; les références dynamiques non résolues bloquent le déploiement. Après avoir créé ou réutilisé le compte de service dédié, il accorde l’accès en lecture sur les éléments privés détectés tout en préservant les autorisations sans rapport. Les octrois en échec identifient l’élément et laissent le déploiement reprenable.

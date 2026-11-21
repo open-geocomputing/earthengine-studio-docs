@@ -2,7 +2,7 @@
 title: Repositories & sharing
 description: Connect Git providers, open or create branches and files, handle save conflicts, and share immutable Studio links.
 permalink: /repositories-and-sharing/
-order: 10
+order: 11
 lang: en
 translation_key: repositories-and-sharing
 keywords: [Scripts, repositories, GitHub, GitLab, GoogleSource, branch, save conflict, pull request, Get Link]
@@ -100,7 +100,7 @@ Refer to Google's [Code Editor overview](https://developers.google.com/earth-eng
 for those workflows rather than assuming its repository paths or link options
 match Studio.
 
-## Current workflow
+## Details and limits
 
 Scripts separates Local folders and Online folders; **Show all file types** expands the default JavaScript/Python/Markdown/extensionless filter, while hidden folders stay hidden. Online GitHub/GitLab changes refresh loaded trees and offer a reload review for open files; local-only edits receive Recently closed recovery copies before replacement. Polling pauses offline or in hidden tabs. Account menus offer **Disconnect account…**; provider icons connect additional accounts.
 

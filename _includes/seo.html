@@ -1,0 +1,95 @@
+{%- assign lang = page.lang | default: site.lang | default: "en" -%}
+{%- assign ui = site.data.i18n[lang] -%}
+{%- assign language = site.data.languages | where: "code", lang | first -%}
+{%- assign home_url = language.prefix | append: "/" | absolute_url -%}
+{%- assign is_guide = false -%}{%- if page.collection == "docs" -%}{%- assign is_guide = true -%}{%- endif -%}
+{%- if page.seo_title -%}
+  {%- assign seo_title = page.seo_title -%}
+{%- elsif is_guide -%}
+  {%- assign seo_title = page.title | append: " | Earth Engine Studio docs" -%}
+{%- else -%}
+  {%- assign seo_title = page.title | default: site.title -%}
+{%- endif -%}
+{%- assign seo_description = page.description | default: site.description | strip_html | normalize_whitespace -%}
+{%- assign card = "/assets/images/social-card.jpg" | absolute_url -%}
+<title>{{ seo_title | escape }}</title>
+<meta name="description" content="{{ seo_description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- if page.sitemap == false %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{% if is_guide %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:locale" content="{{ language.og_locale }}">
+{%- for alternate in site.data.languages %}{% unless alternate.code == lang %}
+<meta property="og:locale:alternate" content="{{ alternate.og_locale }}">
+{%- endunless %}{% endfor %}
+<meta property="og:image" content="{{ card }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Earth Engine Studio documentation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+<meta name="twitter:image" content="{{ card }}">
+{%- if is_guide and page.last_modified_at %}
+<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+{%- endif %}
+{%- if is_guide %}
+<link rel="alternate" type="text/markdown" href="{{ page.url | append: 'index.md' | relative_url }}" title="{{ ui.markdown_copy }}">
+{%- endif %}
+<script type="application/ld+json">
+{%- if is_guide -%}
+{%- assign section_label = nil -%}
+{%- for section in site.data.navigation -%}{%- for item in section.items -%}{%- if item.slug == page.translation_key -%}{%- assign section_label = section.labels[lang] -%}{%- endif -%}{%- endfor -%}{%- endfor %}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ seo_description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "inLanguage": {{ language.hreflang | jsonify }},
+      {%- if page.last_modified_at %}
+      "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+      {%- endif %}
+      "image": {{ card | jsonify }},
+      {%- if page.keywords %}
+      "keywords": {{ page.keywords | join: ", " | jsonify }},
+      {%- endif %}
+      "articleSection": {{ section_label | default: ui.docs | jsonify }},
+      "isPartOf": { "@type": "WebSite", "name": {{ site.title | jsonify }}, "url": {{ home_url | jsonify }} },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Earth Engine Studio",
+        "url": "https://code.earthengine.studio/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web browser"
+      },
+      "publisher": { "@type": "Organization", "name": "Open Geocomputing", "url": "https://www.open-geocomputing.org/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": {{ ui.docs | jsonify }}, "item": {{ home_url | jsonify }} },
+        { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }}, "item": {{ page.url | absolute_url | jsonify }} }
+      ]
+    }
+  ]
+}
+{%- else %}
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.title | jsonify }},
+  "url": {{ home_url | jsonify }},
+  "inLanguage": {{ language.hreflang | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "publisher": { "@type": "Organization", "name": "Open Geocomputing", "url": "https://www.open-geocomputing.org/" }
+}
+{%- endif %}
+</script>

@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07111f">
 <meta name="color-scheme" content="light dark">
-{% seo %}
+{% include seo.html %}
 {% if page.translation_key %}
   {% for alternate_language in site.data.languages %}
     {% if page.translation_key == "home" %}
@@ -28,5 +28,4 @@
     document.documentElement.dataset.themeSource = saved ? "saved" : "system";
   })();
 </script>
-<script src="https://www.earthengine.studio/assets/js/vendor/lottie.min.js" defer></script>
-<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}" data-lottie-src="https://www.earthengine.studio/assets/js/vendor/lottie.min.js" defer></script>
